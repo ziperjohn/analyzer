@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "459613923741",
+    "project_id": "analyzer-96e67",
+    "storage_bucket": "analyzer-96e67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459613923741:android:4125a7acbebe6c6bd26774",
+        "android_client_info": {
+          "package_name": "cz.vut.analyzer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459613923741-3dhtfqfs43odl7o97bjc7ub2o6v08cli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cz.vut.analyzer",
+            "certificate_hash": "6ce7625cf87579e736472b0f38395975b1d50194"
+          }
+        },
+        {
+          "client_id": "459613923741-n6f42tk07pfms2e6g47strvmbjpnekrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA13EYWLQDFVEDb15U60XS68Zbdi6YPQiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459613923741-n6f42tk07pfms2e6g47strvmbjpnekrg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "459613923741-ggd9it01j4ir1ts4qas71s48b85h95jp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "cz.vut.analyzer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
