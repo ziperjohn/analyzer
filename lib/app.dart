@@ -1,4 +1,4 @@
-import 'package:analyzer/screens/home_screen.dart';
+import 'package:analyzer/auth_wrapper.dart';
 import 'package:analyzer/widgets/loading_indicator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _AppState extends State<App> {
             errorMessage: snapshot.error.toString(),
           );
         } else if (snapshot.hasData) {
-          return const HomeScreen();
+          return const AuthWrapper();
         } else {
           return const LoadingScreen();
         }
