@@ -1,4 +1,6 @@
+import 'package:analyzer/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingIndicator extends StatelessWidget {
   const LoadingIndicator({Key? key}) : super(key: key);
@@ -6,12 +8,11 @@ class LoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: SizedBox(
-        width: 70,
-        height: 70,
-        child: CircularProgressIndicator(
-          strokeWidth: 7,
-        ),
+      child: SpinKitSpinningLines(
+        color: primaryColor,
+        size: 100.0,
+        itemCount: 8,
+        lineWidth: 4,
       ),
     );
   }

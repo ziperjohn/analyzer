@@ -1,3 +1,4 @@
+import 'package:analyzer/theme/theme.dart';
 import 'package:analyzer/utils/routes.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,8 @@ class _MainState extends State<Main> {
       debugShowCheckedModeBanner: false,
       title: "Analyzer",
       routes: appRoutes,
+      darkTheme: darkMode,
+      themeMode: ThemeMode.dark,
     );
   }
 }

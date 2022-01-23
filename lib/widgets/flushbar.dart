@@ -1,20 +1,22 @@
+import 'package:analyzer/theme/colors.dart';
 import 'package:another_flushbar/flushbar.dart';
 import "package:another_flushbar/flushbar_route.dart" as route;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Future<dynamic> showFlushbar(BuildContext context, String message) {
+Future<dynamic> showFlushbar(BuildContext context, String message, bool isError) {
   var _route = route.showFlushbar(
     context: context,
     flushbar: Flushbar(
       dismissDirection: FlushbarDismissDirection.VERTICAL,
-      messageText: Text(message),
-      margin: const EdgeInsets.all(10),
+      messageText: Text(message, style: Theme.of(context).textTheme.bodyText2),
+      backgroundColor: surfaceColor,
+      margin: const EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(10),
       duration: const Duration(seconds: 5),
-      icon: const Icon(
-        FontAwesomeIcons.exclamationTriangle,
-        color: Colors.redAccent,
+      icon: Icon(
+        isError ? FontAwesomeIcons.exclamation : FontAwesomeIcons.check,
+        color: isError ? redColor : greenColor,
       ),
     ),
   );

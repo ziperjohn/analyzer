@@ -1,7 +1,9 @@
 import 'package:analyzer/services/auth_service.dart';
 import 'package:analyzer/widgets/custom_text_field.dart';
 import 'package:analyzer/widgets/primary_button.dart';
+import 'package:analyzer/widgets/secondary_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SingUpScreen extends StatelessWidget {
@@ -13,31 +15,80 @@ class SingUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme _textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Sign Up"),
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Center(
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SvgPicture.asset(
+              "assets/wave/wave2.svg",
+              alignment: Alignment.topCenter,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomTextField(controller: emailController, hintText: "Email", isPassword: false),
-                  CustomTextField(controller: passwordController, hintText: "Password", isPassword: true),
+                  Text.rich(
+                    TextSpan(
+                      text: "Welcome to ",
+                      style: _textTheme.headline2,
+                      children: [
+                        TextSpan(text: "Analyzer", style: _textTheme.headline1),
+                        TextSpan(text: "\nSign Up", style: _textTheme.headline2)
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
                   CustomTextField(
-                      controller: confirmPasswordController, hintText: "Confirm Password", isPassword: true),
-                  PrimaryButton(
-                    action: () => AuthService().passwordValidation(context, emailController.text,
-                        passwordController.text, confirmPasswordController.text),
-                    text: "Sign Up!",
-                    icon: FontAwesomeIcons.userPlus,
+                    controller: emailController,
+                    hintText: "Email",
+                    isPassword: false,
+                    isEmail: true,
+                    icon: FontAwesomeIcons.solidEnvelope,
+                  ),
+                  const SizedBox(height: 10),
+                  CustomTextField(
+                    controller: passwordController,
+                    hintText: "Password",
+                    isPassword: true,
+                    isEmail: false,
+                    icon: FontAwesomeIcons.key,
+                  ),
+                  const SizedBox(height: 10),
+                  CustomTextField(
+                    controller: confirmPasswordController,
+                    hintText: "Confirm Password",
+                    isPassword: true,
+                    isEmail: false,
+                    icon: FontAwesomeIcons.key,
+                  ),
+                  const SizedBox(height: 20),
+                  Center(
+                    child: PrimaryButton(
+                      action: () => AuthService().passwordValidation(context, emailController.text,
+                          passwordController.text, confirmPasswordController.text),
+                      text: "Sign Up",
+                      icon: FontAwesomeIcons.userPlus,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Center(
+                    child: SecondaryButton(
+                      action: () => Navigator.pop(context),
+                      text: "Back",
+                      icon: FontAwesomeIcons.chevronLeft,
+                    ),
                   )
                 ],
               ),
             ),
-          ),
-        ));
+          ],
+        ),
+      ),
+    );
   }
 }

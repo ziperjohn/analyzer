@@ -1,4 +1,5 @@
 import 'package:analyzer/widgets/flushbar.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class AuthService {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (error) {
-      showFlushbar(context, error.message.toString());
+      showFlushbar(context, error.message.toString(), true);
     }
   }
 
@@ -19,7 +20,7 @@ class AuthService {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
       Navigator.of(context).pushNamedAndRemoveUntil("/", (route) => false);
     } on FirebaseAuthException catch (error) {
-      showFlushbar(context, error.message.toString());
+      showFlushbar(context, error.message.toString(), true);
     }
   }
 
@@ -27,7 +28,16 @@ class AuthService {
     try {
       await FirebaseAuth.instance.signOut();
     } on FirebaseAuthException catch (error) {
-      showFlushbar(context, error.message.toString());
+      showFlushbar(context, error.message.toString(), true);
+    }
+  }
+
+  Future<void> resetPassword(BuildContext context, String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      showFlushbar(context, "Password recovery email has been sent, check your inbox.", false);
+    } on FirebaseAuthException catch (error) {
+      showFlushbar(context, error.message.toString(), true);
     }
   }
 
@@ -35,7 +45,7 @@ class AuthService {
     if (password == confirmPassword) {
       signUp(context, email, password);
     } else {
-      showFlushbar(context, "The Passwords Don't Match");
+      showFlushbar(context, "The Passwords Don't Match.", true);
     }
   }
 }
