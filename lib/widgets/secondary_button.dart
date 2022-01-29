@@ -1,3 +1,4 @@
+import 'package:analyzer/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class SecondaryButton extends StatelessWidget {
           shape: shape,
           side: const BorderSide(
             width: 1,
-            color: Color(0xFF493DD9),
+            color: primaryColor,
           ),
         ),
       );
@@ -33,7 +34,7 @@ class SecondaryButton extends StatelessWidget {
           shape: shape,
           side: const BorderSide(
             width: 1,
-            color: Color(0xFF493DD9),
+            color: primaryColor,
           ),
         ),
       );

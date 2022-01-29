@@ -76,7 +76,7 @@ class SingInScreen extends StatelessWidget {
                   ),
                   const Divider(
                     thickness: 1,
-                    color: greyColor,
+                    color: lightGrayColor,
                   ),
                   Center(
                     child: Text("Don't have an account yet?", style: _textTheme.caption),

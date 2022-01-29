@@ -76,7 +76,7 @@ ThemeData darkMode = ThemeData(
     caption: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.normal,
-      color: greyColor,
+      color: lightGrayColor,
       letterSpacing: 0.4,
     ),
     button: TextStyle(

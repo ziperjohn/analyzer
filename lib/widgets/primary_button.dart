@@ -1,3 +1,4 @@
+import 'package:analyzer/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -22,10 +23,7 @@ class PrimaryButton extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF493DD9),
-                Color(0xFF9E20D8),
-              ],
+              colors: [primaryColor, secondaryColor],
             ),
           ),
           child: ElevatedButton(
@@ -51,10 +49,7 @@ class PrimaryButton extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF493DD9),
-                Color(0xFF9E20D8),
-              ],
+              colors: [primaryColor, secondaryColor],
             ),
           ),
           child: ElevatedButton.icon(
