@@ -27,7 +27,7 @@ class ScreenWrapper extends StatelessWidget {
         backgroundColor: surfaceColor,
         items: const [
           BottomNavigationBarItem(label: "Home", icon: Icon(FontAwesomeIcons.home)),
-          BottomNavigationBarItem(label: "Chart", icon: Icon(FontAwesomeIcons.chartLine)),
+          BottomNavigationBarItem(label: "OTDR", icon: Icon(FontAwesomeIcons.chartLine)),
           BottomNavigationBarItem(label: "Settings", icon: Icon(FontAwesomeIcons.userCog)),
         ],
       ),
