@@ -17,14 +17,9 @@ void main() {
   );
 }
 
-class Main extends StatefulWidget {
+class Main extends StatelessWidget {
   const Main({Key? key}) : super(key: key);
 
-  @override
-  _MainState createState() => _MainState();
-}
-
-class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
