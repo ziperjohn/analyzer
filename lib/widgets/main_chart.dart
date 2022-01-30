@@ -27,11 +27,8 @@ class MainChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.5,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: LineChart(
-          mainData(),
-        ),
+      child: LineChart(
+        mainData(),
       ),
     );
   }
