@@ -32,7 +32,7 @@ ThemeData darkMode = ThemeData(
     headline3: TextStyle(
       fontSize: 25,
       fontWeight: FontWeight.w600,
-      color: Colors.blue,
+      color: whiteColor,
     ),
     headline4: TextStyle(
       fontSize: 22,
