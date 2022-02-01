@@ -1,3 +1,4 @@
+import 'package:analyzer/providers/analyzer_provider.dart';
 import 'package:analyzer/providers/navigation_provider.dart';
 import 'package:analyzer/theme/theme.dart';
 import 'package:analyzer/utils/routes.dart';
@@ -11,6 +12,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => NavigationProvider()),
+        ChangeNotifierProvider(create: (_) => AnalyzerProvider()),
       ],
       child: const Main(),
     ),
