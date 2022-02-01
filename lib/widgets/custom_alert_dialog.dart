@@ -31,12 +31,12 @@ class CustomAlertDialog extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () => Navigator.of(context).pop(false),
                   style: TextButton.styleFrom(primary: secondaryColor),
                   child: const Text("Cancel"),
                 ),
                 TextButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () => Navigator.of(context).pop(true),
                   child: Text(confirmButtonLabel),
                 )
               ],

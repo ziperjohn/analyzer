@@ -6,6 +6,7 @@ class CustomTextFieldDialog extends StatelessWidget {
   final String title;
   final String confirmButtonLabel;
   final String hintText;
+
   CustomTextFieldDialog(
       {Key? key, required this.title, required this.confirmButtonLabel, required this.hintText})
       : super(key: key);
@@ -39,7 +40,7 @@ class CustomTextFieldDialog extends StatelessWidget {
                   child: const Text("Cancel"),
                 ),
                 TextButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () => Navigator.of(context).pop(textController.text),
                   child: Text(confirmButtonLabel),
                 )
               ],
