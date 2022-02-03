@@ -1,9 +1,9 @@
 // ignore_for_file: implementation_imports
 
-import 'package:analyzer/providers/navigation_provider.dart';
-import 'package:analyzer/screens/home_screen.dart';
-import 'package:analyzer/screens/settings_screen.dart';
-import 'package:analyzer/theme/colors.dart';
+import 'package:analyzer_app/providers/navigation_provider.dart';
+import 'package:analyzer_app/screens/home_screen.dart';
+import 'package:analyzer_app/screens/settings_screen.dart';
+import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/src/provider.dart';

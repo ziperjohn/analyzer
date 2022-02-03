@@ -1,6 +1,6 @@
-import 'package:analyzer/services/auth_service.dart';
-import 'package:analyzer/widgets/loading_indicator.dart';
-import 'package:analyzer/widgets/primary_button.dart';
+import 'package:analyzer_app/services/auth_service.dart';
+import 'package:analyzer_app/widgets/loading_indicator.dart';
+import 'package:analyzer_app/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,6 +21,7 @@ class SettingsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              Text(user.uid),
               Text(user.email ?? ""),
               PrimaryButton(
                 action: () => AuthService().signOut(context),

@@ -1,7 +1,7 @@
-import 'package:analyzer/app.dart';
-import 'package:analyzer/screen_wrapper.dart';
-import 'package:analyzer/screens/sing_in_screen.dart';
-import 'package:analyzer/services/auth_service.dart';
+import 'package:analyzer_app/app.dart';
+import 'package:analyzer_app/screen_wrapper.dart';
+import 'package:analyzer_app/screens/sing_in_screen.dart';
+import 'package:analyzer_app/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class AuthWrapper extends StatelessWidget {

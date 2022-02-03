@@ -1,9 +1,9 @@
 // ignore_for_file: implementation_imports
 import 'package:provider/src/provider.dart';
-import 'package:analyzer/models/analyzer_model.dart';
-import 'package:analyzer/providers/analyzer_provider.dart';
-import 'package:analyzer/theme/colors.dart';
-import 'package:analyzer/widgets/custom_alert_dialog.dart';
+import 'package:analyzer_app/models/analyzer_model.dart';
+import 'package:analyzer_app/providers/analyzer_provider.dart';
+import 'package:analyzer_app/theme/colors.dart';
+import 'package:analyzer_app/widgets/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -25,7 +25,7 @@ class CustomCard extends StatelessWidget {
           onPressed: () async {
             final remove = await showRemoveAnalyzer(context);
             if (remove == true) {
-              context.read<AnalyzerProvider>().removeAnalyzer(analyzer.id);
+            // TODO call firestore function remove
             }
           },
           icon: const Icon(
@@ -34,6 +34,7 @@ class CustomCard extends StatelessWidget {
           ),
         ),
         onTap: () => print(analyzer.id),
+        // TODO push new screen
       ),
     );
   }

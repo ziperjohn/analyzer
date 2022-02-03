@@ -1,4 +1,4 @@
-import 'package:analyzer/widgets/flushbar.dart';
+import 'package:analyzer_app/widgets/flushbar.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

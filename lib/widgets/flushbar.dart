@@ -1,4 +1,4 @@
-import 'package:analyzer/theme/colors.dart';
+import 'package:analyzer_app/theme/colors.dart';
 import 'package:another_flushbar/flushbar.dart';
 import "package:another_flushbar/flushbar_route.dart" as route;
 import 'package:flutter/material.dart';

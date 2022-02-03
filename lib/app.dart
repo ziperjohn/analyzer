@@ -1,5 +1,5 @@
-import 'package:analyzer/auth_wrapper.dart';
-import 'package:analyzer/widgets/loading_indicator.dart';
+import 'package:analyzer_app/auth_wrapper.dart';
+import 'package:analyzer_app/widgets/loading_indicator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

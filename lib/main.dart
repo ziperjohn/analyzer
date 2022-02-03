@@ -1,7 +1,7 @@
-import 'package:analyzer/providers/analyzer_provider.dart';
-import 'package:analyzer/providers/navigation_provider.dart';
-import 'package:analyzer/theme/theme.dart';
-import 'package:analyzer/utils/routes.dart';
+import 'package:analyzer_app/providers/analyzer_provider.dart';
+import 'package:analyzer_app/providers/navigation_provider.dart';
+import 'package:analyzer_app/theme/theme.dart';
+import 'package:analyzer_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,7 +12,6 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => NavigationProvider()),
-        ChangeNotifierProvider(create: (_) => AnalyzerProvider()),
       ],
       child: const Main(),
     ),

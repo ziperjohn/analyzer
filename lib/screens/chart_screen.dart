@@ -1,4 +1,4 @@
-import 'package:analyzer/widgets/main_chart.dart';
+import 'package:analyzer_app/widgets/main_chart.dart';
 import 'package:flutter/material.dart';
 
 class ChartScreen extends StatelessWidget {

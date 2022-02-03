@@ -1,7 +1,7 @@
-import 'package:analyzer/app.dart';
-import 'package:analyzer/screens/forgot_password_screen.dart';
-import 'package:analyzer/screens/sign_up_screen.dart';
-import 'package:analyzer/screens/sing_in_screen.dart';
+import 'package:analyzer_app/app.dart';
+import 'package:analyzer_app/screens/forgot_password_screen.dart';
+import 'package:analyzer_app/screens/sign_up_screen.dart';
+import 'package:analyzer_app/screens/sing_in_screen.dart';
 
 var appRoutes = {
   "/": (context) => const App(),

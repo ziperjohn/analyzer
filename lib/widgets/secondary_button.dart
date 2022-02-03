@@ -1,4 +1,4 @@
-import 'package:analyzer/theme/colors.dart';
+import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryButton extends StatelessWidget {
