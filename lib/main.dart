@@ -32,8 +32,7 @@ class App extends StatelessWidget {
               providers: [
                 ChangeNotifierProvider(create: (_) => NavigationProvider()),
                 StreamProvider<List<Analyzer>>(
-                    create: (_) => FirestoreService().analyzers,
-                    initialData: const [])
+                    create: (_) => FirestoreService().analyzerListStream(), initialData: const [])
               ],
               child: MaterialApp(
                 debugShowCheckedModeBanner: false,

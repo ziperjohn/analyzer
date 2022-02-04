@@ -1,4 +1,6 @@
 import 'package:analyzer_app/models/analyzer_model.dart';
+import 'package:analyzer_app/screens/analyzer_screen.dart';
+import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +24,7 @@ class CustomCard extends StatelessWidget {
           onPressed: () async {
             final remove = await showRemoveAnalyzer(context);
             if (remove == true) {
-              // TODO call firestore function remove
+              FirestoreService().deleteAnalyzer(analyzer.id, analyzer.name, analyzer.place);
             }
           },
           icon: const Icon(
@@ -30,8 +32,13 @@ class CustomCard extends StatelessWidget {
             color: primaryColor,
           ),
         ),
-        onTap: () => {},
-        // TODO push new screen
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => AnalyzerScreen(analyzer: analyzer),
+            ),
+          );
+        },
       ),
     );
   }
