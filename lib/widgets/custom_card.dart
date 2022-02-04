@@ -1,7 +1,4 @@
-// ignore_for_file: implementation_imports
-import 'package:provider/src/provider.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
-import 'package:analyzer_app/providers/analyzer_provider.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +22,7 @@ class CustomCard extends StatelessWidget {
           onPressed: () async {
             final remove = await showRemoveAnalyzer(context);
             if (remove == true) {
-            // TODO call firestore function remove
+              // TODO call firestore function remove
             }
           },
           icon: const Icon(
@@ -33,7 +30,7 @@ class CustomCard extends StatelessWidget {
             color: primaryColor,
           ),
         ),
-        onTap: () => print(analyzer.id),
+        onTap: () => {},
         // TODO push new screen
       ),
     );
