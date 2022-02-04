@@ -1,8 +1,8 @@
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-class AnalyzerDevice extends StatelessWidget {
-  const AnalyzerDevice({Key? key}) : super(key: key);
+class AnalyzerPorts extends StatelessWidget {
+  const AnalyzerPorts({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

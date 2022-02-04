@@ -1,8 +1,8 @@
-import 'package:analyzer_app/screen_wrapper.dart';
-import 'package:analyzer_app/screens/sing_in_screen.dart';
+import 'package:analyzer_app/navigation/navigation_wrapper.dart';
+import 'package:analyzer_app/auth/sing_in_screen.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
+import '../main.dart';
 
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class AuthWrapper extends StatelessWidget {
         } else if (snapshot.hasError) {
           return ErrorScreen(errorMessage: snapshot.error.toString());
         } else if (snapshot.hasData) {
-          return const ScreenWrapper();
+          return const NavigationWrapper();
         } else {
           return const SingInScreen();
         }

@@ -1,7 +1,7 @@
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
-import 'package:analyzer_app/widgets/custom_card.dart';
+import 'package:analyzer_app/home/analyzer_card.dart';
 import 'package:analyzer_app/widgets/custom_text_field_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: analyzerList.length,
                 itemBuilder: (context, index) {
-                  return CustomCard(analyzer: analyzerList[index]);
+                  return AnalyzerCard(analyzer: analyzerList[index]);
                 },
               ),
             ),

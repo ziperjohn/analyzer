@@ -1,15 +1,15 @@
 import 'package:analyzer_app/models/analyzer_model.dart';
-import 'package:analyzer_app/screens/analyzer_screen.dart';
+import 'package:analyzer_app/analyzer/analyzer_screen.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomCard extends StatelessWidget {
+class AnalyzerCard extends StatelessWidget {
   final Analyzer analyzer;
 
-  const CustomCard({Key? key, required this.analyzer}) : super(key: key);
+  const AnalyzerCard({Key? key, required this.analyzer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,7 @@ class CustomCard extends StatelessWidget {
       color: surfaceColor,
       child: ListTile(
         title: Text(analyzer.name),
+        subtitle: analyzer.place == "" ? null : Text(analyzer.place),
         trailing: IconButton(
           onPressed: () async {
             final remove = await showRemoveAnalyzer(context);

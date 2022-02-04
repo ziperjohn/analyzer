@@ -6,14 +6,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uuid/uuid.dart';
 
 class FirestoreService {
-  final CollectionReference analyzerCollection = FirebaseFirestore.instance.collection("analyzers");
+  final CollectionReference _analyzerCollection = FirebaseFirestore.instance.collection("analyzers");
 
   Stream<List<Analyzer>> analyzerListStream() {
     // Listen user stream if user is sign in and get user UID
     return AuthService().userStream.switchMap((user) {
       if (user != null) {
         // Get user document from firestore
-        return analyzerCollection.doc(user.uid).snapshots().map((doc) {
+        return _analyzerCollection.doc(user.uid).snapshots().map((doc) {
           List<Analyzer> analyzerList = [];
 
           // Get documnet data as map and get value for key userAnalyzers as List of dynamic, if doc.data not equal to null
@@ -28,7 +28,6 @@ class FirestoreService {
               }
             }
           }
-
           return analyzerList;
         });
       } else {
@@ -38,12 +37,30 @@ class FirestoreService {
     });
   }
 
+  Future<void> updateAnalyzer(String id, String name, String place) async {
+    var user = AuthService().user!;
+
+    var doc = await _analyzerCollection.doc(user.uid).get();
+    var data = doc.data() as Map;
+    var userAnalyzers = data["userAnalyzers"] as List<dynamic>;
+
+    for (var item in userAnalyzers) {
+      if (item["id"] == id) {
+        item["id"] = id;
+        item["name"] = name;
+        item["place"] = place;
+      }
+    }
+
+    _analyzerCollection.doc(user.uid).set({"userAnalyzers": userAnalyzers}, SetOptions(merge: false));
+  }
+
   Future<void> addAnalyzer(String name) async {
     Map data = {"id": const Uuid().v4(), "name": name, "place": ""};
 
     var user = AuthService().user!;
 
-    analyzerCollection.doc(user.uid).set({
+    _analyzerCollection.doc(user.uid).set({
       "userAnalyzers": FieldValue.arrayUnion([data])
     }, SetOptions(merge: true));
   }
@@ -53,7 +70,7 @@ class FirestoreService {
 
     var user = AuthService().user!;
 
-    analyzerCollection.doc(user.uid).update({
+    _analyzerCollection.doc(user.uid).update({
       "userAnalyzers": FieldValue.arrayRemove([data])
     });
   }

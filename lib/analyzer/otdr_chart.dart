@@ -2,8 +2,8 @@ import 'package:analyzer_app/theme/colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class MainChart extends StatelessWidget {
-  MainChart({Key? key}) : super(key: key);
+class OTDRChart extends StatelessWidget {
+  OTDRChart({Key? key}) : super(key: key);
 
   final List<Color> gradientColors = [primaryColor, secondaryColor];
 

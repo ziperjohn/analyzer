@@ -1,5 +1,5 @@
 import 'package:analyzer_app/models/analyzer_model.dart';
-import 'package:analyzer_app/providers/navigation_provider.dart';
+import 'package:analyzer_app/navigation/navigation_provider.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/theme.dart';
 import 'package:analyzer_app/utils/routes.dart';
