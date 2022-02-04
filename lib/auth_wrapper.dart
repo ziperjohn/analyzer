@@ -19,7 +19,7 @@ class AuthWrapper extends StatelessWidget {
         } else if (snapshot.hasData) {
           return const ScreenWrapper();
         } else {
-          return SingInScreen();
+          return const SingInScreen();
         }
       },
     );

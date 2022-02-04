@@ -7,12 +7,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
-  ForgotPasswordScreen({Key? key}) : super(key: key);
-
-  final TextEditingController emailController = TextEditingController();
+  const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+
     return Scaffold(
       body: SingleChildScrollView(
         reverse: true,

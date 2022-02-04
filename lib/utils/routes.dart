@@ -4,6 +4,6 @@ import 'package:analyzer_app/screens/sign_up_screen.dart';
 
 var appRoutes = {
   "/": (context) => const AuthWrapper(),
-  "/singUp": (context) => SingUpScreen(),
-  "/forgotPassword": (context) => ForgotPasswordScreen(),
+  "/singUp": (context) => const SingUpScreen(),
+  "/forgotPassword": (context) => const ForgotPasswordScreen(),
 };

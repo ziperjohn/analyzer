@@ -8,13 +8,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SingInScreen extends StatelessWidget {
-  SingInScreen({Key? key}) : super(key: key);
-
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  const SingInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
     TextTheme _textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
@@ -70,7 +69,7 @@ class SingInScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   Center(
                     child: TextButton(
-                      onPressed: () => Navigator.pushNamed(context, "/singIn/forgotPassword"),
+                      onPressed: () => Navigator.pushNamed(context, "/forgotPassword"),
                       child: const Text("Forgot Password?"),
                     ),
                   ),
@@ -84,7 +83,7 @@ class SingInScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   Center(
                     child: SecondaryButton(
-                      action: () => Navigator.pushNamed(context, '/singIn/singUp'),
+                      action: () => Navigator.pushNamed(context, '/singUp'),
                       text: "Sign Up",
                       icon: FontAwesomeIcons.userPlus,
                     ),
