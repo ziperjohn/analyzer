@@ -37,6 +37,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   isPassword: false,
                   isEmail: true,
                   icon: FontAwesomeIcons.solidEnvelope,
+                  autoFocus: false,
                 ),
                 const SizedBox(height: 20),
                 Center(

@@ -48,6 +48,7 @@ class SingInScreen extends StatelessWidget {
                     isPassword: false,
                     isEmail: true,
                     icon: FontAwesomeIcons.solidEnvelope,
+                    autoFocus: false,
                   ),
                   const SizedBox(height: 10),
                   CustomTextField(
@@ -56,6 +57,7 @@ class SingInScreen extends StatelessWidget {
                     isPassword: true,
                     isEmail: false,
                     icon: FontAwesomeIcons.key,
+                    autoFocus: false,
                   ),
                   const SizedBox(height: 20),
                   Center(

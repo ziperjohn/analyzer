@@ -29,7 +29,12 @@ class CustomTextFieldDialog extends StatelessWidget {
             const Divider(thickness: 1, color: lightGrayColor),
             const SizedBox(height: 5),
             CustomTextField(
-                controller: textController, hintText: hintText, isPassword: false, isEmail: false),
+              controller: textController,
+              hintText: hintText,
+              isPassword: false,
+              isEmail: false,
+              autoFocus: true,
+            ),
             const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

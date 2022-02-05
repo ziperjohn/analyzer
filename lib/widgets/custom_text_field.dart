@@ -6,6 +6,7 @@ class CustomTextField extends StatelessWidget {
   final bool isPassword;
   final bool isEmail;
   final IconData? icon;
+  final bool autoFocus;
 
   const CustomTextField(
       {Key? key,
@@ -13,6 +14,7 @@ class CustomTextField extends StatelessWidget {
       required this.hintText,
       required this.isPassword,
       required this.isEmail,
+      required this.autoFocus,
       this.icon})
       : super(key: key);
 
@@ -24,6 +26,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: isPassword,
       enableSuggestions: false,
       autocorrect: false,
+      autofocus: autoFocus,
       decoration: InputDecoration(
         prefixIcon: icon == null ? null : Icon(icon),
         hintText: hintText,
