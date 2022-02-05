@@ -3,19 +3,28 @@ import 'package:analyzer_app/analyzer/edit_tab.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AnalyzerScreen extends StatelessWidget {
-  final Analyzer analyzer;
+  final int analyzerIndex;
 
-  const AnalyzerScreen({Key? key, required this.analyzer}) : super(key: key);
+  const AnalyzerScreen({Key? key, required this.analyzerIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final analyzerList = Provider.of<List<Analyzer>>(context);
+    final TextTheme _textTheme = Theme.of(context).textTheme;
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(analyzer.name),
+          title: Column(
+            children: [
+              Text(analyzerList[analyzerIndex].name),
+              Text(analyzerList[analyzerIndex].place, style: _textTheme.caption)
+            ],
+          ),
           centerTitle: true,
           bottom: const TabBar(
             tabs: [Tab(text: "Data"), Tab(text: "Edit")],
@@ -25,9 +34,9 @@ class AnalyzerScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            DataTab(),
+            const DataTab(),
             EditTab(
-              analyzer: analyzer,
+              analyzer: analyzerList[analyzerIndex],
             ),
           ],
         ),

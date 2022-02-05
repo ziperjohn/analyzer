@@ -1,5 +1,4 @@
 // ignore_for_file: implementation_imports
-
 import 'package:analyzer_app/navigation/navigation_provider.dart';
 import 'package:analyzer_app/home/home_screen.dart';
 import 'package:analyzer_app/settings/settings_screen.dart';

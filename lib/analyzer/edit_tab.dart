@@ -10,21 +10,42 @@ class EditTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController nameController = TextEditingController();
-    final TextEditingController placeController = TextEditingController();
+    final TextEditingController _nameController = TextEditingController(text: analyzer.name);
+    final TextEditingController _placeController = TextEditingController(text: analyzer.place);
+    final TextTheme _textTheme = Theme.of(context).textTheme;
 
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTextField(controller: nameController, hintText: "Name", isPassword: false, isEmail: false),
+            Text("Name", style: _textTheme.headline3),
+            const SizedBox(height: 5),
             CustomTextField(
-                controller: placeController, hintText: "Place", isPassword: false, isEmail: false),
-            PrimaryButton(
-                action: () =>
-                    FirestoreService().updateAnalyzer(analyzer.id, nameController.text, placeController.text),
-                text: "Save")
+              controller: _nameController,
+              hintText: "Name",
+              isPassword: false,
+              isEmail: false,
+              autoFocus: false,
+            ),
+            const SizedBox(height: 10),
+            Text("Place", style: _textTheme.headline3),
+            const SizedBox(height: 5),
+            CustomTextField(
+              controller: _placeController,
+              hintText: "Place",
+              isPassword: false,
+              isEmail: false,
+              autoFocus: false,
+            ),
+            const SizedBox(height: 10),
+            Center(
+              child: PrimaryButton(
+                  action: () => FirestoreService()
+                      .updateAnalyzer(analyzer.id, _nameController.text, _placeController.text),
+                  text: "Save"),
+            )
           ],
         ),
       ),

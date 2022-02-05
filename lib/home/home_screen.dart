@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     final analyzerList = Provider.of<List<Analyzer>>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Screen"),
+        title: const Text("Home"),
         centerTitle: true,
         actions: [
           Padding(
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: analyzerList.length,
                 itemBuilder: (context, index) {
-                  return AnalyzerCard(analyzer: analyzerList[index]);
+                  return AnalyzerCard(analyzerIndex: index);
                 },
               ),
             ),
