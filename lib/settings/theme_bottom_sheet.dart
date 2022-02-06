@@ -1,9 +1,8 @@
-import 'package:analyzer_app/theme/colors.dart';
+import 'package:analyzer_app/theme/theme_provider.dart';
+import 'package:analyzer_app/widgets/drag_indicator.dart';
 import 'package:analyzer_app/widgets/title_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../theme/theme_provider.dart';
 
 class ThemeBottomSheet extends StatelessWidget {
   const ThemeBottomSheet({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class ThemeBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 370,
+      height: 350,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
           Radius.circular(30),
@@ -45,24 +44,6 @@ class ThemeBottomSheet extends StatelessWidget {
   }
 }
 
-class DragIndicator extends StatelessWidget {
-  const DragIndicator({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: darkGrayColor,
-        borderRadius: BorderRadius.all(
-          Radius.circular(20),
-        ),
-      ),
-      height: 7,
-      width: 50,
-    );
-  }
-}
-
 class ThemeImage extends StatelessWidget {
   final String text;
   final String image;
@@ -85,7 +66,10 @@ class ThemeImage extends StatelessWidget {
             height: 157.5,
           ),
           const SizedBox(height: 5),
-          Text(text),
+          Text(
+            text,
+            style: Theme.of(context).textTheme.headline6,
+          ),
           const SizedBox(height: 5),
           Radio<ThemeMode>(
             value: value,

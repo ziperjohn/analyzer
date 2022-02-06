@@ -1,6 +1,7 @@
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/services/package_info_service.dart';
+import 'package:analyzer_app/settings/language_bottom_sheet.dart';
 import 'package:analyzer_app/settings/settings_card.dart';
 import 'package:analyzer_app/settings/theme_bottom_sheet.dart';
 import 'package:analyzer_app/theme/theme_provider.dart';
@@ -39,13 +40,13 @@ class SettingsScreen extends StatelessWidget {
                     SettingsCard(
                       title: "Theme",
                       subtitle: _themeProvider.getThemeToString(),
-                      onPressed: () => showModalBottomSheet(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
-                          context: context,
-                          builder: (context) => showSheet()),
+                      onPressed: () => showThemeBottomSheet(context),
                     ),
-                    SettingsCard(title: "Language", subtitle: "English", onPressed: () {}),
+                    SettingsCard(
+                      title: "Language",
+                      subtitle: "English",
+                      onPressed: () => showLanguageBottomSheet(context),
+                    ),
                     const TitleList(title: "Personal info"),
                     SettingsCard(title: "Email", subtitle: _user.email!, onPressed: () {}),
                     SettingsCard(title: "Password", subtitle: "*******", onPressed: () {}),
@@ -78,7 +79,9 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget showSheet() {
-    return ThemeBottomSheet();
-  }
+  showThemeBottomSheet(BuildContext context) =>
+      showModalBottomSheet(context: context, builder: (context) => const ThemeBottomSheet());
+
+  showLanguageBottomSheet(BuildContext context) =>
+      showModalBottomSheet(context: context, builder: (context) => const LanguageBottomSheet());
 }

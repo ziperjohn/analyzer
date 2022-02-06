@@ -8,10 +8,10 @@ ThemeData lightTheme = ThemeData(
   colorScheme: const ColorScheme(
     brightness: Brightness.light,
     primary: primaryColor,
-    primaryVariant: primaryColor,
+    primaryContainer: primaryColor,
     onPrimary: blackColor,
     secondary: secondaryColor,
-    secondaryVariant: secondaryColor,
+    secondaryContainer: secondaryColor,
     onSecondary: blackColor,
     surface: darkSurfaceColor,
     onSurface: blackColor,
@@ -43,13 +43,13 @@ ThemeData lightTheme = ThemeData(
     ),
     headline5: TextStyle(
       fontSize: 20,
-      fontWeight: FontWeight.w600,
-      color: Colors.orange,
+      fontWeight: FontWeight.w500,
+      color: blackColor,
     ),
     headline6: TextStyle(
       fontSize: 18,
-      fontWeight: FontWeight.w600,
-      color: Colors.brown,
+      fontWeight: FontWeight.w500,
+      color: blackColor,
     ),
     subtitle1: TextStyle(
       fontSize: 16,
@@ -101,7 +101,9 @@ ThemeData lightTheme = ThemeData(
     color: lightSurfaceColor,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
   ),
-  bottomSheetTheme: const BottomSheetThemeData(backgroundColor: lightSurfaceColor),
+  bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: lightSurfaceColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(30)))),
   dialogTheme: const DialogTheme(backgroundColor: lightSurfaceColor),
   tabBarTheme: const TabBarTheme(labelColor: blackColor),
   radioTheme: RadioThemeData(fillColor: MaterialStateProperty.all(primaryColor)),
@@ -113,10 +115,10 @@ ThemeData darkTheme = ThemeData(
   colorScheme: const ColorScheme(
     brightness: Brightness.dark,
     primary: primaryColor,
-    primaryVariant: primaryColor,
+    primaryContainer: primaryColor,
     onPrimary: whiteColor,
     secondary: secondaryColor,
-    secondaryVariant: secondaryColor,
+    secondaryContainer: secondaryColor,
     onSecondary: whiteColor,
     surface: darkSurfaceColor,
     onSurface: whiteColor,
@@ -148,13 +150,13 @@ ThemeData darkTheme = ThemeData(
     ),
     headline5: TextStyle(
       fontSize: 20,
-      fontWeight: FontWeight.w600,
-      color: Colors.orange,
+      fontWeight: FontWeight.w500,
+      color: whiteColor,
     ),
     headline6: TextStyle(
       fontSize: 18,
-      fontWeight: FontWeight.w600,
-      color: Colors.brown,
+      fontWeight: FontWeight.w500,
+      color: whiteColor,
     ),
     subtitle1: TextStyle(
       fontSize: 16,
@@ -206,7 +208,9 @@ ThemeData darkTheme = ThemeData(
     color: darkSurfaceColor,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
   ),
-  bottomSheetTheme: const BottomSheetThemeData(backgroundColor: darkSurfaceColor),
+  bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: darkSurfaceColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(30)))),
   dialogTheme: const DialogTheme(backgroundColor: darkSurfaceColor),
   tabBarTheme: const TabBarTheme(labelColor: whiteColor),
   radioTheme: RadioThemeData(fillColor: MaterialStateProperty.all(primaryColor)),

@@ -11,7 +11,6 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const shape = StadiumBorder();
-    final TextTheme _textTheme = Theme.of(context).textTheme;
 
     if (icon == null) {
       return Material(

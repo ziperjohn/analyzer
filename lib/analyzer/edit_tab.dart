@@ -13,7 +13,6 @@ class EditTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController _nameController = TextEditingController(text: analyzer.name);
     final TextEditingController _placeController = TextEditingController(text: analyzer.place);
-    final TextTheme _textTheme = Theme.of(context).textTheme;
 
     return SingleChildScrollView(
       child: Padding(
@@ -21,9 +20,7 @@ class EditTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TitleList(title: "Name"),
-            // Text("Name", style: _textTheme.headline3),
-            // const SizedBox(height: 5),
+            const TitleList(title: "Name"),
             CustomTextField(
               controller: _nameController,
               hintText: "Name",
@@ -31,10 +28,7 @@ class EditTab extends StatelessWidget {
               isEmail: false,
               autoFocus: false,
             ),
-            TitleList(title: "Place"),
-            // const SizedBox(height: 10),
-            // Text("Place", style: _textTheme.headline3),
-            // const SizedBox(height: 5),
+            const TitleList(title: "Place"),
             CustomTextField(
               controller: _placeController,
               hintText: "Place",
