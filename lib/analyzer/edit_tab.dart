@@ -2,6 +2,7 @@ import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
 import 'package:analyzer_app/widgets/primary_button.dart';
+import 'package:analyzer_app/widgets/title_list.dart';
 import 'package:flutter/material.dart';
 
 class EditTab extends StatelessWidget {
@@ -20,8 +21,9 @@ class EditTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Name", style: _textTheme.headline3),
-            const SizedBox(height: 5),
+            TitleList(title: "Name"),
+            // Text("Name", style: _textTheme.headline3),
+            // const SizedBox(height: 5),
             CustomTextField(
               controller: _nameController,
               hintText: "Name",
@@ -29,9 +31,10 @@ class EditTab extends StatelessWidget {
               isEmail: false,
               autoFocus: false,
             ),
-            const SizedBox(height: 10),
-            Text("Place", style: _textTheme.headline3),
-            const SizedBox(height: 5),
+            TitleList(title: "Place"),
+            // const SizedBox(height: 10),
+            // Text("Place", style: _textTheme.headline3),
+            // const SizedBox(height: 5),
             CustomTextField(
               controller: _placeController,
               hintText: "Place",

@@ -11,9 +11,6 @@ class SettingsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
       child: ListTile(
         title: Text(title),
         subtitle: Text(subtitle),

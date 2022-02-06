@@ -17,10 +17,6 @@ class AnalyzerCard extends StatelessWidget {
     final analyzerList = Provider.of<List<Analyzer>>(context);
 
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: surfaceColor,
       child: ListTile(
         title: Text(analyzerList[analyzerIndex].name),
         subtitle: analyzerList[analyzerIndex].place == "" ? null : Text(analyzerList[analyzerIndex].place),

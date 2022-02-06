@@ -13,8 +13,8 @@ class NavigationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _screens = [
-      const SettingsScreen(),
       const HomeScreen(),
+      const SettingsScreen(),
     ];
     final _navigationProvider = Provider.of<NavigationProvider>(context);
     return Scaffold(
@@ -22,11 +22,10 @@ class NavigationWrapper extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) => _navigationProvider.setScreenIndex(index),
         currentIndex: _navigationProvider.screenIndex,
-        backgroundColor: surfaceColor,
         fixedColor: primaryColor,
         items: const [
-          BottomNavigationBarItem(label: "Settings", icon: Icon(FontAwesomeIcons.userCog)),
           BottomNavigationBarItem(label: "Home", icon: Icon(FontAwesomeIcons.home)),
+          BottomNavigationBarItem(label: "Settings", icon: Icon(FontAwesomeIcons.userCog)),
         ],
       ),
     );

@@ -61,7 +61,8 @@ class MatterialAppWithTheme extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Analyzer",
       routes: appRoutes,
-      darkTheme: darkMode,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       themeMode: _themeProvider.themeMode,
     );
   }
@@ -76,7 +77,9 @@ class ErrorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);
     return MaterialApp(
-      darkTheme: darkMode,
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       themeMode: _themeProvider.themeMode,
       home: Scaffold(
         body: Center(child: Text(errorMessage)),
@@ -92,7 +95,9 @@ class LoadingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);
     return MaterialApp(
-      darkTheme: darkMode,
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       themeMode: _themeProvider.themeMode,
       home: const Scaffold(
         body: Center(child: LoadingIndicator()),

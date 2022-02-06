@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-const backgroundColor = Color(0xFF1C1C29);
-const surfaceColor = Color(0xFF15151B);
+// Light pallete
+const lightBackgroundColor = Color(0xFFDEDEDE);
+const lightSurfaceColor = Color(0xFFFFFFFF);
+
+// Dark pallete
+const darkBackgroundColor = Color(0xFF1C1C29);
+const darkSurfaceColor = Color(0xFF15151B);
+
+// Common pallete
 const blackColor = Color(0xFF0E0E14);
 const darkGrayColor = Color(0xff37434d);
 const lightGrayColor = Color(0xFF8F8F9C);

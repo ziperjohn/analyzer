@@ -1,7 +1,114 @@
 import 'package:flutter/material.dart';
 import 'package:analyzer_app/theme/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-ThemeData darkMode = ThemeData(
+ThemeData lightTheme = ThemeData(
+  fontFamily: GoogleFonts.inter().fontFamily,
+  brightness: Brightness.light,
+  colorScheme: const ColorScheme(
+    brightness: Brightness.light,
+    primary: primaryColor,
+    primaryVariant: primaryColor,
+    onPrimary: blackColor,
+    secondary: secondaryColor,
+    secondaryVariant: secondaryColor,
+    onSecondary: blackColor,
+    surface: darkSurfaceColor,
+    onSurface: blackColor,
+    background: darkBackgroundColor,
+    onBackground: blackColor,
+    error: redColor,
+    onError: blackColor,
+  ),
+  textTheme: const TextTheme(
+    headline1: TextStyle(
+      fontSize: 34,
+      fontWeight: FontWeight.w900,
+      color: secondaryColor,
+    ),
+    headline2: TextStyle(
+      fontSize: 27,
+      fontWeight: FontWeight.w700,
+      color: blackColor,
+    ),
+    headline3: TextStyle(
+      fontSize: 25,
+      fontWeight: FontWeight.w600,
+      color: blackColor,
+    ),
+    headline4: TextStyle(
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
+      color: blackColor,
+    ),
+    headline5: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+      color: Colors.orange,
+    ),
+    headline6: TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w600,
+      color: Colors.brown,
+    ),
+    subtitle1: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+      color: blackColor,
+      letterSpacing: 0.15,
+    ),
+    subtitle2: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.bold,
+      color: blackColor,
+      letterSpacing: 0.1,
+    ),
+    bodyText1: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+      color: blackColor,
+      letterSpacing: 0.5,
+    ),
+    bodyText2: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.normal,
+      color: blackColor,
+      letterSpacing: 0.25,
+    ),
+    caption: TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.normal,
+      color: lightGrayColor,
+      letterSpacing: 0.4,
+    ),
+    button: TextStyle(
+      fontSize: 15,
+      fontWeight: FontWeight.bold,
+      color: whiteColor,
+      letterSpacing: 1.25,
+    ),
+    overline: TextStyle(
+      fontSize: 10,
+      fontWeight: FontWeight.normal,
+      color: blackColor,
+      letterSpacing: 1.5,
+    ),
+  ),
+  scaffoldBackgroundColor: lightBackgroundColor,
+  appBarTheme: const AppBarTheme(backgroundColor: lightSurfaceColor),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: lightSurfaceColor),
+  cardTheme: CardTheme(
+    color: lightSurfaceColor,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+  ),
+  bottomSheetTheme: const BottomSheetThemeData(backgroundColor: lightSurfaceColor),
+  dialogTheme: const DialogTheme(backgroundColor: lightSurfaceColor),
+  tabBarTheme: const TabBarTheme(labelColor: blackColor),
+  radioTheme: RadioThemeData(fillColor: MaterialStateProperty.all(primaryColor)),
+);
+
+ThemeData darkTheme = ThemeData(
+  fontFamily: GoogleFonts.inter().fontFamily,
   brightness: Brightness.dark,
   colorScheme: const ColorScheme(
     brightness: Brightness.dark,
@@ -11,9 +118,9 @@ ThemeData darkMode = ThemeData(
     secondary: secondaryColor,
     secondaryVariant: secondaryColor,
     onSecondary: whiteColor,
-    surface: surfaceColor,
+    surface: darkSurfaceColor,
     onSurface: whiteColor,
-    background: backgroundColor,
+    background: darkBackgroundColor,
     onBackground: whiteColor,
     error: redColor,
     onError: whiteColor,
@@ -37,7 +144,7 @@ ThemeData darkMode = ThemeData(
     headline4: TextStyle(
       fontSize: 22,
       fontWeight: FontWeight.w600,
-      color: Colors.purple,
+      color: whiteColor,
     ),
     headline5: TextStyle(
       fontSize: 20,
@@ -92,5 +199,15 @@ ThemeData darkMode = ThemeData(
       letterSpacing: 1.5,
     ),
   ),
-  scaffoldBackgroundColor: backgroundColor,
+  scaffoldBackgroundColor: darkBackgroundColor,
+  appBarTheme: const AppBarTheme(backgroundColor: darkSurfaceColor),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: darkSurfaceColor),
+  cardTheme: CardTheme(
+    color: darkSurfaceColor,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+  ),
+  bottomSheetTheme: const BottomSheetThemeData(backgroundColor: darkSurfaceColor),
+  dialogTheme: const DialogTheme(backgroundColor: darkSurfaceColor),
+  tabBarTheme: const TabBarTheme(labelColor: whiteColor),
+  radioTheme: RadioThemeData(fillColor: MaterialStateProperty.all(primaryColor)),
 );

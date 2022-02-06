@@ -11,6 +11,7 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const shape = StadiumBorder();
+    final TextTheme _textTheme = Theme.of(context).textTheme;
 
     if (icon == null) {
       return Material(
@@ -28,7 +29,7 @@ class PrimaryButton extends StatelessWidget {
           ),
           child: ElevatedButton(
             onPressed: () => action(),
-            child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold)),
+            child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, color: whiteColor)),
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(220, 45),
                 shape: shape,
@@ -54,8 +55,8 @@ class PrimaryButton extends StatelessWidget {
           ),
           child: ElevatedButton.icon(
             onPressed: () => action(),
-            label: Text(text, style: const TextStyle(fontWeight: FontWeight.bold)),
-            icon: Icon(icon, size: 17),
+            label: Text(text, style: const TextStyle(fontWeight: FontWeight.bold, color: whiteColor)),
+            icon: Icon(icon, size: 17, color: whiteColor),
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(220, 45),
                 shape: shape,

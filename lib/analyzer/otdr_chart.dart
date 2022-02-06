@@ -27,8 +27,13 @@ class OTDRChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.5,
-      child: LineChart(
-        mainData(),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: LineChart(
+            mainData(),
+          ),
+        ),
       ),
     );
   }
@@ -83,7 +88,7 @@ class OTDRChart extends StatelessWidget {
   LineTouchData createLineTouchData() {
     return LineTouchData(
       touchTooltipData: LineTouchTooltipData(
-        tooltipBgColor: surfaceColor,
+        tooltipBgColor: darkSurfaceColor,
         getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
           return touchedBarSpots.map(
             (barSpot) {

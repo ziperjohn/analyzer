@@ -17,7 +17,6 @@ class CustomTextFieldDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     TextTheme _textTheme = Theme.of(context).textTheme;
     return Dialog(
-      backgroundColor: surfaceColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
         padding: const EdgeInsets.all(15),
