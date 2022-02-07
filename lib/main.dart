@@ -1,3 +1,6 @@
+import 'package:analyzer_app/localization/localization_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:analyzer_app/localization/l10n.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/navigation/navigation_provider.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
@@ -7,6 +10,7 @@ import 'package:analyzer_app/utils/routes.dart';
 import 'package:analyzer_app/widgets/loading_indicator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -34,6 +38,7 @@ class App extends StatelessWidget {
           } else if (snapshot.connectionState == ConnectionState.done) {
             return MultiProvider(
               providers: [
+                ChangeNotifierProvider(create: (_) => LocalizationProvider()),
                 ChangeNotifierProvider(create: (_) => ThemeProvider()),
                 ChangeNotifierProvider(create: (_) => NavigationProvider()),
                 StreamProvider<List<Analyzer>>(
@@ -56,6 +61,7 @@ class MatterialAppWithTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _localizationProvider = Provider.of<LocalizationProvider>(context);
     final _themeProvider = Provider.of<ThemeProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -64,6 +70,14 @@ class MatterialAppWithTheme extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: _themeProvider.themeMode,
+      supportedLocales: L10n.all,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      locale: _localizationProvider.locale,
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'package:analyzer_app/localization/localization_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/services/package_info_service.dart';
@@ -17,8 +19,10 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
     final _user = AuthService().user;
     final _themeProvider = Provider.of<ThemeProvider>(context);
+    final _localizationProvider = Provider.of<LocalizationProvider>(context);
     final _analyzerListProvider = Provider.of<List<Analyzer>>(context);
 
     return FutureBuilder(
@@ -27,7 +31,7 @@ class SettingsScreen extends StatelessWidget {
         if (snapshot.hasData && _user != null) {
           return Scaffold(
             appBar: AppBar(
-              title: const Text("Settings"),
+              title: Text(_locale!.settings),
               centerTitle: true,
             ),
             body: SingleChildScrollView(
@@ -44,7 +48,7 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     SettingsCard(
                       title: "Language",
-                      subtitle: "English",
+                      subtitle: _localizationProvider.getLocaleToString(),
                       onPressed: () => showLanguageBottomSheet(context),
                     ),
                     const TitleList(title: "Personal info"),

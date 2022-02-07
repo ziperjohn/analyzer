@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/theme/theme_provider.dart';
 import 'package:analyzer_app/widgets/drag_indicator.dart';
 import 'package:analyzer_app/widgets/title_list.dart';
@@ -9,6 +10,7 @@ class ThemeBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
     return Container(
       height: 350,
       decoration: const BoxDecoration(
@@ -25,15 +27,17 @@ class ThemeBottomSheet extends StatelessWidget {
               child: DragIndicator(),
             ),
             const SizedBox(height: 10),
-            const TitleList(title: "Choose theme"),
+            TitleList(title: _locale!.choose_theme),
             const SizedBox(height: 10),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  ThemeImage(text: "Light", image: "assets/theme/light_theme.png", value: ThemeMode.light),
-                  ThemeImage(text: "Dark", image: "assets/theme/dark_theme.png", value: ThemeMode.dark),
-                  ThemeImage(text: "System", image: "assets/theme/system_theme.png", value: ThemeMode.system),
+                children: [
+                  ThemeImage(
+                      text: _locale.light, image: "assets/theme/light_theme.png", value: ThemeMode.light),
+                  ThemeImage(text: _locale.dark, image: "assets/theme/dark_theme.png", value: ThemeMode.dark),
+                  ThemeImage(
+                      text: _locale.system, image: "assets/theme/system_theme.png", value: ThemeMode.system),
                 ],
               ),
             )
