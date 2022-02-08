@@ -9,8 +9,8 @@ Future<dynamic> showFlushbar(BuildContext context, String message, bool isError)
     context: context,
     flushbar: Flushbar(
       dismissDirection: FlushbarDismissDirection.VERTICAL,
-      messageText: Text(message, style: Theme.of(context).textTheme.bodyText2),
-      backgroundColor: darkSurfaceColor,
+      messageText: Text(message, style: const TextStyle(color: whiteColor)),
+      backgroundColor: primaryColor,
       margin: const EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(10),
       duration: const Duration(seconds: 5),

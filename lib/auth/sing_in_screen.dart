@@ -12,9 +12,9 @@ class SingInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    TextTheme _textTheme = Theme.of(context).textTheme;
+    final _emailController = TextEditingController();
+    final _passwordController = TextEditingController();
+    final _textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -43,7 +43,7 @@ class SingInScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   CustomTextField(
-                    controller: emailController,
+                    controller: _emailController,
                     hintText: "Email",
                     isPassword: false,
                     isEmail: true,
@@ -52,7 +52,7 @@ class SingInScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   CustomTextField(
-                    controller: passwordController,
+                    controller: _passwordController,
                     hintText: "Password",
                     isPassword: true,
                     isEmail: false,
@@ -63,7 +63,7 @@ class SingInScreen extends StatelessWidget {
                   Center(
                     child: PrimaryButton(
                       action: () =>
-                          AuthService().signIn(context, emailController.text, passwordController.text),
+                          AuthService().signIn(context, _emailController.text, _passwordController.text),
                       text: "Sign In",
                       icon: FontAwesomeIcons.signInAlt,
                     ),

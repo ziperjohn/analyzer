@@ -7,15 +7,14 @@ class CustomTextFieldDialog extends StatelessWidget {
   final String confirmButtonLabel;
   final String hintText;
 
-  CustomTextFieldDialog(
+  const CustomTextFieldDialog(
       {Key? key, required this.title, required this.confirmButtonLabel, required this.hintText})
       : super(key: key);
 
-  final TextEditingController textController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
-    TextTheme _textTheme = Theme.of(context).textTheme;
+    final _textController = TextEditingController();
+    final _textTheme = Theme.of(context).textTheme;
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
@@ -28,7 +27,7 @@ class CustomTextFieldDialog extends StatelessWidget {
             const Divider(thickness: 1, color: lightGrayColor),
             const SizedBox(height: 5),
             CustomTextField(
-              controller: textController,
+              controller: _textController,
               hintText: hintText,
               isPassword: false,
               isEmail: false,
@@ -44,7 +43,7 @@ class CustomTextFieldDialog extends StatelessWidget {
                   child: const Text("Cancel"),
                 ),
                 TextButton(
-                  onPressed: () => Navigator.of(context).pop(textController.text),
+                  onPressed: () => Navigator.of(context).pop(_textController.text),
                   child: Text(confirmButtonLabel),
                 )
               ],

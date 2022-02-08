@@ -1,3 +1,4 @@
+import 'package:analyzer_app/auth/reauthentication_screen.dart';
 import 'package:analyzer_app/localization/localization_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
@@ -52,8 +53,30 @@ class SettingsScreen extends StatelessWidget {
                       onPressed: () => showLanguageBottomSheet(context),
                     ),
                     const TitleList(title: "Personal info"),
-                    SettingsCard(title: "Email", subtitle: _user.email!, onPressed: () {}),
-                    SettingsCard(title: "Password", subtitle: "*******", onPressed: () {}),
+                    SettingsCard(
+                      title: "Email",
+                      subtitle: _user.email!,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ReauthenticationScreen(changePassword: false),
+                          ),
+                        );
+                      },
+                    ),
+                    SettingsCard(
+                      title: "Password",
+                      subtitle: "*******",
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ReauthenticationScreen(changePassword: true),
+                          ),
+                        );
+                      },
+                    ),
                     SettingsCard(
                         title: "Number of analyzers",
                         subtitle: _analyzerListProvider.length.toString(),

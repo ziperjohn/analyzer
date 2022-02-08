@@ -1,3 +1,4 @@
+import 'package:analyzer_app/auth/reauthentication_provider.dart';
 import 'package:analyzer_app/localization/localization_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/localization/l10n.dart';
@@ -38,6 +39,7 @@ class App extends StatelessWidget {
           } else if (snapshot.connectionState == ConnectionState.done) {
             return MultiProvider(
               providers: [
+                ChangeNotifierProvider(create: (_) => ReauthenticationProvider()),
                 ChangeNotifierProvider(create: (_) => LocalizationProvider()),
                 ChangeNotifierProvider(create: (_) => ThemeProvider()),
                 ChangeNotifierProvider(create: (_) => NavigationProvider()),

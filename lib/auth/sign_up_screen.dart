@@ -11,9 +11,9 @@ class SingUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final TextEditingController confirmPasswordController = TextEditingController();
+    final _emailController = TextEditingController();
+    final _passwordController = TextEditingController();
+    final _confirmPasswordController = TextEditingController();
     TextTheme _textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
@@ -43,7 +43,7 @@ class SingUpScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   CustomTextField(
-                    controller: emailController,
+                    controller: _emailController,
                     hintText: "Email",
                     isPassword: false,
                     isEmail: true,
@@ -52,7 +52,7 @@ class SingUpScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   CustomTextField(
-                    controller: passwordController,
+                    controller: _passwordController,
                     hintText: "Password",
                     isPassword: true,
                     isEmail: false,
@@ -61,7 +61,7 @@ class SingUpScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   CustomTextField(
-                    controller: confirmPasswordController,
+                    controller: _confirmPasswordController,
                     hintText: "Confirm Password",
                     isPassword: true,
                     isEmail: false,
@@ -71,8 +71,13 @@ class SingUpScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   Center(
                     child: PrimaryButton(
-                      action: () => AuthService().passwordValidation(context, emailController.text,
-                          passwordController.text, confirmPasswordController.text),
+                      action: () {
+                        bool isValid = AuthService().passwordValidation(
+                            context, _passwordController.text, _confirmPasswordController.text);
+                        if (isValid) {
+                          AuthService().signUp(context, _emailController.text, _passwordController.text);
+                        }
+                      },
                       text: "Sign Up",
                       icon: FontAwesomeIcons.userPlus,
                     ),

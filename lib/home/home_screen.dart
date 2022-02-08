@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
 
   Future<String?> showAddAnalyzer(BuildContext context) => showDialog<String>(
         context: context,
-        builder: (BuildContext context) => CustomTextFieldDialog(
+        builder: (BuildContext context) => const CustomTextFieldDialog(
           title: "Create Analyzer",
           confirmButtonLabel: "Create",
           hintText: "Name",
