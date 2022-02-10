@@ -41,20 +41,21 @@ class SettingsScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const TitleList(title: "Appearance & language"),
+                    TitleList(title: _locale.appearance_language),
                     SettingsCard(
-                      title: "Theme",
+                      title: _locale.theme,
+                      //TODO add translation
                       subtitle: _themeProvider.getThemeToString(),
                       onPressed: () => showThemeBottomSheet(context),
                     ),
                     SettingsCard(
-                      title: "Language",
+                      title: _locale.language,
                       subtitle: _localizationProvider.getLocaleToString(),
                       onPressed: () => showLanguageBottomSheet(context),
                     ),
-                    const TitleList(title: "Personal info"),
+                    TitleList(title: _locale.personal_info),
                     SettingsCard(
-                      title: "Email",
+                      title: _locale.email,
                       subtitle: _user.email!,
                       onPressed: () {
                         Navigator.of(context).push(
@@ -66,7 +67,7 @@ class SettingsScreen extends StatelessWidget {
                       },
                     ),
                     SettingsCard(
-                      title: "Password",
+                      title: _locale.password,
                       subtitle: "*******",
                       onPressed: () {
                         Navigator.of(context).push(
@@ -78,19 +79,20 @@ class SettingsScreen extends StatelessWidget {
                       },
                     ),
                     SettingsCard(
-                        title: "Number of analyzers",
+                        title: _locale.number_of_analyzers,
                         subtitle: _analyzerListProvider.length.toString(),
                         onPressed: () {}),
                     const SizedBox(height: 10),
                     Center(
                       child: PrimaryButton(
                         action: () => AuthService().signOut(context),
-                        text: "Sign Out",
+                        text: _locale.sign_out,
                         icon: FontAwesomeIcons.signOutAlt,
                       ),
                     ),
                     const SizedBox(height: 20),
                     Center(
+                        //TODO add translation with parameter
                         child: Text("App version: ${snapshot.data}",
                             style: Theme.of(context).textTheme.caption)),
                     const SizedBox(height: 20),

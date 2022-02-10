@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
@@ -13,10 +14,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
     final _analyzerListProvider = Provider.of<List<Analyzer>>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: Text(_locale!.home),
         centerTitle: true,
         actions: [
           Padding(
@@ -42,9 +44,9 @@ class HomeScreen extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                  child: TitleList(title: "My analyzers"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                  child: TitleList(title: _locale.my_analyzers),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
@@ -62,6 +64,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  //TODO add translation
   Future<String?> showAddAnalyzer(BuildContext context) => showDialog<String>(
         context: context,
         builder: (BuildContext context) => const CustomTextFieldDialog(

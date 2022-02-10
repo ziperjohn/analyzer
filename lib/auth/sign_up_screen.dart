@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
 import 'package:analyzer_app/widgets/primary_button.dart';
@@ -11,6 +12,7 @@ class SingUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
     final _emailController = TextEditingController();
     final _passwordController = TextEditingController();
     final _confirmPasswordController = TextEditingController();
@@ -33,10 +35,10 @@ class SingUpScreen extends StatelessWidget {
                 children: [
                   Text.rich(
                     TextSpan(
-                      text: "Welcome to ",
+                      text: _locale!.welcome_to,
                       style: _textTheme.headline2,
                       children: [
-                        TextSpan(text: "Analyzer", style: _textTheme.headline1),
+                        TextSpan(text: _locale.analyzer, style: _textTheme.headline1),
                         TextSpan(text: "\nSign Up", style: _textTheme.headline2)
                       ],
                     ),
@@ -44,7 +46,7 @@ class SingUpScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   CustomTextField(
                     controller: _emailController,
-                    hintText: "Email",
+                    hintText: _locale.email,
                     isPassword: false,
                     isEmail: true,
                     icon: FontAwesomeIcons.solidEnvelope,
@@ -53,7 +55,7 @@ class SingUpScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   CustomTextField(
                     controller: _passwordController,
-                    hintText: "Password",
+                    hintText: _locale.password,
                     isPassword: true,
                     isEmail: false,
                     icon: FontAwesomeIcons.key,
@@ -62,7 +64,7 @@ class SingUpScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   CustomTextField(
                     controller: _confirmPasswordController,
-                    hintText: "Confirm Password",
+                    hintText: _locale.confirm_password,
                     isPassword: true,
                     isEmail: false,
                     icon: FontAwesomeIcons.key,
@@ -78,7 +80,7 @@ class SingUpScreen extends StatelessWidget {
                           AuthService().signUp(context, _emailController.text, _passwordController.text);
                         }
                       },
-                      text: "Sign Up",
+                      text: _locale.sign_up,
                       icon: FontAwesomeIcons.userPlus,
                     ),
                   ),
@@ -86,7 +88,7 @@ class SingUpScreen extends StatelessWidget {
                   Center(
                     child: SecondaryButton(
                       action: () => Navigator.pop(context),
-                      text: "Back",
+                      text: _locale.back,
                       icon: FontAwesomeIcons.chevronLeft,
                     ),
                   )

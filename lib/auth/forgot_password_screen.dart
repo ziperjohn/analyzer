@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
 import 'package:analyzer_app/widgets/primary_button.dart';
@@ -11,7 +12,8 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
+    final _locale = AppLocalizations.of(context);
+    final _emailController = TextEditingController();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -27,13 +29,13 @@ class ForgotPasswordScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Forgot Password?",
+                  _locale!.forgot_password,
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 const SizedBox(height: 20),
                 CustomTextField(
-                  controller: emailController,
-                  hintText: "Email",
+                  controller: _emailController,
+                  hintText: _locale.email,
                   isPassword: false,
                   isEmail: true,
                   icon: FontAwesomeIcons.solidEnvelope,
@@ -42,15 +44,15 @@ class ForgotPasswordScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Center(
                   child: PrimaryButton(
-                      action: () => AuthService().resetPassword(context, emailController.text),
-                      text: "Send Email",
+                      action: () => AuthService().resetPassword(context, _emailController.text),
+                      text: _locale.send_email,
                       icon: FontAwesomeIcons.solidEnvelope),
                 ),
                 const SizedBox(height: 10),
                 Center(
                   child: SecondaryButton(
                     action: () => Navigator.pop(context),
-                    text: "Back",
+                    text: _locale.back,
                     icon: FontAwesomeIcons.chevronLeft,
                   ),
                 )

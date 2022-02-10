@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
@@ -12,6 +13,7 @@ class SingInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
     final _emailController = TextEditingController();
     final _passwordController = TextEditingController();
     final _textTheme = Theme.of(context).textTheme;
@@ -33,10 +35,10 @@ class SingInScreen extends StatelessWidget {
                 children: [
                   Text.rich(
                     TextSpan(
-                      text: "Welcome to ",
+                      text: _locale!.welcome_to,
                       style: _textTheme.headline2,
                       children: [
-                        TextSpan(text: "Analyzer", style: _textTheme.headline1),
+                        TextSpan(text: _locale.analyzer, style: _textTheme.headline1),
                         TextSpan(text: "\nSign In", style: _textTheme.headline2)
                       ],
                     ),
@@ -44,7 +46,7 @@ class SingInScreen extends StatelessWidget {
                   const SizedBox(height: 20),
                   CustomTextField(
                     controller: _emailController,
-                    hintText: "Email",
+                    hintText: _locale.email,
                     isPassword: false,
                     isEmail: true,
                     icon: FontAwesomeIcons.solidEnvelope,
@@ -53,7 +55,7 @@ class SingInScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   CustomTextField(
                     controller: _passwordController,
-                    hintText: "Password",
+                    hintText: _locale.password,
                     isPassword: true,
                     isEmail: false,
                     icon: FontAwesomeIcons.key,
@@ -64,7 +66,7 @@ class SingInScreen extends StatelessWidget {
                     child: PrimaryButton(
                       action: () =>
                           AuthService().signIn(context, _emailController.text, _passwordController.text),
-                      text: "Sign In",
+                      text: _locale.sing_in,
                       icon: FontAwesomeIcons.signInAlt,
                     ),
                   ),
@@ -72,7 +74,7 @@ class SingInScreen extends StatelessWidget {
                   Center(
                     child: TextButton(
                       onPressed: () => Navigator.pushNamed(context, "/forgotPassword"),
-                      child: const Text("Forgot Password?"),
+                      child: Text(_locale.forgot_password),
                     ),
                   ),
                   const Divider(
@@ -80,13 +82,13 @@ class SingInScreen extends StatelessWidget {
                     color: lightGrayColor,
                   ),
                   Center(
-                    child: Text("Don't have an account yet?", style: _textTheme.caption),
+                    child: Text(_locale.dont_have_account, style: _textTheme.caption),
                   ),
                   const SizedBox(height: 10),
                   Center(
                     child: SecondaryButton(
                       action: () => Navigator.pushNamed(context, '/singUp'),
-                      text: "Sign Up",
+                      text: _locale.sign_up,
                       icon: FontAwesomeIcons.userPlus,
                     ),
                   ),

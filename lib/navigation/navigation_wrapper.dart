@@ -1,5 +1,6 @@
 // ignore_for_file: implementation_imports
 import 'package:analyzer_app/navigation/navigation_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/home/home_screen.dart';
 import 'package:analyzer_app/settings/settings_screen.dart';
 import 'package:analyzer_app/theme/colors.dart';
@@ -12,6 +13,8 @@ class NavigationWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
+
     final _screens = [
       const HomeScreen(),
       const SettingsScreen(),
@@ -23,9 +26,9 @@ class NavigationWrapper extends StatelessWidget {
         onTap: (index) => _navigationProvider.setScreenIndex(index),
         currentIndex: _navigationProvider.screenIndex,
         fixedColor: primaryColor,
-        items: const [
-          BottomNavigationBarItem(label: "Home", icon: Icon(FontAwesomeIcons.home)),
-          BottomNavigationBarItem(label: "Settings", icon: Icon(FontAwesomeIcons.userCog)),
+        items: [
+          BottomNavigationBarItem(label: _locale!.home, icon: const Icon(FontAwesomeIcons.home)),
+          BottomNavigationBarItem(label: _locale.settings, icon: const Icon(FontAwesomeIcons.userCog)),
         ],
       ),
     );
