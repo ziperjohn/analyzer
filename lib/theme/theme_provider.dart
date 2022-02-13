@@ -1,31 +1,27 @@
+import 'package:analyzer_app/utils/user_shared_preferences.dart';
 import 'package:flutter/material.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  ThemeMode _themeMode = ThemeMode.light;
+  ThemeMode _themeMode = UserSharedPreferences.getThemeMode();
 
   ThemeMode get themeMode => _themeMode;
 
   void setThemeMode(ThemeMode newTheme) {
     _themeMode = newTheme;
+    UserSharedPreferences.setThemeMode(newTheme);
     notifyListeners();
   }
 
   String getThemeToString() {
-    String theme;
     switch (_themeMode) {
       case ThemeMode.dark:
-        theme = "Dark";
-        break;
+        return "Dark";
       case ThemeMode.light:
-        theme = "Light";
-        break;
+        return "Light";
       case ThemeMode.system:
-        theme = "System";
-        break;
+        return "System";
       default:
-        theme = "Error";
+        return "Error";
     }
-
-    return theme;
   }
 }

@@ -1,5 +1,6 @@
 import 'package:analyzer_app/auth/reauthentication_provider.dart';
 import 'package:analyzer_app/localization/localization_provider.dart';
+import 'package:analyzer_app/utils/user_shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/localization/l10n.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
@@ -14,8 +15,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await UserSharedPreferences.init();
   runApp(const App());
 }
 
@@ -25,14 +27,15 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Future<FirebaseApp> _initialization = Firebase.initializeApp(
-        options: const FirebaseOptions(
-            apiKey: "AIzaSyCQbD-ebyUMSxFiDlYv9e7VPl86AFt_0z8",
-            authDomain: "analyzer-96e67.firebaseapp.com",
-            projectId: "analyzer-96e67",
-            storageBucket: "analyzer-96e67.appspot.com",
-            messagingSenderId: "459613923741",
-            appId: "1:459613923741:web:db56697eead8fa5cd26774",
-            measurementId: "G-DN97LNSH3T"));
+        // options: const FirebaseOptions(
+        //     apiKey: "AIzaSyCQbD-ebyUMSxFiDlYv9e7VPl86AFt_0z8",
+        //     authDomain: "analyzer-96e67.firebaseapp.com",
+        //     projectId: "analyzer-96e67",
+        //     storageBucket: "analyzer-96e67.appspot.com",
+        //     messagingSenderId: "459613923741",
+        //     appId: "1:459613923741:web:db56697eead8fa5cd26774",
+        //     measurementId: "G-DN97LNSH3T"),
+        );
 
     return FutureBuilder(
         future: _initialization,
