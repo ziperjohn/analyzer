@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/analyzer/data_tab.dart';
 import 'package:analyzer_app/analyzer/edit_tab.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
@@ -12,7 +13,8 @@ class AnalyzerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final analyzerList = Provider.of<List<Analyzer>>(context);
+    final _locale = AppLocalizations.of(context);
+    final _analyzerList = Provider.of<List<Analyzer>>(context);
     final TextTheme _textTheme = Theme.of(context).textTheme;
 
     return DefaultTabController(
@@ -21,13 +23,13 @@ class AnalyzerScreen extends StatelessWidget {
         appBar: AppBar(
           title: Column(
             children: [
-              Text(analyzerList[analyzerIndex].name),
-              Text(analyzerList[analyzerIndex].place, style: _textTheme.caption)
+              Text(_analyzerList[analyzerIndex].name),
+              Text(_analyzerList[analyzerIndex].place, style: _textTheme.caption)
             ],
           ),
           centerTitle: true,
-          bottom: const TabBar(
-            tabs: [Tab(text: "Data"), Tab(text: "Edit")],
+          bottom: TabBar(
+            tabs: [Tab(text: _locale!.data), Tab(text: _locale.edit)],
             indicatorColor: primaryColor,
             indicatorWeight: 3,
           ),
@@ -36,7 +38,7 @@ class AnalyzerScreen extends StatelessWidget {
           children: [
             const DataTab(),
             EditTab(
-              analyzer: analyzerList[analyzerIndex],
+              analyzer: _analyzerList[analyzerIndex],
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomTextFieldDialog extends StatelessWidget {
   final String title;
@@ -15,6 +16,8 @@ class CustomTextFieldDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final _textController = TextEditingController();
     final _textTheme = Theme.of(context).textTheme;
+    final _locale = AppLocalizations.of(context);
+
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
@@ -40,7 +43,7 @@ class CustomTextFieldDialog extends StatelessWidget {
                 TextButton(
                   onPressed: () => Navigator.pop(context),
                   style: TextButton.styleFrom(primary: secondaryColor),
-                  child: const Text("Cancel"),
+                  child: Text(_locale!.cancel),
                 ),
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(_textController.text),

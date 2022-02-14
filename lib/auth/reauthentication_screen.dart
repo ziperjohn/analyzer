@@ -1,3 +1,4 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/auth/reauthentication_provider.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
@@ -16,13 +17,14 @@ class ReauthenticationScreen extends StatelessWidget {
     final _reauthenticationProvider = Provider.of<ReauthenticationProvider>(context);
     final _emailController = TextEditingController();
     final _passwordController = TextEditingController();
+    final _locale = AppLocalizations.of(context);
 
     if (_reauthenticationProvider.isReauthenticated) {
       return changePassword ? const ChangePassword() : const ChangeEmail();
     } else {
       return Scaffold(
         appBar: AppBar(
-          title: const Text("Authenticate"),
+          title: Text(_locale!.authenticate),
           centerTitle: true,
         ),
         body: Padding(
@@ -30,19 +32,19 @@ class ReauthenticationScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TitleList(title: "Email"),
+              TitleList(title: _locale.email),
               CustomTextField(
                 controller: _emailController,
-                hintText: "Email",
+                hintText: _locale.email,
                 isPassword: false,
                 isEmail: true,
                 icon: FontAwesomeIcons.solidEnvelope,
                 autoFocus: false,
               ),
-              const TitleList(title: "Password"),
+              TitleList(title: _locale.password),
               CustomTextField(
                 controller: _passwordController,
-                hintText: "Password",
+                hintText: _locale.password,
                 isPassword: true,
                 isEmail: false,
                 icon: FontAwesomeIcons.key,
@@ -57,7 +59,7 @@ class ReauthenticationScreen extends StatelessWidget {
 
                     _reauthenticationProvider.setIsReauthenticated(isReauthenticated);
                   },
-                  text: "Authenticate",
+                  text: _locale.authenticate,
                   icon: FontAwesomeIcons.signInAlt,
                 ),
               ),
@@ -76,10 +78,11 @@ class ChangeEmail extends StatelessWidget {
   Widget build(BuildContext context) {
     final _emailController = TextEditingController();
     final _reauthenticationProvider = Provider.of<ReauthenticationProvider>(context);
+    final _locale = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Change email"),
+        title: Text(_locale!.change_email),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -94,10 +97,10 @@ class ChangeEmail extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TitleList(title: "New email"),
+            TitleList(title: _locale.new_email),
             CustomTextField(
               controller: _emailController,
-              hintText: "New email",
+              hintText: _locale.new_email,
               isPassword: false,
               isEmail: true,
               icon: FontAwesomeIcons.solidEnvelope,
@@ -111,7 +114,7 @@ class ChangeEmail extends StatelessWidget {
                   _reauthenticationProvider.setIsReauthenticated(false);
                   Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
                 },
-                text: "Change",
+                text: _locale.change,
               ),
             ),
           ],
@@ -129,10 +132,11 @@ class ChangePassword extends StatelessWidget {
     final _reauthenticationProvider = Provider.of<ReauthenticationProvider>(context);
     final _passwordController = TextEditingController();
     final _confirmPasswordController = TextEditingController();
+    final _locale = AppLocalizations.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Change password"),
+        title: Text(_locale!.change_email),
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -147,19 +151,19 @@ class ChangePassword extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TitleList(title: "New password"),
+            TitleList(title: _locale.new_password),
             CustomTextField(
               controller: _passwordController,
-              hintText: "New password",
+              hintText: _locale.new_password,
               isPassword: true,
               isEmail: false,
               icon: FontAwesomeIcons.key,
               autoFocus: false,
             ),
-            const TitleList(title: "Confirm new password"),
+            TitleList(title: _locale.confirm_new_password),
             CustomTextField(
               controller: _confirmPasswordController,
-              hintText: "Confirm new password",
+              hintText: _locale.confirm_new_password,
               isPassword: true,
               isEmail: false,
               icon: FontAwesomeIcons.key,
@@ -177,7 +181,7 @@ class ChangePassword extends StatelessWidget {
                     Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
                   }
                 },
-                text: "Change",
+                text: _locale.change,
               ),
             ),
           ],

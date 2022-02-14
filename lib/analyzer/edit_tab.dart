@@ -1,4 +1,5 @@
 import 'package:analyzer_app/models/analyzer_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
 import 'package:analyzer_app/widgets/primary_button.dart';
@@ -13,6 +14,7 @@ class EditTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController _nameController = TextEditingController(text: analyzer.name);
     final TextEditingController _placeController = TextEditingController(text: analyzer.place);
+    final _locale = AppLocalizations.of(context);
 
     return SingleChildScrollView(
       child: Padding(
@@ -20,18 +22,18 @@ class EditTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TitleList(title: "Name"),
+            TitleList(title: _locale!.name),
             CustomTextField(
               controller: _nameController,
-              hintText: "Name",
+              hintText: _locale.name,
               isPassword: false,
               isEmail: false,
               autoFocus: false,
             ),
-            const TitleList(title: "Place"),
+            TitleList(title: _locale.place),
             CustomTextField(
               controller: _placeController,
-              hintText: "Place",
+              hintText: _locale.place,
               isPassword: false,
               isEmail: false,
               autoFocus: false,
@@ -41,7 +43,7 @@ class EditTab extends StatelessWidget {
               child: PrimaryButton(
                   action: () => FirestoreService()
                       .updateAnalyzer(analyzer.id, _nameController.text, _placeController.text),
-                  text: "Save"),
+                  text: _locale.save),
             )
           ],
         ),

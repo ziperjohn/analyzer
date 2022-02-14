@@ -1,5 +1,6 @@
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomAlertDialog extends StatelessWidget {
   final String title;
@@ -12,7 +13,9 @@ class CustomAlertDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextTheme _textTheme = Theme.of(context).textTheme;
+    final _textTheme = Theme.of(context).textTheme;
+    final _locale = AppLocalizations.of(context);
+
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
@@ -32,7 +35,7 @@ class CustomAlertDialog extends StatelessWidget {
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(false),
                   style: TextButton.styleFrom(primary: secondaryColor),
-                  child: const Text("Cancel"),
+                  child: Text(_locale!.cancel),
                 ),
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(true),

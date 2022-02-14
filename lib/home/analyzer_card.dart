@@ -6,6 +6,7 @@ import 'package:analyzer_app/widgets/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AnalyzerCard extends StatelessWidget {
   final int analyzerIndex;
@@ -15,6 +16,7 @@ class AnalyzerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final analyzerList = Provider.of<List<Analyzer>>(context);
+    final _locale = AppLocalizations.of(context);
 
     return Card(
       child: ListTile(
@@ -22,7 +24,7 @@ class AnalyzerCard extends StatelessWidget {
         subtitle: analyzerList[analyzerIndex].place == "" ? null : Text(analyzerList[analyzerIndex].place),
         trailing: IconButton(
           onPressed: () async {
-            final remove = await showRemoveAnalyzer(context);
+            final remove = await showRemoveAnalyzer(context, _locale!);
             if (remove == true) {
               FirestoreService().deleteAnalyzer(analyzerList[analyzerIndex].id,
                   analyzerList[analyzerIndex].name, analyzerList[analyzerIndex].place);
@@ -44,12 +46,12 @@ class AnalyzerCard extends StatelessWidget {
     );
   }
 
-  Future<bool?> showRemoveAnalyzer(BuildContext context) => showDialog<bool>(
+  Future<bool?> showRemoveAnalyzer(BuildContext context, AppLocalizations locale) => showDialog<bool>(
         context: context,
-        builder: (BuildContext context) => const CustomAlertDialog(
-          title: "Remove Analyzer",
-          content: "Do you really want to remove the analyzer?",
-          confirmButtonLabel: "Remove",
+        builder: (BuildContext context) => CustomAlertDialog(
+          title: locale.remove_analyzer,
+          content: locale.remove_analyzer_question,
+          confirmButtonLabel: locale.remove,
         ),
       );
 }

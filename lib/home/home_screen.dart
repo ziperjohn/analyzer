@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: IconButton(
               onPressed: () async {
-                final name = await showAddAnalyzer(context);
+                final name = await showAddAnalyzer(context, _locale);
                 if (name == null || name.isEmpty) return;
                 FirestoreService().addAnalyzer(name);
               },
@@ -64,13 +64,12 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  //TODO add translation
-  Future<String?> showAddAnalyzer(BuildContext context) => showDialog<String>(
+  Future<String?> showAddAnalyzer(BuildContext context, AppLocalizations locale) => showDialog<String>(
         context: context,
-        builder: (BuildContext context) => const CustomTextFieldDialog(
-          title: "Create Analyzer",
-          confirmButtonLabel: "Create",
-          hintText: "Name",
+        builder: (BuildContext context) => CustomTextFieldDialog(
+          title: locale.create_analyzer,
+          confirmButtonLabel: locale.create,
+          hintText: locale.name,
         ),
       );
 }

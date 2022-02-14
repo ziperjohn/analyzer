@@ -1,5 +1,6 @@
 import 'package:analyzer_app/utils/user_shared_preferences.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode _themeMode = UserSharedPreferences.getThemeMode();
@@ -12,16 +13,16 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  String getThemeToString() {
+  String getThemeToString(AppLocalizations locale) {
     switch (_themeMode) {
       case ThemeMode.dark:
-        return "Dark";
+        return locale.dark;
       case ThemeMode.light:
-        return "Light";
+        return locale.light;
       case ThemeMode.system:
-        return "System";
+        return locale.system;
       default:
-        return "Error";
+        return locale.error;
     }
   }
 }

@@ -46,5 +46,6 @@
     "welcome_to": "Welcome to ",
     "remove_analyzer_question": "Do you relly want to remove the analyzer?",
     "remove_analyzer": "Remove analyzer",
-    "create_analyzer": "Create analyzer"
+    "create_analyzer": "Create analyzer",
+    "error": "Error"
 }

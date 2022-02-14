@@ -14,12 +14,12 @@ class NavigationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _locale = AppLocalizations.of(context);
+    final _navigationProvider = Provider.of<NavigationProvider>(context);
 
     final _screens = [
       const HomeScreen(),
       const SettingsScreen(),
     ];
-    final _navigationProvider = Provider.of<NavigationProvider>(context);
     return Scaffold(
       body: _screens[_navigationProvider.screenIndex],
       bottomNavigationBar: BottomNavigationBar(

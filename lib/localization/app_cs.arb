@@ -27,7 +27,7 @@
     "name": "Jméno",
     "place": "Místo",
     "data": "Data",
-    "edit": "Editování",
+    "edit": "Editovat",
     "analyzer_ports_status": "Stav portu",
     "otdr_chart": "OTDR graf",
     "my_analyzers": "Moje analyzátory",
@@ -46,5 +46,6 @@
     "welcome_to": "Vítejte v ",
     "remove_analyzer_question": "Opravdu chcete odstranit tento analyzér?",
     "remove_analyzer": "Odstranit analyzér",
-    "create_analyzer": "Vytvořit analyzér"
+    "create_analyzer": "Vytvořit analyzér",
+    "error": "Chyba"
 }

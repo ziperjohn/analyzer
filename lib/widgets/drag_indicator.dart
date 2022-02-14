@@ -1,6 +1,5 @@
+import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
-
-import '../theme/colors.dart';
 
 class DragIndicator extends StatelessWidget {
   const DragIndicator({Key? key}) : super(key: key);

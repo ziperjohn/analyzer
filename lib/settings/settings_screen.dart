@@ -44,8 +44,7 @@ class SettingsScreen extends StatelessWidget {
                     TitleList(title: _locale.appearance_language),
                     SettingsCard(
                       title: _locale.theme,
-                      //TODO add translation
-                      subtitle: _themeProvider.getThemeToString(),
+                      subtitle: _themeProvider.getThemeToString(_locale),
                       onPressed: () => showThemeBottomSheet(context),
                     ),
                     SettingsCard(
@@ -92,8 +91,7 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     Center(
-                        //TODO add translation with parameter
-                        child: Text("App version: ${snapshot.data}",
+                        child: Text("${_locale.app_version}: ${snapshot.data}",
                             style: Theme.of(context).textTheme.caption)),
                     const SizedBox(height: 20),
                   ],
