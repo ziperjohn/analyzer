@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//* ------------------------------------------------------------
+//* LIGHT THEME
+//* ------------------------------------------------------------
+
 ThemeData lightTheme = ThemeData(
   fontFamily: GoogleFonts.inter().fontFamily,
   brightness: Brightness.light,
@@ -108,6 +112,10 @@ ThemeData lightTheme = ThemeData(
   tabBarTheme: const TabBarTheme(labelColor: blackColor),
   radioTheme: RadioThemeData(fillColor: MaterialStateProperty.all(primaryColor)),
 );
+
+//* ------------------------------------------------------------
+//* DARK THEME
+//* ------------------------------------------------------------
 
 ThemeData darkTheme = ThemeData(
   fontFamily: GoogleFonts.inter().fontFamily,

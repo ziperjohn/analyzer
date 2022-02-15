@@ -23,7 +23,7 @@ class CustomAlertDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(title, style: _textTheme.headline2),
+            Text(title, style: _textTheme.headline4),
             const SizedBox(height: 5),
             const Divider(thickness: 1, color: lightGrayColor),
             const SizedBox(height: 5),
