@@ -20,22 +20,6 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(_locale!.home),
         centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: IconButton(
-              onPressed: () async {
-                final name = await showAddAnalyzer(context, _locale);
-                if (name == null || name.isEmpty) return;
-                FirestoreService().addAnalyzer(name);
-              },
-              icon: const Icon(
-                FontAwesomeIcons.plus,
-                color: primaryColor,
-              ),
-            ),
-          )
-        ],
       ),
       body: ListView.builder(
         itemCount: _analyzerListProvider.length,
@@ -60,6 +44,18 @@ class HomeScreen extends StatelessWidget {
             child: AnalyzerCard(analyzerIndex: index),
           );
         },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final name = await showAddAnalyzer(context, _locale);
+          if (name == null || name.isEmpty) return;
+          FirestoreService().addAnalyzer(name);
+        },
+        child: const Icon(
+          FontAwesomeIcons.plus,
+          color: whiteColor,
+        ),
       ),
     );
   }
