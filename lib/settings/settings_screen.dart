@@ -46,11 +46,13 @@ class SettingsScreen extends StatelessWidget {
                       title: _locale.theme,
                       subtitle: _themeProvider.getThemeToString(_locale),
                       onPressed: () => showThemeBottomSheet(context),
+                      hasIcon: true,
                     ),
                     SettingsCard(
                       title: _locale.language,
                       subtitle: _localizationProvider.getLocaleToString(),
                       onPressed: () => showLanguageBottomSheet(context),
+                      hasIcon: true,
                     ),
                     TitleList(title: _locale.personal_info),
                     SettingsCard(
@@ -64,6 +66,7 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         );
                       },
+                      hasIcon: true,
                     ),
                     SettingsCard(
                       title: _locale.password,
@@ -76,11 +79,14 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         );
                       },
+                      hasIcon: true,
                     ),
                     SettingsCard(
-                        title: _locale.number_of_analyzers,
-                        subtitle: _analyzerListProvider.length.toString(),
-                        onPressed: () {}),
+                      title: _locale.number_of_analyzers,
+                      subtitle: _analyzerListProvider.length.toString(),
+                      onPressed: () {},
+                      hasIcon: false,
+                    ),
                     const SizedBox(height: 10),
                     Center(
                       child: PrimaryButton(

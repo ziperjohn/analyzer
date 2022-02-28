@@ -1,11 +1,15 @@
+import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SettingsCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final Function onPressed;
+  final bool hasIcon;
 
-  const SettingsCard({Key? key, required this.title, required this.subtitle, required this.onPressed})
+  const SettingsCard(
+      {Key? key, required this.title, required this.subtitle, required this.onPressed, required this.hasIcon})
       : super(key: key);
 
   @override
@@ -15,6 +19,7 @@ class SettingsCard extends StatelessWidget {
         title: Text(title),
         subtitle: Text(subtitle),
         onTap: () => onPressed(),
+        trailing: hasIcon ? const Icon(FontAwesomeIcons.chevronRight, size: 17, color: lightGrayColor) : null,
       ),
     );
   }
