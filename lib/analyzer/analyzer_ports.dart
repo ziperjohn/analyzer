@@ -1,8 +1,11 @@
+import 'package:analyzer_app/models/port_model.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class AnalyzerPorts extends StatelessWidget {
-  const AnalyzerPorts({Key? key}) : super(key: key);
+  final List<PortModel> portlist;
+
+  const AnalyzerPorts({Key? key, required this.portlist}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,39 +15,37 @@ class AnalyzerPorts extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Port(id: 1, color: greenColor),
-                Port(id: 2, color: greenColor),
-                Port(id: 3, color: greenColor),
-                Port(id: 4, color: greenColor),
-                Port(id: 5, color: greenColor),
-                Port(id: 6, color: orangeColor),
-                Port(id: 7, color: redColor),
-                Port(id: 8, color: greenColor),
-                Port(id: 9, color: greenColor),
-                Port(id: 10, color: greenColor),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Port(id: 11, color: greenColor),
-                Port(id: 12, color: orangeColor),
-                Port(id: 13, color: greenColor),
-                Port(id: 14, color: orangeColor),
-                Port(id: 15, color: greenColor),
-                Port(id: 16, color: greenColor),
-                Port(id: 17, color: redColor),
-                Port(id: 18, color: greenColor),
-                Port(id: 19, color: greenColor),
-                Port(id: 20, color: redColor),
-              ],
-            ),
+            RowPort(portlist: portlist.sublist(0, 10)),
+            RowPort(portlist: portlist.sublist(10, 20)),
           ],
         ),
       ),
+    );
+  }
+}
+
+class RowPort extends StatelessWidget {
+  final List<PortModel> portlist;
+  const RowPort({Key? key, required this.portlist}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Map<String, Color> colorMap = {
+      "ERROR": redColor,
+      "ECHO": orangeColor,
+      "ON": greenColor,
+      "OFF": blackColor,
+    };
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        for (var port in portlist)
+          Port(
+            id: port.id + 1,
+            color: colorMap[port.state] ?? blackColor,
+          )
+      ],
     );
   }
 }

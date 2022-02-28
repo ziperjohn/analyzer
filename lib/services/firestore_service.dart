@@ -37,7 +37,7 @@ class FirestoreService {
     });
   }
 
-  Future<void> updateAnalyzer(String id, String name, String place) async {
+  Future<void> updateAnalyzer(String id, String name, String place, String ipAddress, String port) async {
     var user = AuthService().user!;
 
     var doc = await _analyzerCollection.doc(user.uid).get();
@@ -49,6 +49,8 @@ class FirestoreService {
         item["id"] = id;
         item["name"] = name;
         item["place"] = place;
+        item["ipAddress"] = ipAddress;
+        item["port"] = port;
       }
     }
 
@@ -56,7 +58,7 @@ class FirestoreService {
   }
 
   Future<void> addAnalyzer(String name) async {
-    Map data = {"id": const Uuid().v4(), "name": name, "place": ""};
+    Map data = {"id": const Uuid().v4(), "name": name, "place": "", "ipAddress": "", "port": ""};
 
     var user = AuthService().user!;
 
@@ -65,8 +67,8 @@ class FirestoreService {
     }, SetOptions(merge: true));
   }
 
-  Future<void> deleteAnalyzer(String id, String name, String place) async {
-    Map data = {"id": id, "name": name, "place": place};
+  Future<void> deleteAnalyzer(String id, String name, String place, String ipAddress, String port) async {
+    Map data = {"id": id, "name": name, "place": place, "ipAddress": ipAddress, "port": port};
 
     var user = AuthService().user!;
 

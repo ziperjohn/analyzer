@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class AuthService {
   final userStream = FirebaseAuth.instance.authStateChanges();
-
   final user = FirebaseAuth.instance.currentUser;
 
   Future<void> signIn(BuildContext context, String email, String password) async {
