@@ -3,10 +3,20 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 import 'dart:convert';
 
 class WebSocketService {
-  final webSocketServer = WebSocketChannel.connect(Uri.parse('ws://localhost:8082'));
+  final String ipAddress;
+  final String port;
+  late WebSocketChannel webSocketChannel;
+
+  WebSocketService({this.ipAddress = "", this.port = ""});
+
+  void createConnection() {
+    webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
+  }
 
   Stream<List<PortModel>> portListStream() {
-    return webSocketServer.stream.map((response) {
+    createConnection();
+
+    return webSocketChannel.stream.map((response) {
       List<PortModel> portList = [];
 
       var parsed = jsonDecode(response);
@@ -21,13 +31,9 @@ class WebSocketService {
   }
 
   void closeStream() {
-    webSocketServer.sink.close();
+    webSocketChannel.sink.close();
   }
 }
-
-
-
-
 // Send message to server
 
 //  void _sendMessage() {

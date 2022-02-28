@@ -47,5 +47,8 @@
     "remove_analyzer_question": "Do you relly want to remove the analyzer?",
     "remove_analyzer": "Remove analyzer",
     "create_analyzer": "Create analyzer",
-    "error": "Error"
+    "error": "Error",
+    "port": "Port",
+    "ipAddress": "IP address",
+    "ip_port_not_defined": "IP address or port not defined."
 }

@@ -14,6 +14,8 @@ class EditTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController _nameController = TextEditingController(text: analyzer.name);
     final TextEditingController _placeController = TextEditingController(text: analyzer.place);
+    final TextEditingController _ipAddressController = TextEditingController(text: analyzer.ipAddress);
+    final TextEditingController _portController = TextEditingController(text: analyzer.port);
     final _locale = AppLocalizations.of(context);
 
     return SingleChildScrollView(
@@ -38,11 +40,27 @@ class EditTab extends StatelessWidget {
               isEmail: false,
               autoFocus: false,
             ),
+            TitleList(title: _locale.ipAddress),
+            CustomTextField(
+              controller: _ipAddressController,
+              hintText: _locale.ipAddress,
+              isPassword: false,
+              isEmail: false,
+              autoFocus: false,
+            ),
+            TitleList(title: _locale.port),
+            CustomTextField(
+              controller: _portController,
+              hintText: _locale.port,
+              isPassword: false,
+              isEmail: false,
+              autoFocus: false,
+            ),
             const SizedBox(height: 10),
             Center(
               child: PrimaryButton(
-                  action: () => FirestoreService()
-                      .updateAnalyzer(analyzer.id, _nameController.text, _placeController.text),
+                  action: () => FirestoreService().updateAnalyzer(analyzer.id, _nameController.text,
+                      _placeController.text, _ipAddressController.text, _portController.text),
                   text: _locale.save),
             )
           ],

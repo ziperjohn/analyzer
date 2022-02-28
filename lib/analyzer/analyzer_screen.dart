@@ -36,7 +36,9 @@ class AnalyzerScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            const DataTab(),
+            DataTab(
+              analyzer: _analyzerList[analyzerIndex],
+            ),
             EditTab(
               analyzer: _analyzerList[analyzerIndex],
             ),

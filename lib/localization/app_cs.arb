@@ -47,5 +47,8 @@
     "remove_analyzer_question": "Opravdu chcete odstranit tento analyzér?",
     "remove_analyzer": "Odstranit analyzér",
     "create_analyzer": "Vytvořit analyzér",
-    "error": "Chyba"
+    "error": "Chyba",
+    "port": "Port",
+    "ipAddress": "IP adresa",
+    "ip_port_not_defined": "IP adresa nebo port nejsou definované."
 }

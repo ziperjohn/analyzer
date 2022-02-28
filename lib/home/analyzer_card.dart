@@ -26,8 +26,13 @@ class AnalyzerCard extends StatelessWidget {
           onPressed: () async {
             final remove = await showRemoveAnalyzer(context, _locale!);
             if (remove == true) {
-              FirestoreService().deleteAnalyzer(analyzerList[analyzerIndex].id,
-                  analyzerList[analyzerIndex].name, analyzerList[analyzerIndex].place);
+              FirestoreService().deleteAnalyzer(
+                analyzerList[analyzerIndex].id,
+                analyzerList[analyzerIndex].name,
+                analyzerList[analyzerIndex].place,
+                analyzerList[analyzerIndex].ipAddress,
+                analyzerList[analyzerIndex].port,
+              );
             }
           },
           icon: const Icon(
