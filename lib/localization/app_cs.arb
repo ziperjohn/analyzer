@@ -17,6 +17,7 @@
     "personal_info": "Osobní info",
     "appearance_language": "Vzhled a jazyk",
     "app_version": "Verze aplikace",
+    "fw_version": "Verze firmwaru",
     "authenticate": "Ověření",
     "change_email": "Změnit email",
     "new_email": "Nový email",

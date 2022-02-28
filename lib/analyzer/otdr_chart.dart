@@ -3,33 +3,11 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class OTDRChart extends StatelessWidget {
-  OTDRChart({Key? key}) : super(key: key);
+  final List<FlSpot> otdrList;
+
+  OTDRChart({Key? key, required this.otdrList}) : super(key: key);
 
   final List<Color> gradientColors = [primaryColor, secondaryColor];
-
-  final data = const [
-    FlSpot(0, 20),
-    FlSpot(1, 18),
-    FlSpot(2, 17),
-    FlSpot(3, 16),
-    FlSpot(4, 19),
-    FlSpot(5, 15),
-    FlSpot(6, 14),
-    FlSpot(7, 12),
-    FlSpot(8, 12.8),
-    FlSpot(9, 12),
-    FlSpot(10, 11),
-    FlSpot(11, 12),
-    FlSpot(12, 10),
-    FlSpot(13, 9),
-    FlSpot(14, 8),
-    FlSpot(15, 7),
-    FlSpot(16, 7.6),
-    FlSpot(17, 6),
-    FlSpot(18, 17),
-    FlSpot(19, 3),
-    FlSpot(20, 2),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +25,7 @@ class OTDRChart extends StatelessWidget {
   }
 
   LineChartData mainData() {
+    List<FlSpot> data = otdrList;
     return LineChartData(
       lineTouchData: createLineTouchData(),
       gridData: FlGridData(
@@ -57,13 +36,13 @@ class OTDRChart extends StatelessWidget {
         rightTitles: SideTitles(showTitles: false),
         topTitles: SideTitles(showTitles: false),
         bottomTitles: SideTitles(showTitles: true),
-        leftTitles: SideTitles(showTitles: true),
+        leftTitles: SideTitles(showTitles: true, reservedSize: 30),
       ),
       borderData: FlBorderData(show: false),
       minX: 0,
       maxX: 20,
-      minY: 0,
-      maxY: 20,
+      minY: -50,
+      maxY: 0,
       lineBarsData: [
         LineChartBarData(
           spots: data,

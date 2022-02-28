@@ -17,6 +17,7 @@
     "personal_info": "Personal info",
     "appearance_language": "Appearance & language",
     "app_version": "App version",
+    "fw_version": "Firmware version",
     "authenticate": "Authenticate",
     "change_email": "Change email",
     "new_email": "New email",
