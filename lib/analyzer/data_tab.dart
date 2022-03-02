@@ -1,4 +1,5 @@
 import 'package:analyzer_app/analyzer/analyzer_ports.dart';
+import 'package:analyzer_app/localization/error_localization.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/models/response_model.dart';
 import 'package:analyzer_app/services/websockets_service.dart';
@@ -42,12 +43,33 @@ class DataTab extends StatelessWidget {
               ),
             );
           } else if (snapshot.hasError) {
-            return Center(child: Text(snapshot.error.toString()));
+            return WebSocketErrorWidget(error: snapshot.error.toString());
           } else {
             return const LoadingIndicator();
           }
         },
       );
     }
+  }
+}
+
+class WebSocketErrorWidget extends StatelessWidget {
+  final String error;
+  const WebSocketErrorWidget({Key? key, required this.error}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context);
+    final errorLocalization = ErrorLocalization();
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+      child: Center(
+        child: Text(
+          errorLocalization.parseErrorCodeToLocaleString(
+              locale!, errorLocalization.findSubstringInErrorMessage(error)),
+        ),
+      ),
+    );
   }
 }

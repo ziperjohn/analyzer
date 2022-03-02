@@ -48,8 +48,17 @@
     "remove_analyzer_question": "Opravdu chcete odstranit tento analyzér?",
     "remove_analyzer": "Odstranit analyzér",
     "create_analyzer": "Vytvořit analyzér",
-    "error": "Chyba",
+    "error": "Nespecifikovaná chyba.",
     "port": "Port",
     "ipAddress": "IP adresa",
-    "ip_port_not_defined": "IP adresa nebo port nejsou definované."
+    "ip_port_not_defined": "IP adresa nebo port nejsou definované.",
+    "wrong_password": "Heslo je neplatné.",
+    "invalid_email": "Nemplatná e-mailová adresa.",
+    "weak_password": "Heslo musí mít alespoň 6 znaků.",
+    "email_already_in_use": " E-mailová adresa je již používána jiným účtem.",
+    "user_not_found": "Neexistuje žádný záznam uživatele odpovídající tomuto identifikátoru. Uživatel mohl být smazán.",
+    "passwords_dont_match": "Hesla se neshodují.",
+    "recovery_email_sent": "E-mail pro obnovení hesla byl odeslán, zkontrolujte si schránku.",
+    "wrong_ip_error": "Špatná ip adresa, zkuste ji upravit v záložce editovat.",
+    "wrong_port_or_unavailable_server": "Špatný port nebo je server nedostupný, zkuste port upravit v záložce editovat"
 }

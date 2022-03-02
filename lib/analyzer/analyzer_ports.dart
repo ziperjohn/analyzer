@@ -34,7 +34,7 @@ class RowPort extends StatelessWidget {
       "ERROR": redColor,
       "ECHO": orangeColor,
       "ON": greenColor,
-      "OFF": blackColor,
+      "OFF": lightGrayColor,
     };
 
     return Row(
