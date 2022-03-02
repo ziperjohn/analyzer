@@ -16,7 +16,7 @@ class WebSocketService {
     webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
   }
 
-  Stream<ResponseModel> portListStream() {
+  Stream<ResponseModel> webSocketStream() {
     createConnection();
 
     return webSocketChannel.stream.map((response) {
@@ -43,23 +43,6 @@ class WebSocketService {
       return data;
     });
   }
-
-//  Stream<List<PortModel>> portListStream() {
-//     createConnection();
-
-//     return webSocketChannel.stream.map((response) {
-//       List<PortModel> portList = [];
-
-//       var parsed = jsonDecode(response);
-//       var list = parsed["portList"] as List<dynamic>;
-
-//       for (var item in list) {
-//         portList.add(PortModel.fromJson(item));
-//       }
-
-//       return portList;
-//     });
-//   }
 
   void closeStream() {
     webSocketChannel.sink.close();

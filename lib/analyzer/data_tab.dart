@@ -20,7 +20,7 @@ class DataTab extends StatelessWidget {
       return Center(child: Text(_locale!.ip_port_not_defined));
     } else {
       return StreamBuilder<ResponseModel>(
-        stream: WebSocketService(ipAddress: analyzer.ipAddress, port: analyzer.port).portListStream(),
+        stream: WebSocketService(ipAddress: analyzer.ipAddress, port: analyzer.port).webSocketStream(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return SingleChildScrollView(
