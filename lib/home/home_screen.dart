@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     final _analyzerListProvider = Provider.of<List<Analyzer>>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(_locale!.home),
+        title: Text(_locale!.analyzer_list),
         centerTitle: true,
       ),
       body: ListView.builder(
