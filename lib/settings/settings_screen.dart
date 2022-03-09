@@ -26,92 +26,86 @@ class SettingsScreen extends StatelessWidget {
     final _localizationProvider = Provider.of<LocalizationProvider>(context);
     final _analyzerListProvider = Provider.of<List<Analyzer>>(context);
 
-    return FutureBuilder(
-      future: PackageInfoService().getAppVersion(),
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        if (snapshot.hasData && _user != null) {
-          return Scaffold(
-            appBar: AppBar(
-              title: Text(_locale!.settings),
-              centerTitle: true,
-            ),
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TitleList(title: _locale.appearance_language),
-                    SettingsCard(
-                      title: _locale.theme,
-                      subtitle: _themeProvider.getThemeToString(_locale),
-                      onPressed: () => showThemeBottomSheet(context),
-                      hasIcon: true,
-                    ),
-                    SettingsCard(
-                      title: _locale.language,
-                      subtitle: _localizationProvider.getLocaleToString(),
-                      onPressed: () => showLanguageBottomSheet(context),
-                      hasIcon: true,
-                    ),
-                    TitleList(title: _locale.personal_info),
-                    SettingsCard(
-                      title: _locale.email,
-                      subtitle: _user.email!,
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                const ReauthenticationScreen(changePassword: false),
-                          ),
-                        );
-                      },
-                      hasIcon: true,
-                    ),
-                    SettingsCard(
-                      title: _locale.password,
-                      subtitle: "*******",
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                const ReauthenticationScreen(changePassword: true),
-                          ),
-                        );
-                      },
-                      hasIcon: true,
-                    ),
-                    TitleList(title: _locale.general_info),
-                    SettingsCard(
-                      title: _locale.number_of_analyzers,
-                      subtitle: _analyzerListProvider.length.toString(),
-                      onPressed: () {},
-                      hasIcon: false,
-                    ),
-                    SettingsCard(
-                        title: _locale.app_version,
-                        subtitle: snapshot.data,
-                        onPressed: () {},
-                        hasIcon: false),
-                    const SizedBox(height: 10),
-                    Center(
-                      child: PrimaryButton(
-                        action: () => AuthService().signOut(context),
-                        text: _locale.sign_out,
-                        icon: FontAwesomeIcons.signOutAlt,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                  ],
+    if (_user != null) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(_locale!.settings),
+          centerTitle: true,
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TitleList(title: _locale.appearance_language),
+                SettingsCard(
+                  title: _locale.theme,
+                  subtitle: _themeProvider.getThemeToString(_locale),
+                  onPressed: () => showThemeBottomSheet(context),
+                  hasIcon: true,
                 ),
-              ),
+                SettingsCard(
+                  title: _locale.language,
+                  subtitle: _localizationProvider.getLocaleToString(),
+                  onPressed: () => showLanguageBottomSheet(context),
+                  hasIcon: true,
+                ),
+                TitleList(title: _locale.personal_info),
+                SettingsCard(
+                  title: _locale.email,
+                  subtitle: _user.email ?? _locale.no_email,
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            const ReauthenticationScreen(changePassword: false),
+                      ),
+                    );
+                  },
+                  hasIcon: true,
+                ),
+                SettingsCard(
+                  title: _locale.password,
+                  subtitle: "*******",
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const ReauthenticationScreen(changePassword: true),
+                      ),
+                    );
+                  },
+                  hasIcon: true,
+                ),
+                TitleList(title: _locale.general_info),
+                SettingsCard(
+                  title: _locale.number_of_analyzers,
+                  subtitle: _analyzerListProvider.length.toString(),
+                  onPressed: () {},
+                  hasIcon: false,
+                ),
+                SettingsCard(
+                    title: _locale.app_version,
+                    subtitle: "${PackageInfoService.version}+${PackageInfoService.build} ",
+                    onPressed: () {},
+                    hasIcon: false),
+                const SizedBox(height: 10),
+                Center(
+                  child: PrimaryButton(
+                    action: () => AuthService().signOut(context),
+                    text: _locale.sign_out,
+                    icon: FontAwesomeIcons.signOutAlt,
+                  ),
+                ),
+                const SizedBox(height: 20),
+              ],
             ),
-          );
-        } else {
-          return const LoadingIndicator();
-        }
-      },
-    );
+          ),
+        ),
+      );
+    } else {
+      return const LoadingIndicator();
+    }
   }
 
   showThemeBottomSheet(BuildContext context) =>

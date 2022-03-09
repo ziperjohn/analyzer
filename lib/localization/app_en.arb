@@ -61,5 +61,6 @@
     "passwords_dont_match": "The passwords don't match.",
     "recovery_email_sent": "Password recovery email has been sent, check your inbox",
     "wrong_ip_error": "Wrong ip address, try to correct it in the edit tab.",
-    "wrong_port_or_unavailable_server": "Wrong port or the server is unavailable, try editing the port in the edit tab"
+    "wrong_port_or_unavailable_server": "Wrong port or the server is unavailable, try editing the port in the edit tab",
+    "no_email": "No email"
 }

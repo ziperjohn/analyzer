@@ -1,5 +1,5 @@
 import 'package:analyzer_app/localization/l10n.dart';
-import 'package:analyzer_app/utils/user_shared_preferences.dart';
+import 'package:analyzer_app/services/user_shared_preferences.dart';
 import 'package:flutter/material.dart';
 
 class LocalizationProvider extends ChangeNotifier {

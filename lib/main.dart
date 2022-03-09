@@ -1,6 +1,7 @@
 import 'package:analyzer_app/auth/reauthentication_provider.dart';
 import 'package:analyzer_app/localization/localization_provider.dart';
-import 'package:analyzer_app/utils/user_shared_preferences.dart';
+import 'package:analyzer_app/services/package_info_service.dart';
+import 'package:analyzer_app/services/user_shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/localization/l10n.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
@@ -18,6 +19,7 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await UserSharedPreferences.init();
+  await PackageInfoService.init();
   runApp(const App());
 }
 
