@@ -26,16 +26,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Future<FirebaseApp> _initialization = Firebase.initializeApp(
-        // options: const FirebaseOptions(
-        //     apiKey: "AIzaSyCQbD-ebyUMSxFiDlYv9e7VPl86AFt_0z8",
-        //     authDomain: "analyzer-96e67.firebaseapp.com",
-        //     projectId: "analyzer-96e67",
-        //     storageBucket: "analyzer-96e67.appspot.com",
-        //     messagingSenderId: "459613923741",
-        //     appId: "1:459613923741:web:db56697eead8fa5cd26774",
-        //     measurementId: "G-DN97LNSH3T"),
-        );
+    final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
     return FutureBuilder(
         future: _initialization,
