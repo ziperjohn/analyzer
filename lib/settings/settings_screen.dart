@@ -42,39 +42,26 @@ class SettingsScreen extends StatelessWidget {
                 SettingsCard(
                   title: _locale.theme,
                   subtitle: _themeProvider.getThemeToString(_locale),
-                  onPressed: () => showThemeBottomSheet(context),
+                  onPressed: () => showBottomSheet(context, const ThemeBottomSheet()),
                   hasIcon: true,
                 ),
                 SettingsCard(
                   title: _locale.language,
                   subtitle: _localizationProvider.getLocaleToString(),
-                  onPressed: () => showLanguageBottomSheet(context),
+                  onPressed: () => showBottomSheet(context, const LanguageBottomSheet()),
                   hasIcon: true,
                 ),
                 TitleList(title: _locale.personal_info),
                 SettingsCard(
                   title: _locale.email,
                   subtitle: _user.email ?? _locale.no_email,
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            const ReauthenticationScreen(changePassword: false),
-                      ),
-                    );
-                  },
+                  onPressed: () => navigateToReauthenticationScreen(context, false),
                   hasIcon: true,
                 ),
                 SettingsCard(
                   title: _locale.password,
                   subtitle: "*******",
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => const ReauthenticationScreen(changePassword: true),
-                      ),
-                    );
-                  },
+                  onPressed: () => navigateToReauthenticationScreen(context, true),
                   hasIcon: true,
                 ),
                 TitleList(title: _locale.general_info),
@@ -108,9 +95,15 @@ class SettingsScreen extends StatelessWidget {
     }
   }
 
-  showThemeBottomSheet(BuildContext context) =>
-      showModalBottomSheet(context: context, builder: (context) => const ThemeBottomSheet());
+  void navigateToReauthenticationScreen(BuildContext context, bool changePassword) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (BuildContext context) => ReauthenticationScreen(changePassword: changePassword),
+      ),
+    );
+  }
 
-  showLanguageBottomSheet(BuildContext context) =>
-      showModalBottomSheet(context: context, builder: (context) => const LanguageBottomSheet());
+  void showBottomSheet(BuildContext context, Widget bottomSheet) {
+    showModalBottomSheet(context: context, builder: (context) => bottomSheet);
+  }
 }
