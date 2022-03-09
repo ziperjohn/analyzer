@@ -81,12 +81,18 @@ class SettingsScreen extends StatelessWidget {
                       },
                       hasIcon: true,
                     ),
+                    TitleList(title: _locale.general_info),
                     SettingsCard(
                       title: _locale.number_of_analyzers,
                       subtitle: _analyzerListProvider.length.toString(),
                       onPressed: () {},
                       hasIcon: false,
                     ),
+                    SettingsCard(
+                        title: _locale.app_version,
+                        subtitle: snapshot.data,
+                        onPressed: () {},
+                        hasIcon: false),
                     const SizedBox(height: 10),
                     Center(
                       child: PrimaryButton(
@@ -95,10 +101,6 @@ class SettingsScreen extends StatelessWidget {
                         icon: FontAwesomeIcons.signOutAlt,
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    Center(
-                        child: Text("${_locale.app_version}: ${snapshot.data}",
-                            style: Theme.of(context).textTheme.caption)),
                     const SizedBox(height: 20),
                   ],
                 ),
