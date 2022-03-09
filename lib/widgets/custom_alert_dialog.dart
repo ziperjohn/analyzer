@@ -6,9 +6,14 @@ class CustomAlertDialog extends StatelessWidget {
   final String title;
   final String content;
   final String confirmButtonLabel;
+  final bool haveSecondButton;
 
   const CustomAlertDialog(
-      {Key? key, required this.title, required this.content, required this.confirmButtonLabel})
+      {Key? key,
+      required this.title,
+      required this.content,
+      required this.haveSecondButton,
+      required this.confirmButtonLabel})
       : super(key: key);
 
   @override
@@ -29,20 +34,26 @@ class CustomAlertDialog extends StatelessWidget {
             const SizedBox(height: 5),
             Text(content, style: _textTheme.bodyText1),
             const SizedBox(height: 5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                TextButton(
-                  onPressed: () => Navigator.of(context).pop(false),
-                  style: TextButton.styleFrom(primary: secondaryColor),
-                  child: Text(_locale!.cancel),
-                ),
-                TextButton(
-                  onPressed: () => Navigator.of(context).pop(true),
-                  child: Text(confirmButtonLabel),
-                )
-              ],
-            )
+            haveSecondButton
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        style: TextButton.styleFrom(primary: secondaryColor),
+                        child: Text(_locale!.cancel),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(true),
+                        child: Text(confirmButtonLabel),
+                      )
+                    ],
+                  )
+                : Center(
+                    child: TextButton(
+                    onPressed: () => Navigator.of(context).pop(true),
+                    child: Text(confirmButtonLabel),
+                  ))
           ],
         ),
       ),

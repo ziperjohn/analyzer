@@ -1,4 +1,3 @@
-import 'package:analyzer_app/auth/reauthentication_provider.dart';
 import 'package:analyzer_app/localization/localization_provider.dart';
 import 'package:analyzer_app/services/package_info_service.dart';
 import 'package:analyzer_app/services/user_shared_preferences.dart';
@@ -43,7 +42,6 @@ class App extends StatelessWidget {
           } else if (snapshot.connectionState == ConnectionState.done) {
             return MultiProvider(
               providers: [
-                ChangeNotifierProvider(create: (_) => ReauthenticationProvider()),
                 ChangeNotifierProvider(create: (_) => LocalizationProvider()),
                 ChangeNotifierProvider(create: (_) => ThemeProvider()),
                 ChangeNotifierProvider(create: (_) => NavigationProvider()),

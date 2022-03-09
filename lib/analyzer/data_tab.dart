@@ -1,5 +1,5 @@
 import 'package:analyzer_app/analyzer/analyzer_ports.dart';
-import 'package:analyzer_app/localization/error_localization.dart';
+import 'package:analyzer_app/localization/flushbar_localization.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/models/response_model.dart';
 import 'package:analyzer_app/services/websockets_service.dart';
@@ -60,7 +60,7 @@ class WebSocketErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context);
-    final errorLocalization = ErrorLocalization();
+    final errorLocalization = FlushbarLocalization();
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),

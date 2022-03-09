@@ -1,4 +1,4 @@
-import 'package:analyzer_app/localization/error_localization.dart';
+import 'package:analyzer_app/localization/flushbar_localization.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:another_flushbar/flushbar.dart';
@@ -12,7 +12,7 @@ Future<dynamic> showFlushbar(BuildContext context, String code, bool isError) {
     context: context,
     flushbar: Flushbar(
       dismissDirection: FlushbarDismissDirection.VERTICAL,
-      messageText: Text(ErrorLocalization().parseErrorCodeToLocaleString(locale!, code),
+      messageText: Text(FlushbarLocalization().parseErrorCodeToLocaleString(locale!, code),
           style: const TextStyle(color: whiteColor)),
       backgroundColor: primaryColor,
       margin: const EdgeInsets.all(8),

@@ -62,5 +62,10 @@
     "recovery_email_sent": "E-mail pro obnovení hesla byl odeslán, zkontrolujte si schránku.",
     "wrong_ip_error": "Špatná ip adresa, zkuste ji upravit v záložce editovat.",
     "wrong_port_or_unavailable_server": "Špatný port nebo je server nedostupný, zkuste port upravit v záložce editovat",
-    "no_email": "Žadný email"
+    "no_email": "Žadný email",
+    "ok": "Ok",
+    "reauthentication": "Proč se znovu ověřovat?",
+    "reauthentication_text": "Tato operace může být potenciálně nebezpečná. Nejprve musíme ověřit, že jste to skutečně vy.",
+    "password_changed": "Heslo bylo úspěšně změněno!",
+    "email_changed": "Email byl úspěšně změněn!"
 }

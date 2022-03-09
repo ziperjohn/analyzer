@@ -24,6 +24,7 @@ class AnalyzerCard extends StatelessWidget {
         subtitle: analyzerList[analyzerIndex].place == "" ? null : Text(analyzerList[analyzerIndex].place),
         trailing: IconButton(
           onPressed: () async {
+            //TODO refactore
             final remove = await showRemoveAnalyzer(context, _locale!);
             if (remove == true) {
               FirestoreService().deleteAnalyzer(
@@ -56,6 +57,7 @@ class AnalyzerCard extends StatelessWidget {
         builder: (BuildContext context) => CustomAlertDialog(
           title: locale.remove_analyzer,
           content: locale.remove_analyzer_question,
+          haveSecondButton: true,
           confirmButtonLabel: locale.remove,
         ),
       );

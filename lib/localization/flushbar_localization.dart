@@ -1,6 +1,6 @@
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ErrorLocalization {
+class FlushbarLocalization {
   String parseErrorCodeToLocaleString(AppLocalizations locale, String code) {
     String formatedCode = code.replaceAll("-", "_");
 
@@ -9,7 +9,7 @@ class ErrorLocalization {
         return locale.wrong_password;
       case "invalid_email":
         return locale.invalid_email;
-      case " weak_password":
+      case "weak_password":
         return locale.weak_password;
       case "email_already_in_use":
         return locale.email_already_in_use;
@@ -23,6 +23,10 @@ class ErrorLocalization {
         return locale.wrong_ip_error;
       case "wrong_port_or_unavailable_server":
         return locale.wrong_port_or_unavailable_server;
+      case "password_changed":
+        return locale.password_changed;
+      case "email_changed":
+        return locale.email_changed;
       default:
         return locale.error;
     }

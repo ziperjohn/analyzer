@@ -62,5 +62,10 @@
     "recovery_email_sent": "Password recovery email has been sent, check your inbox",
     "wrong_ip_error": "Wrong ip address, try to correct it in the edit tab.",
     "wrong_port_or_unavailable_server": "Wrong port or the server is unavailable, try editing the port in the edit tab",
-    "no_email": "No email"
+    "no_email": "No email",
+    "ok": "Ok",
+    "reauthentication": "Why authenticate again?",
+    "reauthentication_text": "This operation can be potentially dangerous. First, we need to verify that it's really you.",
+    "password_changed": "Password has been successfully changed!",
+    "email_changed": "Email has been successfully changed!"
 }

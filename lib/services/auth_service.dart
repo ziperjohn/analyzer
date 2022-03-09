@@ -66,25 +66,33 @@ class AuthService {
     return isCorrect;
   }
 
-  Future<void> changePassword(BuildContext context, String newPassword) async {
+  Future<bool> changePassword(BuildContext context, String newPassword) async {
+    bool isCorrect = false;
     try {
       if (user != null) {
         await user!.updatePassword(newPassword);
         await user!.reload();
+        isCorrect = true;
       }
     } on FirebaseAuthException catch (error) {
       showFlushbar(context, error.code, true);
+      isCorrect = false;
     }
+    return isCorrect;
   }
 
-  Future<void> changeEmail(BuildContext context, String newEmail) async {
+  Future<bool> changeEmail(BuildContext context, String newEmail) async {
+    bool isCorrect = false;
     try {
       if (user != null) {
         await user!.updateEmail(newEmail);
         await user!.reload();
+        isCorrect = true;
       }
     } on FirebaseAuthException catch (error) {
       showFlushbar(context, error.code, true);
+      isCorrect = false;
     }
+    return isCorrect;
   }
 }
