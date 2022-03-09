@@ -27,8 +27,7 @@ class NavigationWrapper extends StatelessWidget {
         currentIndex: _navigationProvider.screenIndex,
         fixedColor: primaryColor,
         items: [
-          BottomNavigationBarItem(
-              label: _locale!.analyzer_list, icon: const Icon(FontAwesomeIcons.solidListAlt)),
+          BottomNavigationBarItem(label: _locale!.list, icon: const Icon(FontAwesomeIcons.solidListAlt)),
           BottomNavigationBarItem(label: _locale.settings, icon: const Icon(FontAwesomeIcons.userCog)),
         ],
       ),
