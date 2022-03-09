@@ -35,7 +35,7 @@ class WebSocketService {
 
       for (var item in otdrData) {
         OTDRModel otdr = OTDRModel.fromJson(item);
-        otdrList.add(FlSpot(otdr.distance.toDouble(), otdr.power));
+        otdrList.add(FlSpot(otdr.distance.toDouble(), otdr.power.toDouble()));
       }
 
       ResponseModel data = ResponseModel(portList: portList, otdrList: otdrList, fwVersion: fwVersion);
@@ -53,3 +53,4 @@ class WebSocketService {
 //  void _sendMessage() {
 //     _channel.sink.add("Hello from flutter app!");
 //   }
+

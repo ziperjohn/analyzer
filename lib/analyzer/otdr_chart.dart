@@ -40,7 +40,7 @@ class OTDRChart extends StatelessWidget {
       ),
       borderData: FlBorderData(show: false),
       minX: 0,
-      maxX: 20,
+      maxX: data.length.toDouble(),
       minY: -50,
       maxY: 0,
       lineBarsData: [
