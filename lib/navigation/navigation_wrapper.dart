@@ -1,7 +1,7 @@
 // ignore_for_file: implementation_imports
 import 'package:analyzer_app/navigation/navigation_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:analyzer_app/home/home_screen.dart';
+import 'package:analyzer_app/list/home_screen.dart';
 import 'package:analyzer_app/settings/settings_screen.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class NavigationWrapper extends StatelessWidget {
     final _navigationProvider = Provider.of<NavigationProvider>(context);
 
     final _screens = [
-      const HomeScreen(),
+      const ListScreen(),
       const SettingsScreen(),
     ];
     return Scaffold(
