@@ -53,13 +53,13 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 TitleList(title: _locale.personal_info),
                 SettingsCard(
-                  title: _locale.email,
+                  title: _locale.change_email,
                   subtitle: _user.email ?? _locale.no_email,
                   onPressed: () => navigateToReauthenticationScreen(context, false),
                   hasIcon: true,
                 ),
                 SettingsCard(
-                  title: _locale.password,
+                  title: _locale.change_password,
                   subtitle: "*******",
                   onPressed: () => navigateToReauthenticationScreen(context, true),
                   hasIcon: true,
