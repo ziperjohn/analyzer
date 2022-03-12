@@ -67,5 +67,7 @@
     "reauthentication": "Proč se znovu ověřovat?",
     "reauthentication_text": "Tato operace může být potenciálně nebezpečná. Nejprve musíme ověřit, že jste to skutečně vy.",
     "password_changed": "Heslo bylo úspěšně změněno!",
-    "email_changed": "Email byl úspěšně změněn!"
+    "email_changed": "Email byl úspěšně změněn!",
+    "network_request_failed": "Došlo k síťové chybě (například vypršení času, přerušené spojení nebo nedostupnost serveru).",
+    "unknown": "Odeslaný řetězec je prázdný nebo nulový"
 }

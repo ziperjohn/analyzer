@@ -27,6 +27,10 @@ class FlushbarLocalization {
         return locale.password_changed;
       case "email_changed":
         return locale.email_changed;
+      case "network_request_failed":
+        return locale.network_request_failed;
+      case "unknown":
+        return locale.unknown;
       default:
         return locale.error;
     }

@@ -37,7 +37,7 @@
     "back": "Back",
     "send_email": "Send email",
     "forgot_password": "Forgot password?",
-    "sing_in": "Sing up",
+    "sing_in": "Sing in",
     "sign_up": "Sing up",
     "sign_out": "Sign out",
     "change": "Change",
@@ -67,5 +67,7 @@
     "reauthentication": "Why authenticate again?",
     "reauthentication_text": "This operation can be potentially dangerous. First, we need to verify that it's really you.",
     "password_changed": "Password has been successfully changed!",
-    "email_changed": "Email has been successfully changed!"
+    "email_changed": "Email has been successfully changed!",
+    "network_request_failed": "A network error (such as timeout, interrupted connection or unreachable host) has occurred.",
+    "unknown": "Given String is empty or null"
 }
