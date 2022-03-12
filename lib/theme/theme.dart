@@ -82,7 +82,7 @@ ThemeData lightTheme = ThemeData(
     caption: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.normal,
-      color: lightGrayColor,
+      color: darkGrayColor,
       letterSpacing: 0.4,
     ),
     button: TextStyle(

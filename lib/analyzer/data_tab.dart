@@ -3,11 +3,13 @@ import 'package:analyzer_app/localization/flushbar_localization.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/models/response_model.dart';
 import 'package:analyzer_app/services/websockets_service.dart';
+import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/loading_indicator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/analyzer/otdr_chart.dart';
 import 'package:analyzer_app/widgets/title_list.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DataTab extends StatelessWidget {
   final Analyzer analyzer;
@@ -18,7 +20,7 @@ class DataTab extends StatelessWidget {
     final _locale = AppLocalizations.of(context);
 
     if (analyzer.ipAddress == "" && analyzer.port == "") {
-      return Center(child: Text(_locale!.ip_port_not_defined));
+      return const WebSocketErrorWidget(error: "ip_port_not_defined");
     } else {
       return StreamBuilder<ResponseModel>(
         stream: WebSocketService(ipAddress: analyzer.ipAddress, port: analyzer.port).webSocketStream(),
@@ -59,16 +61,27 @@ class WebSocketErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = AppLocalizations.of(context);
-    final errorLocalization = FlushbarLocalization();
+    final _locale = AppLocalizations.of(context);
+    final _errorLocalization = FlushbarLocalization();
+    final _textTheme = Theme.of(context).textTheme;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-      child: Center(
-        child: Text(
-          errorLocalization.parseErrorCodeToLocaleString(
-              locale!, errorLocalization.findSubstringInErrorMessage(error)),
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          const Icon(FontAwesomeIcons.exclamation, color: redColor, size: 120),
+          Text(
+            _errorLocalization.parseErrorCodeToLocaleString(
+                _locale!, _errorLocalization.findSubstringInErrorMessage(error)),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            error,
+            style: _textTheme.caption,
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
