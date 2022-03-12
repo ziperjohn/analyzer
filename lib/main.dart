@@ -30,33 +30,34 @@ class App extends StatelessWidget {
     final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
     return FutureBuilder(
-        future: _initialization,
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasError) {
-            return ChangeNotifierProvider(
-              create: (_) => ThemeProvider(),
-              child: ErrorScreen(
-                errorMessage: snapshot.error.toString(),
-              ),
-            );
-          } else if (snapshot.connectionState == ConnectionState.done) {
-            return MultiProvider(
-              providers: [
-                ChangeNotifierProvider(create: (_) => LocalizationProvider()),
-                ChangeNotifierProvider(create: (_) => ThemeProvider()),
-                ChangeNotifierProvider(create: (_) => NavigationProvider()),
-                StreamProvider<List<Analyzer>>(
-                    create: (_) => FirestoreService().analyzerListStream(), initialData: const [])
-              ],
-              child: const MatterialAppWithTheme(),
-            );
-          } else {
-            return ChangeNotifierProvider(
-              create: (_) => ThemeProvider(),
-              child: const LoadingScreen(),
-            );
-          }
-        });
+      future: _initialization,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.hasError) {
+          return ChangeNotifierProvider(
+            create: (_) => ThemeProvider(),
+            child: ErrorScreen(
+              errorMessage: snapshot.error.toString(),
+            ),
+          );
+        } else if (snapshot.connectionState == ConnectionState.done) {
+          return MultiProvider(
+            providers: [
+              ChangeNotifierProvider(create: (_) => LocalizationProvider()),
+              ChangeNotifierProvider(create: (_) => ThemeProvider()),
+              ChangeNotifierProvider(create: (_) => NavigationProvider()),
+              StreamProvider<List<Analyzer>>(
+                  create: (_) => FirestoreService().analyzerListStream(), initialData: const [])
+            ],
+            child: const MatterialAppWithTheme(),
+          );
+        } else {
+          return ChangeNotifierProvider(
+            create: (_) => ThemeProvider(),
+            child: const LoadingScreen(),
+          );
+        }
+      },
+    );
   }
 }
 
