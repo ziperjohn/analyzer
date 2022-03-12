@@ -1,7 +1,7 @@
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
+import 'package:analyzer_app/widgets/big_spacer.dart';
 import 'package:analyzer_app/widgets/primary_button.dart';
-import 'package:analyzer_app/widgets/title_list.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -21,11 +21,11 @@ class ChangeEmailScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+        padding: const EdgeInsets.fromLTRB(10, 25, 10, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TitleList(title: _locale.new_email),
+            const BigSpacer(),
             CustomTextField(
               controller: _emailController,
               hintText: _locale.new_email,
@@ -34,7 +34,7 @@ class ChangeEmailScreen extends StatelessWidget {
               icon: FontAwesomeIcons.solidEnvelope,
               autoFocus: false,
             ),
-            const SizedBox(height: 10),
+            const BigSpacer(),
             Center(
               child: PrimaryButton(
                 action: () => onPressedChangeButton(context, _emailController.text),

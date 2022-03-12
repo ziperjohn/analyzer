@@ -1,8 +1,8 @@
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
 import 'package:analyzer_app/widgets/flushbar.dart';
+import 'package:analyzer_app/widgets/big_spacer.dart';
 import 'package:analyzer_app/widgets/primary_button.dart';
-import 'package:analyzer_app/widgets/title_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,11 +22,10 @@ class ChangePasswordScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+        padding: const EdgeInsets.fromLTRB(10, 25, 10, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TitleList(title: _locale.new_password),
             CustomTextField(
               controller: _passwordController,
               hintText: _locale.new_password,
@@ -35,7 +34,7 @@ class ChangePasswordScreen extends StatelessWidget {
               icon: FontAwesomeIcons.key,
               autoFocus: false,
             ),
-            TitleList(title: _locale.confirm_new_password),
+            const BigSpacer(),
             CustomTextField(
               controller: _confirmPasswordController,
               hintText: _locale.confirm_new_password,
@@ -44,7 +43,7 @@ class ChangePasswordScreen extends StatelessWidget {
               icon: FontAwesomeIcons.key,
               autoFocus: false,
             ),
-            const SizedBox(height: 10),
+            const BigSpacer(),
             Center(
               child: PrimaryButton(
                 action: () =>

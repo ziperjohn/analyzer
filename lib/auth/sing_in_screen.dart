@@ -1,3 +1,5 @@
+import 'package:analyzer_app/widgets/big_spacer.dart';
+import 'package:analyzer_app/widgets/small_spacer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
@@ -29,7 +31,7 @@ class SingInScreen extends StatelessWidget {
               alignment: Alignment.topCenter,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -43,7 +45,7 @@ class SingInScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const BigSpacer(),
                   CustomTextField(
                     controller: _emailController,
                     hintText: _locale.email,
@@ -52,7 +54,7 @@ class SingInScreen extends StatelessWidget {
                     icon: FontAwesomeIcons.solidEnvelope,
                     autoFocus: false,
                   ),
-                  const SizedBox(height: 10),
+                  const BigSpacer(),
                   CustomTextField(
                     controller: _passwordController,
                     hintText: _locale.password,
@@ -61,7 +63,7 @@ class SingInScreen extends StatelessWidget {
                     icon: FontAwesomeIcons.key,
                     autoFocus: false,
                   ),
-                  const SizedBox(height: 20),
+                  const BigSpacer(),
                   Center(
                     child: PrimaryButton(
                       action: () =>
@@ -70,7 +72,7 @@ class SingInScreen extends StatelessWidget {
                       icon: FontAwesomeIcons.signInAlt,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SmallSpacer(),
                   Center(
                     child: TextButton(
                       onPressed: () => Navigator.pushNamed(context, "/forgotPassword"),
@@ -84,7 +86,7 @@ class SingInScreen extends StatelessWidget {
                   Center(
                     child: Text(_locale.dont_have_account, style: _textTheme.caption),
                   ),
-                  const SizedBox(height: 10),
+                  const SmallSpacer(),
                   Center(
                     child: SecondaryButton(
                       action: () => Navigator.pushNamed(context, '/singUp'),

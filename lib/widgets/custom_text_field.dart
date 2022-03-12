@@ -29,7 +29,8 @@ class CustomTextField extends StatelessWidget {
       autofocus: autoFocus,
       decoration: InputDecoration(
         prefixIcon: icon == null ? null : Icon(icon),
-        hintText: hintText,
+        labelText: hintText,
+        alignLabelWithHint: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
         ),

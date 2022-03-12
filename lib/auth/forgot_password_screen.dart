@@ -1,3 +1,5 @@
+import 'package:analyzer_app/widgets/big_spacer.dart';
+import 'package:analyzer_app/widgets/small_spacer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:analyzer_app/widgets/custom_text_field.dart';
@@ -32,7 +34,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   _locale!.forgot_password,
                   style: Theme.of(context).textTheme.headline2,
                 ),
-                const SizedBox(height: 20),
+                const BigSpacer(),
                 CustomTextField(
                   controller: _emailController,
                   hintText: _locale.email,
@@ -41,14 +43,14 @@ class ForgotPasswordScreen extends StatelessWidget {
                   icon: FontAwesomeIcons.solidEnvelope,
                   autoFocus: false,
                 ),
-                const SizedBox(height: 20),
+                const BigSpacer(),
                 Center(
                   child: PrimaryButton(
                       action: () => AuthService().resetPassword(context, _emailController.text),
                       text: _locale.send_email,
                       icon: FontAwesomeIcons.solidEnvelope),
                 ),
-                const SizedBox(height: 10),
+                const SmallSpacer(),
                 Center(
                   child: SecondaryButton(
                     action: () => Navigator.pop(context),
