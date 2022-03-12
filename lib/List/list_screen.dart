@@ -15,7 +15,7 @@ class ListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _locale = AppLocalizations.of(context);
-    final _analyzerListProvider = Provider.of<List<Analyzer>>(context);
+    final _analyzerListProvider = Provider.of<List<AnalyzerModel>>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(_locale!.list),

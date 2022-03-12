@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DataTab extends StatelessWidget {
-  final Analyzer analyzer;
+  final AnalyzerModel analyzer;
   const DataTab({Key? key, required this.analyzer}) : super(key: key);
 
   @override

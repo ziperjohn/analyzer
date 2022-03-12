@@ -15,7 +15,7 @@ class AnalyzerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final analyzerList = Provider.of<List<Analyzer>>(context);
+    final analyzerList = Provider.of<List<AnalyzerModel>>(context);
     final _locale = AppLocalizations.of(context);
 
     return Card(

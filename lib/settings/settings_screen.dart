@@ -24,7 +24,7 @@ class SettingsScreen extends StatelessWidget {
     final _user = AuthService().user;
     final _themeProvider = Provider.of<ThemeProvider>(context);
     final _localizationProvider = Provider.of<LocalizationProvider>(context);
-    final _analyzerListProvider = Provider.of<List<Analyzer>>(context);
+    final _analyzerListProvider = Provider.of<List<AnalyzerModel>>(context);
 
     if (_user != null) {
       return Scaffold(

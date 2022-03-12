@@ -14,7 +14,7 @@ class AnalyzerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _locale = AppLocalizations.of(context);
-    final _analyzerList = Provider.of<List<Analyzer>>(context);
+    final _analyzerList = Provider.of<List<AnalyzerModel>>(context);
     final TextTheme _textTheme = Theme.of(context).textTheme;
 
     return DefaultTabController(

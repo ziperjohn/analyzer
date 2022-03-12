@@ -45,7 +45,7 @@ class App extends StatelessWidget {
               ChangeNotifierProvider(create: (_) => LocalizationProvider()),
               ChangeNotifierProvider(create: (_) => ThemeProvider()),
               ChangeNotifierProvider(create: (_) => NavigationProvider()),
-              StreamProvider<List<Analyzer>>(
+              StreamProvider<List<AnalyzerModel>>(
                   create: (_) => FirestoreService().analyzerListStream(), initialData: const [])
             ],
             child: const MatterialAppWithTheme(),

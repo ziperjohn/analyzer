@@ -8,13 +8,13 @@ import 'package:uuid/uuid.dart';
 class FirestoreService {
   final CollectionReference _analyzerCollection = FirebaseFirestore.instance.collection("analyzers");
 
-  Stream<List<Analyzer>> analyzerListStream() {
+  Stream<List<AnalyzerModel>> analyzerListStream() {
     // Listen user stream if user is sign in and get user UID
     return AuthService().userStream.switchMap((user) {
       if (user != null) {
         // Get user document from firestore
         return _analyzerCollection.doc(user.uid).snapshots().map((doc) {
-          List<Analyzer> analyzerList = [];
+          List<AnalyzerModel> analyzerList = [];
 
           // Get documnet data as map and get value for key userAnalyzers as List of dynamic, if doc.data not equal to null
           if (doc.data() != null) {
@@ -24,7 +24,7 @@ class FirestoreService {
             // Looping userAnalyzers list and create Analyzer object, then add object to list
             if (userAnalyzers.isNotEmpty) {
               for (var item in userAnalyzers) {
-                analyzerList.add(Analyzer.fromJson(item));
+                analyzerList.add(AnalyzerModel.fromJson(item));
               }
             }
           }

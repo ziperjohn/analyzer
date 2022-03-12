@@ -7,7 +7,7 @@ import 'package:analyzer_app/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
 class EditTab extends StatelessWidget {
-  final Analyzer analyzer;
+  final AnalyzerModel analyzer;
   const EditTab({Key? key, required this.analyzer}) : super(key: key);
 
   @override
