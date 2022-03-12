@@ -24,6 +24,7 @@ class OTDRChart extends StatelessWidget {
     );
   }
 
+  //TODO refactore
   LineChartData mainData() {
     List<FlSpot> data = otdrList;
     return LineChartData(

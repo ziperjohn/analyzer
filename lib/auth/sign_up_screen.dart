@@ -75,6 +75,7 @@ class SingUpScreen extends StatelessWidget {
                   const BigSpacer(),
                   Center(
                     child: PrimaryButton(
+                      //TODO refactore
                       action: () {
                         bool isValid = AuthService().passwordValidation(
                             context, _passwordController.text, _confirmPasswordController.text);
