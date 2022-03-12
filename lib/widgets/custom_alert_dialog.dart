@@ -28,11 +28,19 @@ class CustomAlertDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(title, style: _textTheme.headline4),
+            Text(
+              title,
+              style: _textTheme.headline4,
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 5),
             const Divider(thickness: 1, color: lightGrayColor),
             const SizedBox(height: 5),
-            Text(content, style: _textTheme.bodyText1),
+            Text(
+              content,
+              style: _textTheme.bodyText1,
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 5),
             haveSecondButton
                 ? Row(
