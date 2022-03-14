@@ -6,6 +6,7 @@ import 'package:analyzer_app/services/websockets_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/big_spacer.dart';
 import 'package:analyzer_app/widgets/loading_indicator.dart';
+import 'package:analyzer_app/widgets/small_spacer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/analyzer/otdr_chart.dart';
 import 'package:analyzer_app/widgets/title_list.dart';
@@ -37,10 +38,11 @@ class DataTab extends StatelessWidget {
                     AnalyzerPorts(portlist: snapshot.data!.portList),
                     TitleList(title: _locale.otdr_chart),
                     OTDRChart(otdrList: snapshot.data!.otdrList),
-                    const BigSpacer(),
+                    const SmallSpacer(),
                     Center(
                         child: Text("${_locale.fw_version}: ${snapshot.data!.fwVersion}",
                             style: Theme.of(context).textTheme.caption)),
+                    const BigSpacer(),
                   ],
                 ),
               ),

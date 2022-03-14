@@ -1,3 +1,4 @@
+import 'package:analyzer_app/analyzer/chart_provider.dart';
 import 'package:analyzer_app/localization/localization_provider.dart';
 import 'package:analyzer_app/services/package_info_service.dart';
 import 'package:analyzer_app/services/user_shared_preferences.dart';
@@ -45,6 +46,7 @@ class App extends StatelessWidget {
               ChangeNotifierProvider(create: (_) => LocalizationProvider()),
               ChangeNotifierProvider(create: (_) => ThemeProvider()),
               ChangeNotifierProvider(create: (_) => NavigationProvider()),
+              ChangeNotifierProvider(create: (_) => ChartProvider()),
               StreamProvider<List<AnalyzerModel>>(
                   create: (_) => FirestoreService().analyzerListStream(), initialData: const [])
             ],

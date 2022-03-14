@@ -69,5 +69,12 @@
     "password_changed": "Password has been successfully changed!",
     "email_changed": "Email has been successfully changed!",
     "network_request_failed": "A network error (such as timeout, interrupted connection or unreachable host) has occurred.",
-    "unknown": "Given String is empty or null"
+    "unknown": "Given String is empty or null",
+    "distance": "Distance",
+    "attenuation": "Attenuation",
+    "show_axis_x": "Show distance axis [km]",
+    "show_axis_y": "Show attenuation axis [dB]",
+    "show_grid": "Show grid",
+    "show_dots": "Show dots",
+    "show_area_under_chart": "Show area under the chart"
 }

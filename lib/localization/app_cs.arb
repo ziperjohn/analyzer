@@ -69,5 +69,12 @@
     "password_changed": "Heslo bylo úspěšně změněno!",
     "email_changed": "Email byl úspěšně změněn!",
     "network_request_failed": "Došlo k síťové chybě (například vypršení času, přerušené spojení nebo nedostupnost serveru).",
-    "unknown": "Odeslaný řetězec je prázdný nebo nulový"
+    "unknown": "Odeslaný řetězec je prázdný nebo nulový",
+    "distance": "Vzdálenost",
+    "attenuation": "Útlum",
+    "show_axis_x": "Zobrazit osu vzdálenosti [km]",
+    "show_axis_y": "Zobrazit osu útlumu [dB]",
+    "show_grid": "Zobrazit mřížku",
+    "show_dots": "Zobrazit tečky",
+    "show_area_under_chart": "Zobrazit oblast pod grafem"
 }
