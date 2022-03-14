@@ -8,11 +8,9 @@ class LoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: SpinKitSpinningLines(
+      child: SpinKitThreeBounce(
         color: primaryColor,
-        size: 100.0,
-        itemCount: 8,
-        lineWidth: 4,
+        size: 40,
       ),
     );
   }
