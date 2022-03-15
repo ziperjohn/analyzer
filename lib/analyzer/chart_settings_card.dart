@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class ChartSettingsCard extends StatelessWidget {
   final String title;
-
   final bool value;
   final Function onChange;
+
   const ChartSettingsCard({Key? key, required this.title, required this.value, required this.onChange})
       : super(key: key);
 
