@@ -1,3 +1,4 @@
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
@@ -45,12 +46,17 @@ class ListScreen extends StatelessWidget {
           );
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => onPressedAddButton(context, _locale),
-        child: const Icon(
-          FontAwesomeIcons.plus,
-          color: whiteColor,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+      floatingActionButton: AvatarGlow(
+        endRadius: 45,
+        glowColor: secondaryColor,
+        repeatPauseDuration: const Duration(seconds: 5),
+        child: FloatingActionButton(
+          onPressed: () => onPressedAddButton(context, _locale),
+          child: const Icon(
+            FontAwesomeIcons.plus,
+            color: whiteColor,
+          ),
         ),
       ),
     );

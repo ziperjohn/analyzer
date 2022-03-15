@@ -30,6 +30,7 @@ dependencies:
   shared_preferences: ^2.0.13
   intl: ^0.17.0
   web_socket_channel: ^2.1.0
+  avatar_glow: ^2.0.2
 
 dev_dependencies:
   flutter_test:
