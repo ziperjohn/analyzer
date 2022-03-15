@@ -15,27 +15,15 @@ class AnalyzerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final analyzerList = Provider.of<List<AnalyzerModel>>(context);
+    final _analyzerList = Provider.of<List<AnalyzerModel>>(context);
     final _locale = AppLocalizations.of(context);
 
     return Card(
       child: ListTile(
-        title: Text(analyzerList[analyzerIndex].name),
-        subtitle: analyzerList[analyzerIndex].place == "" ? null : Text(analyzerList[analyzerIndex].place),
+        title: Text(_analyzerList[analyzerIndex].name),
+        subtitle: _analyzerList[analyzerIndex].place == "" ? null : Text(_analyzerList[analyzerIndex].place),
         trailing: IconButton(
-          onPressed: () async {
-            //TODO refactore
-            final remove = await showRemoveAnalyzer(context, _locale!);
-            if (remove == true) {
-              FirestoreService().deleteAnalyzer(
-                analyzerList[analyzerIndex].id,
-                analyzerList[analyzerIndex].name,
-                analyzerList[analyzerIndex].place,
-                analyzerList[analyzerIndex].ipAddress,
-                analyzerList[analyzerIndex].port,
-              );
-            }
-          },
+          onPressed: () => onPressedCard(context, _locale!, _analyzerList),
           icon: const Icon(
             FontAwesomeIcons.trash,
             color: primaryColor,
@@ -50,6 +38,20 @@ class AnalyzerCard extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Future<void> onPressedCard(
+      BuildContext context, AppLocalizations locale, List<AnalyzerModel> analyzerList) async {
+    final remove = await showRemoveAnalyzer(context, locale);
+    if (remove == true) {
+      FirestoreService().deleteAnalyzer(
+        analyzerList[analyzerIndex].id,
+        analyzerList[analyzerIndex].name,
+        analyzerList[analyzerIndex].place,
+        analyzerList[analyzerIndex].ipAddress,
+        analyzerList[analyzerIndex].port,
+      );
+    }
   }
 
   Future<bool?> showRemoveAnalyzer(BuildContext context, AppLocalizations locale) => showDialog<bool>(

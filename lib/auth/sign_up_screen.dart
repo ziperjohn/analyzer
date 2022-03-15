@@ -75,14 +75,8 @@ class SingUpScreen extends StatelessWidget {
                   const BigSpacer(),
                   Center(
                     child: PrimaryButton(
-                      //TODO refactore
-                      action: () {
-                        bool isValid = AuthService().passwordValidation(
-                            context, _passwordController.text, _confirmPasswordController.text);
-                        if (isValid) {
-                          AuthService().signUp(context, _emailController.text, _passwordController.text);
-                        }
-                      },
+                      action: () => onPressedSignUpButton(context, _locale, _emailController.text,
+                          _passwordController.text, _confirmPasswordController.text),
                       text: _locale.sign_up,
                       icon: FontAwesomeIcons.userPlus,
                     ),
@@ -102,5 +96,13 @@ class SingUpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> onPressedSignUpButton(BuildContext context, AppLocalizations locale, String email, String password,
+      String confirmPassword) async {
+    bool isValid = AuthService().passwordValidation(context, password, confirmPassword);
+    if (isValid) {
+      AuthService().signUp(context, email, password);
+    }
   }
 }

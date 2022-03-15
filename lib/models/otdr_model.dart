@@ -1,5 +1,4 @@
 class OTDRModel {
-  //TODO change distance type to double
   final dynamic distance;
   final dynamic power;
 

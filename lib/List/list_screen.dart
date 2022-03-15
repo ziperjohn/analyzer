@@ -56,7 +56,7 @@ class ListScreen extends StatelessWidget {
     );
   }
 
-  onPressedAddButton(BuildContext context, AppLocalizations locale) async {
+  Future<void> onPressedAddButton(BuildContext context, AppLocalizations locale) async {
     final name = await showAddAnalyzer(context, locale);
     if (name == null || name.isEmpty) return;
     FirestoreService().addAnalyzer(name);
