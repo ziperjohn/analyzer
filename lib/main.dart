@@ -2,6 +2,7 @@ import 'package:analyzer_app/analyzer/chart_provider.dart';
 import 'package:analyzer_app/localization/localization_provider.dart';
 import 'package:analyzer_app/services/package_info_service.dart';
 import 'package:analyzer_app/services/user_shared_preferences.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/localization/l10n.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
@@ -18,6 +19,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Init local data from phone
   await UserSharedPreferences.init();
   await PackageInfoService.init();
   runApp(const App());
@@ -28,6 +30,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Init Firebase app
     final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
     return FutureBuilder(
@@ -41,6 +44,8 @@ class App extends StatelessWidget {
             ),
           );
         } else if (snapshot.connectionState == ConnectionState.done) {
+          // Send error to Firebase crashlytics
+          FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
           return MultiProvider(
             providers: [
               ChangeNotifierProvider(create: (_) => LocalizationProvider()),
