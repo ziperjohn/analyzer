@@ -31,6 +31,10 @@ class FlushbarLocalization {
         return locale.network_request_failed;
       case "ip_port_not_defined":
         return locale.ip_port_not_defined;
+      case "changes_saved":
+        return locale.changes_saved;
+      case "changes_not_saved":
+        return locale.changes_not_saved;
       case "unknown":
         return locale.unknown;
       default:

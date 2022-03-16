@@ -76,5 +76,7 @@
     "show_axis_y": "Show attenuation axis [dB]",
     "show_grid": "Show grid",
     "show_dots": "Show dots",
-    "show_area_under_chart": "Show area under the chart"
+    "show_area_under_chart": "Show area under the chart",
+    "changes_saved": "The changes have been saved.",
+    "changes_not_saved": "The changes have not been saved"
 }

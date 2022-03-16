@@ -1,5 +1,7 @@
 // ignore: implementation_imports
 import 'package:rxdart/src/transformers/switch_map.dart';
+import 'package:analyzer_app/widgets/flushbar.dart';
+import 'package:flutter/material.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/auth_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -37,7 +39,8 @@ class FirestoreService {
     });
   }
 
-  Future<void> updateAnalyzer(String id, String name, String place, String ipAddress, String port) async {
+  Future<void> updateAnalyzer(
+      BuildContext context, String id, String name, String place, String ipAddress, String port) async {
     var user = AuthService().user!;
 
     var doc = await _analyzerCollection.doc(user.uid).get();
@@ -53,8 +56,12 @@ class FirestoreService {
         item["port"] = port;
       }
     }
-
-    _analyzerCollection.doc(user.uid).set({"userAnalyzers": userAnalyzers}, SetOptions(merge: false));
+    try {
+      await _analyzerCollection.doc(user.uid).set({"userAnalyzers": userAnalyzers}, SetOptions(merge: false));
+      showFlushbar(context, "changes_saved", false);
+    } catch (error) {
+      showFlushbar(context, "changes_not_saved", true);
+    }
   }
 
   Future<void> addAnalyzer(String name) async {

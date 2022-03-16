@@ -60,7 +60,7 @@ class EditTab extends StatelessWidget {
             const BigSpacer(),
             Center(
               child: PrimaryButton(
-                  action: () => FirestoreService().updateAnalyzer(analyzer.id, _nameController.text,
+                  action: () => FirestoreService().updateAnalyzer(context, analyzer.id, _nameController.text,
                       _placeController.text, _ipAddressController.text, _portController.text),
                   text: _locale.save),
             )
