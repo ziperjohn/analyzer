@@ -1,4 +1,5 @@
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
@@ -63,6 +64,7 @@ class ListScreen extends StatelessWidget {
   }
 
   Future<void> onPressedAddButton(BuildContext context, AppLocalizations locale) async {
+    FirebaseCrashlytics.instance.crash();
     final name = await showAddAnalyzer(context, locale);
     if (name == null || name.isEmpty) return;
     FirestoreService().addAnalyzer(name);
