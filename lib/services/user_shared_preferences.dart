@@ -8,6 +8,18 @@ class UserSharedPreferences {
     _preferences = await SharedPreferences.getInstance();
   }
 
+  static bool get showAxisX => _preferences.getBool("showAxisX") ?? true;
+  static bool get showAxisY => _preferences.getBool("showAxisY") ?? true;
+  static bool get showGrid => _preferences.getBool("showGrid") ?? false;
+  static bool get showDots => _preferences.getBool("showDots") ?? false;
+  static bool get showAreaUnderChart => _preferences.getBool("showAreaUnderChart") ?? true;
+
+  static set showAxisX(bool value) => _preferences.setBool("showAxisX", value);
+  static set showAxisY(bool value) => _preferences.setBool("showAxisY", value);
+  static set showGrid(bool value) => _preferences.setBool("showGrid", value);
+  static set showDots(bool value) => _preferences.setBool("showDots", value);
+  static set showAreaUnderChart(bool value) => _preferences.setBool("showAreaUnderChart", value);
+
   static Future<void> setLanguageCode(Locale locale) async {
     await _preferences.setString("languageCode", locale.languageCode);
   }
