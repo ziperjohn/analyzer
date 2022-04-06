@@ -17,45 +17,44 @@ class ListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final _locale = AppLocalizations.of(context);
     final _analyzerListProvider = Provider.of<List<AnalyzerModel>>(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_locale!.list),
-        centerTitle: true,
-      ),
-      body: ListView.builder(
-        itemCount: _analyzerListProvider.length,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  child: TitleList(title: _locale.my_analyzers),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                  child: AnalyzerCard(analyzerIndex: index),
-                ),
-              ],
+
+    return SafeArea(
+      child: Scaffold(
+        body: ListView.builder(
+          itemCount: _analyzerListProvider.length,
+          itemBuilder: (context, index) {
+            if (index == 0) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: TitleList(title: _locale!.my_analyzers),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                    child: AnalyzerCard(analyzerIndex: index),
+                  ),
+                ],
+              );
+            }
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              child: AnalyzerCard(analyzerIndex: index),
             );
-          }
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            child: AnalyzerCard(analyzerIndex: index),
-          );
-        },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
-      floatingActionButton: AvatarGlow(
-        endRadius: 45,
-        glowColor: secondaryColor,
-        repeatPauseDuration: const Duration(seconds: 5),
-        child: FloatingActionButton(
-          onPressed: () => onPressedAddButton(context, _locale),
-          child: const Icon(
-            FontAwesomeIcons.plus,
-            color: whiteColor,
+          },
+        ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        floatingActionButton: AvatarGlow(
+          endRadius: 45,
+          glowColor: secondaryColor,
+          repeatPauseDuration: const Duration(seconds: 5),
+          child: FloatingActionButton(
+            onPressed: () => onPressedAddButton(context, _locale!),
+            child: const Icon(
+              FontAwesomeIcons.plus,
+              color: whiteColor,
+            ),
           ),
         ),
       ),

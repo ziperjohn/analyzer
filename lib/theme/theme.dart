@@ -41,7 +41,7 @@ ThemeData lightTheme = ThemeData(
       color: blackColor,
     ),
     headline4: TextStyle(
-      fontSize: 20,
+      fontSize: 22,
       fontWeight: FontWeight.w600,
       color: blackColor,
     ),
@@ -152,7 +152,7 @@ ThemeData darkTheme = ThemeData(
       color: whiteColor,
     ),
     headline4: TextStyle(
-      fontSize: 20,
+      fontSize: 22,
       fontWeight: FontWeight.w600,
       color: whiteColor,
     ),
