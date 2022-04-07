@@ -17,7 +17,7 @@ Future<dynamic> showFlushbar(BuildContext context, String code, bool isError) {
       backgroundColor: primaryColor,
       margin: const EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(10),
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 3),
       icon: Icon(
         isError ? FontAwesomeIcons.exclamation : FontAwesomeIcons.check,
         color: isError ? redColor : greenColor,
