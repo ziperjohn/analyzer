@@ -1,4 +1,4 @@
-import 'package:analyzer_app/analyzer/chart_provider.dart';
+import 'package:analyzer_app/providers/chart_provider.dart';
 import 'package:analyzer_app/analyzer/chart_settings_card.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

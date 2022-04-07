@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
-import 'package:analyzer_app/list/analyzer_card.dart';
+import 'package:analyzer_app/list/list_card.dart';
 import 'package:analyzer_app/widgets/custom_text_field_dialog.dart';
 import 'package:analyzer_app/widgets/title_list.dart';
 import 'package:flutter/material.dart';
@@ -33,14 +33,14 @@ class ListScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                    child: AnalyzerCard(analyzerIndex: index),
+                    child: ListCard(analyzerIndex: index),
                   ),
                 ],
               );
             }
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-              child: AnalyzerCard(analyzerIndex: index),
+              child: ListCard(analyzerIndex: index),
             );
           },
         ),

@@ -8,10 +8,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AnalyzerCard extends StatelessWidget {
+class ListCard extends StatelessWidget {
   final int analyzerIndex;
 
-  const AnalyzerCard({Key? key, required this.analyzerIndex}) : super(key: key);
+  const ListCard({Key? key, required this.analyzerIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

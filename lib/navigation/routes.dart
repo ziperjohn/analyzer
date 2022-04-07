@@ -1,4 +1,4 @@
-import 'package:analyzer_app/auth/auth_wrapper.dart';
+import 'package:analyzer_app/navigation/auth_wrapper.dart';
 import 'package:analyzer_app/auth/forgot_password_screen.dart';
 import 'package:analyzer_app/auth/sign_up_screen.dart';
 

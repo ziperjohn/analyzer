@@ -12,12 +12,8 @@ class WebSocketService {
 
   WebSocketService({this.ipAddress = "", this.port = ""});
 
-  void createConnection() {
-    webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
-  }
-
   Stream<ResponseModel> webSocketStream() {
-    createConnection();
+    webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
 
     return webSocketChannel.stream.map((response) {
       List<PortModel> portList = [];
