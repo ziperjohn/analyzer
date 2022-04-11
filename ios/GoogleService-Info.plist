@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>459613923741-ggd9it01j4ir1ts4qas71s48b85h95jp.apps.googleusercontent.com</string>
+	<string>459613923741-gbfo09lflcngtvfpeojmtd4k9bakpkc9.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.459613923741-ggd9it01j4ir1ts4qas71s48b85h95jp</string>
+	<string>com.googleusercontent.apps.459613923741-gbfo09lflcngtvfpeojmtd4k9bakpkc9</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>459613923741-3dhtfqfs43odl7o97bjc7ub2o6v08cli.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAdLLi_VLINl04tsQEDOBD4nyYFzxI8NHk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>cz.vut.analyzer</string>
+	<string>cz.vut.fekt.analyzer</string>
 	<key>PROJECT_ID</key>
 	<string>analyzer-96e67</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:459613923741:ios:4bb0a3012d8a430bd26774</string>
+	<string>1:459613923741:ios:bc819d37d334f476d26774</string>
 </dict>
 </plist>
