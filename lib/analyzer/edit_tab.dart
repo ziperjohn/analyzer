@@ -16,6 +16,7 @@ class EditTab extends StatelessWidget {
     final TextEditingController _placeController = TextEditingController(text: analyzer.place);
     final TextEditingController _ipAddressController = TextEditingController(text: analyzer.ipAddress);
     final TextEditingController _portController = TextEditingController(text: analyzer.port);
+    final TextEditingController _keyController = TextEditingController(text: analyzer.key);
     final _locale = AppLocalizations.of(context);
 
     return SingleChildScrollView(
@@ -24,7 +25,6 @@ class EditTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // TitleList(title: _locale!.name),
             CustomTextField(
               controller: _nameController,
               hintText: _locale!.name,
@@ -48,7 +48,6 @@ class EditTab extends StatelessWidget {
               isEmail: false,
               autoFocus: false,
             ),
-            // TitleList(title: _locale.port),
             const BigSpacer(),
             CustomTextField(
               controller: _portController,
@@ -58,10 +57,23 @@ class EditTab extends StatelessWidget {
               autoFocus: false,
             ),
             const BigSpacer(),
+            CustomTextField(
+                controller: _keyController,
+                hintText: _locale.key,
+                isPassword: true,
+                isEmail: false,
+                autoFocus: false),
+            const BigSpacer(),
             Center(
               child: PrimaryButton(
-                  action: () => FirestoreService().updateAnalyzer(context, analyzer.id, _nameController.text,
-                      _placeController.text, _ipAddressController.text, _portController.text),
+                  action: () => FirestoreService().updateAnalyzer(
+                      context,
+                      analyzer.id,
+                      _nameController.text,
+                      _placeController.text,
+                      _ipAddressController.text,
+                      _portController.text,
+                      _keyController.text),
                   text: _locale.save),
             )
           ],

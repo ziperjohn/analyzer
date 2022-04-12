@@ -50,6 +50,7 @@ class ListCard extends StatelessWidget {
         analyzerList[analyzerIndex].place,
         analyzerList[analyzerIndex].ipAddress,
         analyzerList[analyzerIndex].port,
+        analyzerList[analyzerIndex].key,
       );
     }
   }

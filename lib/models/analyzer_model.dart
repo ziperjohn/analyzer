@@ -4,8 +4,10 @@ class AnalyzerModel {
   String place;
   String ipAddress;
   String port;
+  String key;
 
-  AnalyzerModel({this.id = "", this.name = "", this.place = "", this.ipAddress = "", this.port = ""});
+  AnalyzerModel(
+      {this.id = "", this.name = "", this.place = "", this.ipAddress = "", this.port = "", this.key = ""});
 
   factory AnalyzerModel.fromJson(Map<dynamic, dynamic> json) {
     return AnalyzerModel(
@@ -14,6 +16,7 @@ class AnalyzerModel {
       place: json["place"],
       ipAddress: json["ipAddress"],
       port: json["port"],
+      key: json["key"],
     );
   }
 }

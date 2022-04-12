@@ -78,5 +78,6 @@
     "show_dots": "Show dots",
     "show_area_under_chart": "Show area under the chart",
     "changes_saved": "The changes have been saved.",
-    "changes_not_saved": "The changes have not been saved"
+    "changes_not_saved": "The changes have not been saved",
+    "key": "Key"
 }
