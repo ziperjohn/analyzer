@@ -11,7 +11,7 @@ Future<dynamic> showFlushbar(BuildContext context, String code, bool isError) {
   var _route = route.showFlushbar(
     context: context,
     flushbar: Flushbar(
-      dismissDirection: FlushbarDismissDirection.VERTICAL,
+      dismissDirection: FlushbarDismissDirection.HORIZONTAL,
       messageText: Text(FlushbarLocalization().parseErrorCodeToLocaleString(locale!, code),
           style: const TextStyle(color: whiteColor)),
       backgroundColor: primaryColor,
