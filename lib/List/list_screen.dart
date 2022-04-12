@@ -20,31 +20,7 @@ class ListScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        body: ListView.builder(
-          itemCount: _analyzerListProvider.length,
-          itemBuilder: (context, index) {
-            if (index == 0) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                    child: TitleList(title: _locale!.my_analyzers),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                    child: ListCard(analyzerIndex: index),
-                  ),
-                ],
-              );
-            }
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-              child: ListCard(analyzerIndex: index),
-            );
-          },
-        ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        body: _analyzerListProvider.isEmpty ? const BodyWithoutData() : const BodyWithData(),
         floatingActionButton: AvatarGlow(
           endRadius: 45,
           glowColor: secondaryColor,
@@ -75,4 +51,51 @@ class ListScreen extends StatelessWidget {
           hintText: locale.name,
         ),
       );
+}
+
+class BodyWithoutData extends StatelessWidget {
+  const BodyWithoutData({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      child: TitleList(title: _locale!.my_analyzers),
+    );
+  }
+}
+
+class BodyWithData extends StatelessWidget {
+  const BodyWithData({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final _analyzerListProvider = Provider.of<List<AnalyzerModel>>(context);
+    final _locale = AppLocalizations.of(context);
+    return ListView.builder(
+      itemCount: _analyzerListProvider.length,
+      itemBuilder: (context, index) {
+        if (index == 0) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                child: TitleList(title: _locale!.my_analyzers),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                child: ListCard(analyzerIndex: index),
+              ),
+            ],
+          );
+        }
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+          child: ListCard(analyzerIndex: index),
+        );
+      },
+    );
+  }
 }
