@@ -69,7 +69,7 @@ class SingInScreen extends StatelessWidget {
                       action: () =>
                           AuthService().signIn(context, _emailController.text, _passwordController.text),
                       text: _locale.sing_in,
-                      icon: FontAwesomeIcons.rightToBracket,
+                      icon: FontAwesomeIcons.signInAlt,
                     ),
                   ),
                   const SmallSpacer(),

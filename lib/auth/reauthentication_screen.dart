@@ -53,7 +53,7 @@ class ReauthenticationScreen extends StatelessWidget {
                 action: () =>
                     onPreesedAuthenticateButton(context, _emailController.text, _passwordController.text),
                 text: _locale.authenticate,
-                icon: FontAwesomeIcons.rightToBracket,
+                icon: FontAwesomeIcons.signInAlt,
               ),
             ),
             const SmallSpacer(),
