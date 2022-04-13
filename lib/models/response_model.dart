@@ -5,6 +5,7 @@ class ResponseModel {
   final List<PortModel> portList;
   final List<FlSpot> otdrList;
   final String fwVersion;
+  final bool isKeyVerified;
 
-  ResponseModel({this.portList = const [], this.otdrList = const [], this.fwVersion = ""});
+  ResponseModel({this.portList = const [], this.otdrList = const [], this.fwVersion = "", this.isKeyVerified = false});
 }

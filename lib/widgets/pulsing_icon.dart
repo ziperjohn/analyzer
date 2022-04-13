@@ -1,9 +1,10 @@
-import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PulsingIcon extends StatefulWidget {
-  const PulsingIcon({Key? key}) : super(key: key);
+  final IconData icon;
+  final Color color;
+
+  const PulsingIcon({Key? key, required this.icon, required this.color}) : super(key: key);
 
   @override
   State<PulsingIcon> createState() => _PulsingIconState();
@@ -38,7 +39,7 @@ class _PulsingIconState extends State<PulsingIcon> with TickerProviderStateMixin
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _animation,
-      child: const Icon(FontAwesomeIcons.exclamation, color: redColor, size: 120),
+      child: Icon(widget.icon, color: widget.color, size: 120),
     );
   }
 }

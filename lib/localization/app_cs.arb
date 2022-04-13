@@ -79,5 +79,7 @@
     "show_area_under_chart": "Zobrazit oblast pod grafem",
     "changes_saved": "Změny byly uloženy.",
     "changes_not_saved": "Změny nebyly uloženy.",
-    "key": "Klíč"
+    "key": "Klíč",
+    "incorrect_key": "Špatný klíč",
+    "incorect_key_help": "Pokud si klíč nepamatujete  tak je uveden zezadu na Analyzátoru."
 }

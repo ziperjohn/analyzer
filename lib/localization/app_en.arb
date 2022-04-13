@@ -79,5 +79,7 @@
     "show_area_under_chart": "Show area under the chart",
     "changes_saved": "The changes have been saved.",
     "changes_not_saved": "The changes have not been saved",
-    "key": "Key"
+    "key": "Key",
+    "incorrect_key": "Incorrect key",
+    "incorect_key_help": "If you don't remember the key, it's on the back of the Analyzer."
 }

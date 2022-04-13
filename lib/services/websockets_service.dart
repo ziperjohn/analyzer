@@ -8,12 +8,13 @@ import 'dart:convert';
 class WebSocketService {
   final String ipAddress;
   final String port;
+  final String key;
   late WebSocketChannel webSocketChannel;
 
-  WebSocketService({this.ipAddress = "", this.port = ""});
+  WebSocketService({required this.ipAddress, required this.port, required this.key});
 
   Stream<ResponseModel> webSocketStream() {
-    webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
+    createWebSocketChannel();
 
     return webSocketChannel.stream.map((response) {
       List<PortModel> portList = [];
@@ -24,6 +25,7 @@ class WebSocketService {
       var portData = parsed["portList"] as List<dynamic>;
       var otdrData = parsed["otdrList"] as List<dynamic>;
       var fwVersion = parsed["fwVersion"] as String;
+      var isKeyVerified = parsed["isKeyVerified"] as bool;
 
       for (var item in portData) {
         portList.add(PortModel.fromJson(item));
@@ -34,19 +36,23 @@ class WebSocketService {
         otdrList.add(FlSpot(otdr.distance.toDouble(), otdr.power.toDouble()));
       }
 
-      ResponseModel data = ResponseModel(portList: portList, otdrList: otdrList, fwVersion: fwVersion);
+      ResponseModel data = ResponseModel(
+          portList: portList, otdrList: otdrList, fwVersion: fwVersion, isKeyVerified: isKeyVerified);
 
       return data;
     });
   }
 
-  void closeStream() {
+  void createWebSocketChannel() {
+    webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
+    sendData(jsonEncode({"key": key}));
+  }
+
+  void closeWebSocketChannel() {
     webSocketChannel.sink.close();
   }
+
+  void sendData(String data) {
+    webSocketChannel.sink.add(data);
+  }
 }
-// Send message to server
-
-//  void _sendMessage() {
-//     _channel.sink.add("Hello from flutter app!");
-//   }
-
