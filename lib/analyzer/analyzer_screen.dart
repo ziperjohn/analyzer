@@ -1,6 +1,5 @@
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:analyzer_app/analyzer/data_tab.dart';
-import 'package:analyzer_app/analyzer/edit_tab.dart';
+import 'package:analyzer_app/analyzer/analyzer.dart';
 import 'package:analyzer_app/models/models.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
