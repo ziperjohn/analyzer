@@ -1,5 +1,5 @@
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:analyzer_app/providers/theme_provider.dart';
+import 'package:analyzer_app/providers/providers.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

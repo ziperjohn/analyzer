@@ -1,5 +1,4 @@
 import 'package:analyzer_app/auth/reauthentication_screen.dart';
-import 'package:analyzer_app/providers/localization_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/auth_service.dart';
@@ -7,7 +6,7 @@ import 'package:analyzer_app/services/package_info_service.dart';
 import 'package:analyzer_app/settings/language_bottom_sheet.dart';
 import 'package:analyzer_app/settings/settings_card.dart';
 import 'package:analyzer_app/settings/theme_bottom_sheet.dart';
-import 'package:analyzer_app/providers/theme_provider.dart';
+import 'package:analyzer_app/providers/providers.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
