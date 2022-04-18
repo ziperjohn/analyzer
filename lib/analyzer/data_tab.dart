@@ -5,13 +5,9 @@ import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/models/response_model.dart';
 import 'package:analyzer_app/services/websockets_service.dart';
 import 'package:analyzer_app/theme/colors.dart';
-import 'package:analyzer_app/widgets/big_spacer.dart';
-import 'package:analyzer_app/widgets/loading_indicator.dart';
-import 'package:analyzer_app/widgets/pulsing_icon.dart';
-import 'package:analyzer_app/widgets/small_spacer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/analyzer/otdr_chart.dart';
-import 'package:analyzer_app/widgets/title_list.dart';
+import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

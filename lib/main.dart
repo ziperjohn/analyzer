@@ -11,7 +11,7 @@ import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/theme.dart';
 import 'package:analyzer_app/providers/theme_provider.dart';
 import 'package:analyzer_app/navigation/routes.dart';
-import 'package:analyzer_app/widgets/loading_indicator.dart';
+import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

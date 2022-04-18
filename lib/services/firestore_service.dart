@@ -1,6 +1,6 @@
 // ignore: implementation_imports
 import 'package:rxdart/src/transformers/switch_map.dart';
-import 'package:analyzer_app/widgets/flushbar.dart';
+import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/services/auth_service.dart';

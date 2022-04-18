@@ -1,8 +1,5 @@
 import 'package:analyzer_app/services/auth_service.dart';
-import 'package:analyzer_app/widgets/custom_text_field.dart';
-import 'package:analyzer_app/widgets/flushbar.dart';
-import 'package:analyzer_app/widgets/big_spacer.dart';
-import 'package:analyzer_app/widgets/primary_button.dart';
+import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
