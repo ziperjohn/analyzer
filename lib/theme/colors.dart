@@ -18,3 +18,6 @@ const secondaryColor = Color(0xFF9E20D8);
 const greenColor = Color(0xFF10B193);
 const orangeColor = Color(0xFFFB8019);
 const redColor = Color(0xFFD44646);
+
+// Gradinet color
+const List<Color> chartGradient = [primaryColor, secondaryColor];

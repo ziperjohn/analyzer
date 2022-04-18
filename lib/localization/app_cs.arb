@@ -81,5 +81,8 @@
     "changes_not_saved": "Změny nebyly uloženy.",
     "key": "Klíč",
     "incorrect_key": "Špatný klíč",
-    "incorect_key_help": "Pokud si klíč nepamatujete  tak je uveden zezadu na Analyzátoru."
+    "incorect_key_help": "Pokud si klíč nepamatujete  tak je uveden zezadu na Analyzátoru.",
+    "selected_port": "Vybraný port:",
+    "none": "Žádný",
+    "select_port_prompt": "Chcete-li zobrazit graf, vyberte v nabídce port."
 }

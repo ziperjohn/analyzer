@@ -9,9 +9,7 @@ import 'package:provider/provider.dart';
 class OTDRChart extends StatelessWidget {
   final List<FlSpot> otdrList;
 
-  OTDRChart({Key? key, required this.otdrList}) : super(key: key);
-
-  final List<Color> gradientColors = [primaryColor, secondaryColor];
+  const OTDRChart({Key? key, required this.otdrList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +23,11 @@ class OTDRChart extends StatelessWidget {
             padding: EdgeInsets.all(_chartProvider.showAxisX || _chartProvider.showAxisY ? 15 : 5),
             child: AspectRatio(
               aspectRatio: 1.0,
-              child: LineChart(
-                mainData(context),
-              ),
+              child: otdrList.isEmpty
+                  ? const NoDataWidget()
+                  : LineChart(
+                      mainData(context),
+                    ),
             ),
           ),
         ),
@@ -101,14 +101,14 @@ class OTDRChart extends StatelessWidget {
       ),
       borderData: FlBorderData(show: false),
       minX: 0,
-      maxX: data.length.toDouble() - 1,
+      maxX: data.length.toDouble(),
       minY: -50,
       maxY: 0,
       lineBarsData: [
         LineChartBarData(
           spots: data,
           isCurved: false,
-          colors: gradientColors,
+          colors: chartGradient,
           barWidth: 1.5,
           isStrokeCapRound: true,
           dotData: FlDotData(
@@ -124,7 +124,7 @@ class OTDRChart extends StatelessWidget {
           ),
           belowBarData: BarAreaData(
             show: _chartProvider.showAreaUnderChart,
-            colors: gradientColors.map((color) => color.withOpacity(0.09)).toList(),
+            colors: chartGradient.map((color) => color.withOpacity(0.09)).toList(),
           ),
         ),
       ],
@@ -178,5 +178,29 @@ class OTDRChart extends StatelessWidget {
         );
       },
     ).toList();
+  }
+}
+
+class NoDataWidget extends StatelessWidget {
+  const NoDataWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Icon(
+          Icons.show_chart_rounded,
+          size: 80,
+        ),
+        Text(
+          _locale!.select_port_prompt,
+          style: Theme.of(context).textTheme.subtitle1,
+          textAlign: TextAlign.center,
+        ),
+      ],
+    );
   }
 }

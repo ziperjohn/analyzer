@@ -19,6 +19,7 @@ class WebSocketService {
     return webSocketChannel.stream.map((response) {
       List<PortModel> portList = [];
       List<FlSpot> otdrList = [];
+      List<PortModel> activePortList = [];
 
       var parsed = jsonDecode(response);
 
@@ -36,8 +37,19 @@ class WebSocketService {
         otdrList.add(FlSpot(otdr.distance.toDouble(), otdr.power.toDouble()));
       }
 
+      for (var port in portList) {
+        if (port.status == Status.ON || port.status == Status.ECHO) {
+          activePortList.add(port);
+        }
+      }
+
       ResponseModel data = ResponseModel(
-          portList: portList, otdrList: otdrList, fwVersion: fwVersion, isKeyVerified: isKeyVerified);
+        portList: portList,
+        activePortList: activePortList,
+        otdrList: otdrList,
+        fwVersion: fwVersion,
+        isKeyVerified: isKeyVerified,
+      );
 
       return data;
     });
@@ -45,7 +57,7 @@ class WebSocketService {
 
   void createWebSocketChannel() {
     webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
-    sendData(jsonEncode({"key": key}));
+    sendData(jsonEncode({"key": key, "selectedPort": null}));
   }
 
   void closeWebSocketChannel() {

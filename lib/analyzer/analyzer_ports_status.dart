@@ -1,11 +1,10 @@
 import 'package:analyzer_app/models/port_model.dart';
-import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-class AnalyzerPorts extends StatelessWidget {
+class AnalyzerPortsStatus extends StatelessWidget {
   final List<PortModel> portlist;
 
-  const AnalyzerPorts({Key? key, required this.portlist}) : super(key: key);
+  const AnalyzerPortsStatus({Key? key, required this.portlist}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,30 +29,17 @@ class RowPort extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map<String, Color> colorMap = {
-      "ERROR": redColor,
-      "ECHO": orangeColor,
-      "ON": greenColor,
-      "OFF": lightGrayColor,
-    };
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        for (var port in portlist)
-          Port(
-            id: port.id + 1,
-            color: colorMap[port.state] ?? blackColor,
-          )
-      ],
+      children: [for (var port in portlist) Port(port: port)],
     );
   }
 }
 
 class Port extends StatelessWidget {
-  final int id;
-  final Color color;
-  const Port({Key? key, required this.id, required this.color}) : super(key: key);
+  final PortModel port;
+
+  const Port({Key? key, required this.port}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +48,10 @@ class Port extends StatelessWidget {
         Container(
           height: 20,
           width: 20,
-          color: color,
+          color: port.color,
         ),
         const SizedBox(height: 3),
-        Text(id.toString())
+        Text("${port.id + 1}")
       ],
     );
   }

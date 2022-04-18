@@ -81,5 +81,8 @@
     "changes_not_saved": "The changes have not been saved",
     "key": "Key",
     "incorrect_key": "Incorrect key",
-    "incorect_key_help": "If you don't remember the key, it's on the back of the Analyzer."
+    "incorect_key_help": "If you don't remember the key, it's on the back of the Analyzer.",
+    "selected_port": "Selected port:",
+    "none": "None",
+    "select_port_prompt": "To view the chart, select the port from the menu."
 }

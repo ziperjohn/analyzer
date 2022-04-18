@@ -80,7 +80,7 @@ ThemeData lightTheme = ThemeData(
       letterSpacing: 0.25,
     ),
     caption: TextStyle(
-      fontSize: 12,
+      fontSize: 13,
       fontWeight: FontWeight.normal,
       color: darkGrayColor,
       letterSpacing: 0.4,
@@ -111,6 +111,10 @@ ThemeData lightTheme = ThemeData(
   dialogTheme: const DialogTheme(backgroundColor: lightSurfaceColor),
   tabBarTheme: const TabBarTheme(labelColor: blackColor),
   radioTheme: RadioThemeData(fillColor: MaterialStateProperty.all(primaryColor)),
+  chipTheme: ChipThemeData(
+    selectedColor: primaryColor.withOpacity(0.4),
+    backgroundColor: lightSurfaceColor,
+  ),
 );
 
 //* ------------------------------------------------------------
@@ -191,7 +195,7 @@ ThemeData darkTheme = ThemeData(
       letterSpacing: 0.25,
     ),
     caption: TextStyle(
-      fontSize: 12,
+      fontSize: 13,
       fontWeight: FontWeight.normal,
       color: lightGrayColor,
       letterSpacing: 0.4,
@@ -222,4 +226,8 @@ ThemeData darkTheme = ThemeData(
   dialogTheme: const DialogTheme(backgroundColor: darkSurfaceColor),
   tabBarTheme: const TabBarTheme(labelColor: whiteColor),
   radioTheme: RadioThemeData(fillColor: MaterialStateProperty.all(primaryColor)),
+  chipTheme: ChipThemeData(
+    selectedColor: primaryColor.withOpacity(0.4),
+    backgroundColor: darkSurfaceColor,
+  ),
 );

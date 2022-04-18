@@ -1,4 +1,5 @@
-import 'package:analyzer_app/analyzer/analyzer_ports.dart';
+import 'package:analyzer_app/analyzer/analyzer_ports_status.dart';
+import 'package:analyzer_app/analyzer/port_selection.dart';
 import 'package:analyzer_app/localization/flushbar_localization.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/models/response_model.dart';
@@ -21,13 +22,13 @@ class DataTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _locale = AppLocalizations.of(context);
-
+    final _webSocketService =
+        WebSocketService(ipAddress: analyzer.ipAddress, port: analyzer.port, key: analyzer.key);
     if (analyzer.ipAddress == "" || analyzer.port == "") {
       return const WebSocketErrorWidget(error: "ip_port_not_defined");
     } else {
       return StreamBuilder<ResponseModel>(
-        stream: WebSocketService(ipAddress: analyzer.ipAddress, port: analyzer.port, key: analyzer.key)
-            .webSocketStream(),
+        stream: _webSocketService.webSocketStream(),
         builder: (context, snapshot) {
           if (snapshot.hasData && snapshot.data!.isKeyVerified) {
             return SingleChildScrollView(
@@ -37,13 +38,18 @@ class DataTab extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TitleList(title: _locale!.analyzer_ports_status),
-                    AnalyzerPorts(portlist: snapshot.data!.portList),
+                    AnalyzerPortsStatus(portlist: snapshot.data!.portList),
                     TitleList(title: _locale.otdr_chart),
+                    PortSelection(
+                      portlist: snapshot.data!.portList,
+                      webSocketService: _webSocketService,
+                    ),
                     OTDRChart(otdrList: snapshot.data!.otdrList),
                     const SmallSpacer(),
                     Center(
-                        child: Text("${_locale.fw_version}: ${snapshot.data!.fwVersion}",
-                            style: Theme.of(context).textTheme.caption)),
+                      child: Text("${_locale.fw_version}: ${snapshot.data!.fwVersion}",
+                          style: Theme.of(context).textTheme.caption),
+                    ),
                     const BigSpacer(),
                   ],
                 ),
