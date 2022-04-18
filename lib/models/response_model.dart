@@ -1,4 +1,4 @@
-import 'package:analyzer_app/models/port_model.dart';
+import 'package:analyzer_app/models/models.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class ResponseModel {

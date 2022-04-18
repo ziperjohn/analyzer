@@ -4,7 +4,7 @@ import 'package:analyzer_app/services/user_shared_preferences.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/localization/l10n.dart';
-import 'package:analyzer_app/models/analyzer_model.dart';
+import 'package:analyzer_app/models/models.dart';
 import 'package:analyzer_app/services/firestore_service.dart';
 import 'package:analyzer_app/theme/theme.dart';
 import 'package:analyzer_app/navigation/routes.dart';

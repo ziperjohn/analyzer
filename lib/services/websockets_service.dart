@@ -1,6 +1,4 @@
-import 'package:analyzer_app/models/otdr_model.dart';
-import 'package:analyzer_app/models/port_model.dart';
-import 'package:analyzer_app/models/response_model.dart';
+import 'package:analyzer_app/models/models.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'dart:convert';
