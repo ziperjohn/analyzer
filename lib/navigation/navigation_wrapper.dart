@@ -2,7 +2,7 @@
 import 'package:analyzer_app/providers/providers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/list/list_screen.dart';
-import 'package:analyzer_app/settings/settings_screen.dart';
+import 'package:analyzer_app/settings/settings.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
