@@ -3,7 +3,7 @@ import 'package:rxdart/src/transformers/switch_map.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:analyzer_app/models/models.dart';
-import 'package:analyzer_app/services/auth_service.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uuid/uuid.dart';
 

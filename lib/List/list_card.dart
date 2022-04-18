@@ -1,6 +1,6 @@
 import 'package:analyzer_app/analyzer/analyzer_screen.dart';
 import 'package:analyzer_app/models/models.dart';
-import 'package:analyzer_app/services/firestore_service.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/custom_alert_dialog.dart';
 import 'package:flutter/material.dart';

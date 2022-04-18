@@ -1,4 +1,4 @@
-import 'package:analyzer_app/services/user_shared_preferences.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:flutter/material.dart';
 
 class ChartProvider extends ChangeNotifier {

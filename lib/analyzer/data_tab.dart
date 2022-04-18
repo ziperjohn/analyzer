@@ -3,7 +3,7 @@ import 'package:analyzer_app/analyzer/port_selection.dart';
 import 'package:analyzer_app/localization/flushbar_localization.dart';
 import 'package:analyzer_app/models/analyzer_model.dart';
 import 'package:analyzer_app/models/response_model.dart';
-import 'package:analyzer_app/services/websockets_service.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/analyzer/otdr_chart.dart';

@@ -1,6 +1,6 @@
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:analyzer_app/services/auth_service.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

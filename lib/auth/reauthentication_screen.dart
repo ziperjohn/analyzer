@@ -2,7 +2,7 @@ import 'package:analyzer_app/auth/change_email_screen.dart';
 import 'package:analyzer_app/auth/change_password_screen.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:analyzer_app/services/auth_service.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

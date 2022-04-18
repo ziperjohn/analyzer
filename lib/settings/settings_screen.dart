@@ -1,8 +1,7 @@
 import 'package:analyzer_app/auth/reauthentication_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/models.dart';
-import 'package:analyzer_app/services/auth_service.dart';
-import 'package:analyzer_app/services/package_info_service.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:analyzer_app/settings/language_bottom_sheet.dart';
 import 'package:analyzer_app/settings/settings_card.dart';
 import 'package:analyzer_app/settings/theme_bottom_sheet.dart';

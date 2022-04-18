@@ -1,7 +1,7 @@
 import 'package:analyzer_app/models/models.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:analyzer_app/services/firestore_service.dart';
+import 'package:analyzer_app/services/services.dart';
 import 'package:flutter/material.dart';
 
 class EditTab extends StatelessWidget {
