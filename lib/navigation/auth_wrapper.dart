@@ -1,5 +1,5 @@
 import 'package:analyzer_app/navigation/navigation_wrapper.dart';
-import 'package:analyzer_app/auth/sing_in_screen.dart';
+import 'package:analyzer_app/auth/auth.dart';
 import 'package:analyzer_app/services/services.dart';
 import 'package:flutter/material.dart';
 import '../main.dart';

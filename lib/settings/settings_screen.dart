@@ -1,4 +1,4 @@
-import 'package:analyzer_app/auth/reauthentication_screen.dart';
+import 'package:analyzer_app/auth/auth.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/models/models.dart';
 import 'package:analyzer_app/services/services.dart';
