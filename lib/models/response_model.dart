@@ -2,15 +2,19 @@ import 'package:analyzer_app/models/models.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class ResponseModel {
-  final List<PortModel> portList;
-  final List<FlSpot> otdrList;
-  final String fwVersion;
   final bool isKeyVerified;
+  final String fwVersion;
+  final List<PortModel> portList;
+  final List<FlSpot> pointList;
+  final List<EventModel> eventList;
+  final InfoModel info;
 
   ResponseModel({
-    this.portList = const [],
-    this.otdrList = const [],
-    this.fwVersion = "",
-    this.isKeyVerified = false,
+    required this.isKeyVerified,
+    required this.fwVersion,
+    required this.portList,
+    required this.pointList,
+    required this.eventList,
+    required this.info,
   });
 }
