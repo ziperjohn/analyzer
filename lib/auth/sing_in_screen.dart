@@ -60,20 +60,16 @@ class SingInScreen extends StatelessWidget {
                     autoFocus: false,
                   ),
                   const BigSpacer(),
-                  Center(
-                    child: PrimaryButton(
-                      action: () =>
-                          AuthService().signIn(context, _emailController.text, _passwordController.text),
-                      text: _locale.sing_in,
-                      icon: FontAwesomeIcons.signInAlt,
-                    ),
+                  PrimaryButton(
+                    action: () =>
+                        AuthService().signIn(context, _emailController.text, _passwordController.text),
+                    text: _locale.sing_in,
+                    icon: FontAwesomeIcons.signInAlt,
                   ),
                   const SmallSpacer(),
-                  Center(
-                    child: TextButton(
-                      onPressed: () => Navigator.pushNamed(context, "/forgotPassword"),
-                      child: Text(_locale.forgot_password),
-                    ),
+                  ThirdButton(
+                    action: () => Navigator.pushNamed(context, "/forgotPassword"),
+                    text: _locale.forgot_password,
                   ),
                   const Divider(
                     thickness: 1,
@@ -83,12 +79,10 @@ class SingInScreen extends StatelessWidget {
                     child: Text(_locale.dont_have_account, style: _textTheme.caption),
                   ),
                   const SmallSpacer(),
-                  Center(
-                    child: SecondaryButton(
-                      action: () => Navigator.pushNamed(context, '/singUp'),
-                      text: _locale.sign_up,
-                      icon: FontAwesomeIcons.userPlus,
-                    ),
+                  SecondaryButton(
+                    action: () => Navigator.pushNamed(context, '/singUp'),
+                    text: _locale.sign_up,
+                    icon: FontAwesomeIcons.userPlus,
                   ),
                 ],
               ),

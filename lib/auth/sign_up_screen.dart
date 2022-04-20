@@ -69,21 +69,17 @@ class SingUpScreen extends StatelessWidget {
                     autoFocus: false,
                   ),
                   const BigSpacer(),
-                  Center(
-                    child: PrimaryButton(
-                      action: () => onPressedSignUpButton(context, _locale, _emailController.text,
-                          _passwordController.text, _confirmPasswordController.text),
-                      text: _locale.sign_up,
-                      icon: FontAwesomeIcons.userPlus,
-                    ),
+                  PrimaryButton(
+                    action: () => onPressedSignUpButton(context, _locale, _emailController.text,
+                        _passwordController.text, _confirmPasswordController.text),
+                    text: _locale.sign_up,
+                    icon: FontAwesomeIcons.userPlus,
                   ),
                   const SmallSpacer(),
-                  Center(
-                    child: SecondaryButton(
-                      action: () => Navigator.pop(context),
-                      text: _locale.back,
-                      icon: FontAwesomeIcons.chevronLeft,
-                    ),
+                  SecondaryButton(
+                    action: () => Navigator.pop(context),
+                    text: _locale.back,
+                    icon: FontAwesomeIcons.chevronLeft,
                   )
                 ],
               ),

@@ -43,20 +43,16 @@ class ReauthenticationScreen extends StatelessWidget {
               autoFocus: false,
             ),
             const BigSpacer(),
-            Center(
-              child: PrimaryButton(
-                action: () =>
-                    onPreesedAuthenticateButton(context, _emailController.text, _passwordController.text),
-                text: _locale.authenticate,
-                icon: FontAwesomeIcons.signInAlt,
-              ),
+            PrimaryButton(
+              action: () =>
+                  onPreesedAuthenticateButton(context, _emailController.text, _passwordController.text),
+              text: _locale.authenticate,
+              icon: FontAwesomeIcons.signInAlt,
             ),
             const SmallSpacer(),
-            Center(
-              child: TextButton(
-                onPressed: () => showAlertDialog(context, _locale),
-                child: Text(_locale.reauthentication),
-              ),
+            ThirdButton(
+              action: () => showAlertDialog(context, _locale),
+              text: _locale.reauthentication,
             ),
           ],
         ),

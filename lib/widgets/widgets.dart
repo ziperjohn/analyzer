@@ -10,3 +10,4 @@ export 'pulsing_icon.dart';
 export 'secondary_button.dart';
 export 'small_spacer.dart';
 export 'title_list.dart';
+export 'third_button.dart';

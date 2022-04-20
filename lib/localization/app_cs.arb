@@ -84,5 +84,7 @@
     "incorect_key_help": "Pokud si klíč nepamatujete  tak je uveden zezadu na Analyzátoru.",
     "selected_port": "Vybraný port:",
     "none": "Žádný",
-    "select_port_prompt": "Chcete-li zobrazit graf, vyberte v nabídce port."
+    "select_port_prompt": "Chcete-li zobrazit graf, vyberte v nabídce port.",
+    "otdr_chart_settings": "Nastavení OTDR grafu",
+    "show_details": "Zobrazit detaily"
 }

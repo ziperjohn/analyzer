@@ -12,29 +12,33 @@ class SecondaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     const shape = StadiumBorder();
     if (icon == null) {
-      return OutlinedButton(
-        onPressed: () => action(),
-        child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold)),
-        style: OutlinedButton.styleFrom(
-          minimumSize: const Size(220, 45),
-          shape: shape,
-          side: const BorderSide(
-            width: 1,
-            color: primaryColor,
+      return Center(
+        child: OutlinedButton(
+          onPressed: () => action(),
+          child: Text(text, style: const TextStyle(fontWeight: FontWeight.bold)),
+          style: OutlinedButton.styleFrom(
+            minimumSize: const Size(220, 45),
+            shape: shape,
+            side: const BorderSide(
+              width: 1,
+              color: primaryColor,
+            ),
           ),
         ),
       );
     } else {
-      return OutlinedButton.icon(
-        onPressed: () => action(),
-        icon: Icon(icon, size: 17),
-        label: Text(text, style: const TextStyle(fontWeight: FontWeight.bold)),
-        style: OutlinedButton.styleFrom(
-          minimumSize: const Size(220, 45),
-          shape: shape,
-          side: const BorderSide(
-            width: 1,
-            color: primaryColor,
+      return Center(
+        child: OutlinedButton.icon(
+          onPressed: () => action(),
+          icon: Icon(icon, size: 17),
+          label: Text(text, style: const TextStyle(fontWeight: FontWeight.bold)),
+          style: OutlinedButton.styleFrom(
+            minimumSize: const Size(220, 45),
+            shape: shape,
+            side: const BorderSide(
+              width: 1,
+              color: primaryColor,
+            ),
           ),
         ),
       );

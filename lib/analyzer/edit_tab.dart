@@ -62,18 +62,16 @@ class EditTab extends StatelessWidget {
                 isEmail: false,
                 autoFocus: false),
             const BigSpacer(),
-            Center(
-              child: PrimaryButton(
-                  action: () => FirestoreService().updateAnalyzer(
-                      context,
-                      analyzer.id,
-                      _nameController.text,
-                      _placeController.text,
-                      _ipAddressController.text,
-                      _portController.text,
-                      _keyController.text),
-                  text: _locale.save),
-            )
+            PrimaryButton(
+                action: () => FirestoreService().updateAnalyzer(
+                    context,
+                    analyzer.id,
+                    _nameController.text,
+                    _placeController.text,
+                    _ipAddressController.text,
+                    _portController.text,
+                    _keyController.text),
+                text: _locale.save)
           ],
         ),
       ),

@@ -68,12 +68,10 @@ class SettingsScreen extends StatelessWidget {
                       onPressed: () {},
                       hasIcon: false),
                   const SizedBox(height: 10),
-                  Center(
-                    child: PrimaryButton(
-                      action: () => AuthService().signOut(context),
-                      text: _locale.sign_out,
-                      icon: FontAwesomeIcons.signOutAlt,
-                    ),
+                  PrimaryButton(
+                    action: () => AuthService().signOut(context),
+                    text: _locale.sign_out,
+                    icon: FontAwesomeIcons.signOutAlt,
                   ),
                   const SizedBox(height: 20),
                 ],

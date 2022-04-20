@@ -1,62 +1,39 @@
 import 'package:analyzer_app/providers/providers.dart';
-import 'package:analyzer_app/analyzer/chart_settings_card.dart';
 import 'package:analyzer_app/theme/colors.dart';
+import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class OTDRChart extends StatelessWidget {
-  final List<FlSpot> otdrDataList;
+  final List<FlSpot> pointList;
 
-  const OTDRChart({Key? key, required this.otdrDataList}) : super(key: key);
+  const OTDRChart({Key? key, required this.pointList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final _locale = AppLocalizations.of(context);
     final _chartProvider = Provider.of<ChartProvider>(context);
 
-    return Column(
-      children: [
-        Card(
-          child: Padding(
-            padding: EdgeInsets.all(_chartProvider.showAxisX || _chartProvider.showAxisY ? 15 : 5),
-            child: AspectRatio(
-              aspectRatio: 1.0,
-              child: otdrDataList.isEmpty
+    return Card(
+      child: Padding(
+        padding: EdgeInsets.all(_chartProvider.showAxisX || _chartProvider.showAxisY ? 15 : 5),
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 1,
+              child: pointList.isEmpty
                   ? const NoDataWidget()
                   : LineChart(
                       mainData(context),
                     ),
             ),
-          ),
+            pointList.isEmpty
+                ? Container()
+                : ThirdButton(text: "Show details", action: () {}, icon: Icons.assignment_rounded),
+          ],
         ),
-        ChartSettingsCard(
-          title: _locale!.show_axis_x,
-          value: _chartProvider.showAxisX,
-          onChange: (newValue) => _chartProvider.setShowAxisX(newValue),
-        ),
-        ChartSettingsCard(
-          title: _locale.show_axis_y,
-          value: _chartProvider.showAxisY,
-          onChange: (newValue) => _chartProvider.setShowAxisY(newValue),
-        ),
-        ChartSettingsCard(
-          title: _locale.show_area_under_chart,
-          value: _chartProvider.showAreaUnderChart,
-          onChange: (newValue) => _chartProvider.setShowAreaUnderChart(newValue),
-        ),
-        ChartSettingsCard(
-          title: _locale.show_grid,
-          value: _chartProvider.showGrid,
-          onChange: (newValue) => _chartProvider.setShowGrid(newValue),
-        ),
-        ChartSettingsCard(
-          title: _locale.show_dots,
-          value: _chartProvider.showDots,
-          onChange: (newValue) => _chartProvider.setShowDots(newValue),
-        ),
-      ],
+      ),
     );
   }
 
@@ -106,7 +83,7 @@ class OTDRChart extends StatelessWidget {
       maxY: 35,
       lineBarsData: [
         LineChartBarData(
-          spots: otdrDataList,
+          spots: pointList,
           isCurved: false,
           colors: chartGradient,
           barWidth: 1.5,

@@ -40,19 +40,15 @@ class ForgotPasswordScreen extends StatelessWidget {
                   autoFocus: false,
                 ),
                 const BigSpacer(),
-                Center(
-                  child: PrimaryButton(
-                      action: () => AuthService().resetPassword(context, _emailController.text),
-                      text: _locale.send_email,
-                      icon: FontAwesomeIcons.solidEnvelope),
-                ),
+                PrimaryButton(
+                    action: () => AuthService().resetPassword(context, _emailController.text),
+                    text: _locale.send_email,
+                    icon: FontAwesomeIcons.solidEnvelope),
                 const SmallSpacer(),
-                Center(
-                  child: SecondaryButton(
-                    action: () => Navigator.pop(context),
-                    text: _locale.back,
-                    icon: FontAwesomeIcons.chevronLeft,
-                  ),
+                SecondaryButton(
+                  action: () => Navigator.pop(context),
+                  text: _locale.back,
+                  icon: FontAwesomeIcons.chevronLeft,
                 )
               ],
             ),

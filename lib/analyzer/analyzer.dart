@@ -5,3 +5,4 @@ export 'data_tab.dart';
 export 'edit_tab.dart';
 export 'otdr_chart.dart';
 export 'port_selection.dart';
+export 'otdr_chart_settings.dart';

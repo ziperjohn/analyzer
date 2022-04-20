@@ -41,12 +41,10 @@ class ChangePasswordScreen extends StatelessWidget {
               autoFocus: false,
             ),
             const BigSpacer(),
-            Center(
-              child: PrimaryButton(
-                action: () =>
-                    onPressedChangeButton(context, _passwordController.text, _confirmPasswordController.text),
-                text: _locale.change,
-              ),
+            PrimaryButton(
+              action: () =>
+                  onPressedChangeButton(context, _passwordController.text, _confirmPasswordController.text),
+              text: _locale.change,
             ),
           ],
         ),
