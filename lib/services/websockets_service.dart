@@ -17,33 +17,25 @@ class WebSocketService {
     return webSocketChannel.stream.map((response) {
       List<PortModel> portList = [];
       List<FlSpot> otdrList = [];
-      List<PortModel> activePortList = [];
 
       var parsed = jsonDecode(response);
 
+      var isKeyVerified = parsed["isKeyVerified"] as bool;
+      var fwVersion = parsed["fwVersion"] as String;
       var portData = parsed["portList"] as List<dynamic>;
       var otdrData = parsed["otdrList"] as List<dynamic>;
-      var fwVersion = parsed["fwVersion"] as String;
-      var isKeyVerified = parsed["isKeyVerified"] as bool;
 
       for (var item in portData) {
         portList.add(PortModel.fromJson(item));
       }
 
       for (var item in otdrData) {
-        OTDRModel otdr = OTDRModel.fromJson(item);
+        PointModel otdr = PointModel.fromJson(item);
         otdrList.add(FlSpot(otdr.distance.toDouble(), otdr.power.toDouble()));
-      }
-
-      for (var port in portList) {
-        if (port.status == Status.ON || port.status == Status.ECHO) {
-          activePortList.add(port);
-        }
       }
 
       ResponseModel data = ResponseModel(
         portList: portList,
-        activePortList: activePortList,
         otdrList: otdrList,
         fwVersion: fwVersion,
         isKeyVerified: isKeyVerified,

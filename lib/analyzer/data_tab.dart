@@ -37,7 +37,7 @@ class DataTab extends StatelessWidget {
                       portlist: snapshot.data!.portList,
                       webSocketService: _webSocketService,
                     ),
-                    OTDRChart(otdrList: snapshot.data!.otdrList),
+                    OTDRChart(otdrDataList: snapshot.data!.otdrList),
                     const SmallSpacer(),
                     Center(
                       child: Text("${_locale.fw_version}: ${snapshot.data!.fwVersion}",

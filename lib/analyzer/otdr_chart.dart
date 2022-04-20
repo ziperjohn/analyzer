@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class OTDRChart extends StatelessWidget {
-  final List<FlSpot> otdrList;
+  final List<FlSpot> otdrDataList;
 
-  const OTDRChart({Key? key, required this.otdrList}) : super(key: key);
+  const OTDRChart({Key? key, required this.otdrDataList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class OTDRChart extends StatelessWidget {
             padding: EdgeInsets.all(_chartProvider.showAxisX || _chartProvider.showAxisY ? 15 : 5),
             child: AspectRatio(
               aspectRatio: 1.0,
-              child: otdrList.isEmpty
+              child: otdrDataList.isEmpty
                   ? const NoDataWidget()
                   : LineChart(
                       mainData(context),
@@ -63,7 +63,7 @@ class OTDRChart extends StatelessWidget {
   LineChartData mainData(BuildContext context) {
     final _chartProvider = Provider.of<ChartProvider>(context);
     final _textTheme = Theme.of(context).textTheme;
-    List<FlSpot> data = otdrList;
+
     return LineChartData(
       lineTouchData: createLineTouchData(context),
       gridData: FlGridData(
@@ -101,12 +101,12 @@ class OTDRChart extends StatelessWidget {
       ),
       borderData: FlBorderData(show: false),
       minX: 0,
-      maxX: data.length.toDouble(),
-      minY: -50,
-      maxY: 0,
+      maxX: 35,
+      minY: 0, //TODO calculate max and min Y values
+      maxY: 35,
       lineBarsData: [
         LineChartBarData(
-          spots: data,
+          spots: otdrDataList,
           isCurved: false,
           colors: chartGradient,
           barWidth: 1.5,
@@ -115,7 +115,7 @@ class OTDRChart extends StatelessWidget {
             show: _chartProvider.showDots,
             getDotPainter: (spot, percent, barData, index) {
               return FlDotCirclePainter(
-                radius: 3,
+                radius: 2,
                 color: secondaryColor,
                 strokeWidth: 0,
                 strokeColor: secondaryColor,
