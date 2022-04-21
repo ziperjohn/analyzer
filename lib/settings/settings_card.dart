@@ -19,7 +19,7 @@ class SettingsCard extends StatelessWidget {
         title: Text(title),
         subtitle: Text(subtitle),
         onTap: () => onPressed(),
-        trailing: hasIcon ? const Icon(FontAwesomeIcons.chevronRight, size: 17, color: lightGrayColor) : null,
+        trailing: hasIcon ? const Icon(FontAwesomeIcons.chevronRight, size: 17, color: primaryColor) : null,
       ),
     );
   }
