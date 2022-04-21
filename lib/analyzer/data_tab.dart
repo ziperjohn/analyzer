@@ -37,9 +37,11 @@ class DataTab extends StatelessWidget {
                       portlist: snapshot.data!.portList,
                       webSocketService: _webSocketService,
                     ),
-                    OTDRChart(pointList: snapshot.data!.pointList),
-                    // if (snapshot.data!.pointList.isNotEmpty)
-                    //   ThirdButton(text: _locale.show_details, action: () {}, icon: Icons.assignment_rounded),
+                    OTDRChart(
+                      pointList: snapshot.data!.pointList,
+                      eventList: snapshot.data!.eventList,
+                      info: snapshot.data!.info,
+                    ),
                     TitleList(title: _locale.otdr_chart_settings),
                     const OTDRChartSettings(),
                     const SmallSpacer(),

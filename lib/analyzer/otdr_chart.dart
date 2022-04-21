@@ -1,3 +1,6 @@
+import 'package:analyzer_app/analyzer/analyzer.dart';
+import 'package:analyzer_app/models/event_model.dart';
+import 'package:analyzer_app/models/info_model.dart';
 import 'package:analyzer_app/providers/providers.dart';
 import 'package:analyzer_app/theme/colors.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
@@ -8,8 +11,11 @@ import 'package:provider/provider.dart';
 
 class OTDRChart extends StatelessWidget {
   final List<FlSpot> pointList;
+  final List<EventModel> eventList;
+  final InfoModel info;
 
-  const OTDRChart({Key? key, required this.pointList}) : super(key: key);
+  const OTDRChart({Key? key, required this.pointList, required this.eventList, required this.info})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +36,22 @@ class OTDRChart extends StatelessWidget {
             ),
             pointList.isEmpty
                 ? Container()
-                : ThirdButton(text: "Show details", action: () {}, icon: Icons.assignment_rounded),
+                : ThirdButton(
+                    text: "Show details",
+                    action: () => navigateToOtdrDetailsScreen(context, eventList, info),
+                    icon: Icons.assignment_rounded),
           ],
+        ),
+      ),
+    );
+  }
+
+  void navigateToOtdrDetailsScreen(BuildContext context, List<EventModel> eventList, InfoModel info) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (BuildContext context) => OTDRDetailsScreen(
+          eventList: eventList,
+          info: info,
         ),
       ),
     );

@@ -86,5 +86,13 @@
     "none": "None",
     "select_port_prompt": "To view the chart, select the port from the menu.",
     "otdr_chart_settings": "OTDR chart settings",
-    "show_details": "Show details"
+    "show_details": "Show details",
+    "general": "General",
+    "orl": "Optical return loss",
+    "loss": "Loss",
+    "wavelength": "Wavelength:",
+    "fiber_id": "Fiber ID:",
+    "start": "Start:",
+    "finish": "Finish:",
+    "total": "Total:"
 }
