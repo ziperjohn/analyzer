@@ -82,7 +82,7 @@
     "key": "Key",
     "incorrect_key": "Incorrect key",
     "incorect_key_help": "If you don't remember the key, it's on the back of the Analyzer.",
-    "selected_port": "Selected port:",
+    "selected_port": "Selected port",
     "none": "None",
     "select_port_prompt": "To view the chart, select the port from the menu.",
     "otdr_chart_settings": "OTDR chart settings",
@@ -90,9 +90,14 @@
     "general": "General",
     "orl": "Optical return loss",
     "loss": "Loss",
-    "wavelength": "Wavelength:",
-    "fiber_id": "Fiber ID:",
-    "start": "Start:",
-    "finish": "Finish:",
-    "total": "Total:"
+    "wavelength": "Wavelength",
+    "fiber_id": "Fiber ID",
+    "start": "Start",
+    "finish": "Finish",
+    "total": "Total",
+    "slope": "Slope",
+    "event": "Event",
+    "splice_loss": "Splice loss",
+    "reflection_loss": "Reflection loss",
+    "measurment": "Measurment"
 }

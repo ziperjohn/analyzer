@@ -82,7 +82,7 @@
     "key": "Klíč",
     "incorrect_key": "Špatný klíč",
     "incorect_key_help": "Pokud si klíč nepamatujete  tak je uveden zezadu na Analyzátoru.",
-    "selected_port": "Vybraný port:",
+    "selected_port": "Vybraný port",
     "none": "Žádný",
     "select_port_prompt": "Chcete-li zobrazit graf, vyberte v nabídce port.",
     "otdr_chart_settings": "Nastavení OTDR grafu",
@@ -90,9 +90,14 @@
     "general": "Obecné",
     "orl": "Optický zpětný útlum",
     "loss": "Ztráty",
-    "wavelength": "Vlnová délka:",
-    "fiber_id": "ID vlákna:",
-    "start": "Start:",
-    "finish": "Konec:",
-    "total": "Celkem:"
+    "wavelength": "Vlnová délka",
+    "fiber_id": "ID vlákna",
+    "start": "Start",
+    "finish": "Konec",
+    "total": "Celkem",
+    "slope": "Svah",
+    "event": "Událost",
+    "splice_loss": "Ztráta spoje",
+    "reflection_loss": "Ztráta odrazu",
+    "measurment": "Měření"
 }

@@ -62,10 +62,10 @@ ThemeData lightTheme = ThemeData(
       letterSpacing: 0.15,
     ),
     subtitle2: TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.bold,
+      fontSize: 17,
+      fontWeight: FontWeight.w600,
       color: blackColor,
-      letterSpacing: 0.1,
+      letterSpacing: 0.15,
     ),
     bodyText1: TextStyle(
       fontSize: 16,
@@ -74,13 +74,13 @@ ThemeData lightTheme = ThemeData(
       letterSpacing: 0.5,
     ),
     bodyText2: TextStyle(
-      fontSize: 14,
+      fontSize: 15,
       fontWeight: FontWeight.normal,
       color: blackColor,
       letterSpacing: 0.25,
     ),
     caption: TextStyle(
-      fontSize: 13,
+      fontSize: 14,
       fontWeight: FontWeight.normal,
       color: darkGrayColor,
       letterSpacing: 0.4,
@@ -177,10 +177,10 @@ ThemeData darkTheme = ThemeData(
       letterSpacing: 0.15,
     ),
     subtitle2: TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.bold,
+      fontSize: 17,
+      fontWeight: FontWeight.w600,
       color: whiteColor,
-      letterSpacing: 0.1,
+      letterSpacing: 0.15,
     ),
     bodyText1: TextStyle(
       fontSize: 16,
@@ -189,13 +189,13 @@ ThemeData darkTheme = ThemeData(
       letterSpacing: 0.5,
     ),
     bodyText2: TextStyle(
-      fontSize: 14,
+      fontSize: 15,
       fontWeight: FontWeight.normal,
       color: whiteColor,
       letterSpacing: 0.25,
     ),
     caption: TextStyle(
-      fontSize: 13,
+      fontSize: 14,
       fontWeight: FontWeight.normal,
       color: lightGrayColor,
       letterSpacing: 0.4,

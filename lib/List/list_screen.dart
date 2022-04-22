@@ -76,18 +76,15 @@ class BodyWithData extends StatelessWidget {
       itemCount: _analyzerListProvider.length,
       itemBuilder: (context, index) {
         if (index == 0) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                child: TitleList(title: _locale!.my_analyzers),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-                child: ListCard(analyzerIndex: index),
-              ),
-            ],
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TitleList(title: _locale!.my_analyzers),
+                ListCard(analyzerIndex: index),
+              ],
+            ),
           );
         }
         return Padding(

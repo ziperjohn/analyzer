@@ -18,18 +18,18 @@ class InfoCard extends StatelessWidget {
         child: Column(
           children: [
             CardTitle(title: _locale!.general),
-            CardRow(title: _locale.fiber_id, value: info.fiberID),
-            CardRow(title: _locale.wavelength, value: info.wavelength),
+            CardRow(title: "${_locale.fiber_id}:", value: info.fiberID),
+            CardRow(title: "${_locale.wavelength}:", value: info.wavelength),
             const SmallSpacer(),
             CardTitle(title: _locale.loss),
-            CardRow(title: _locale.start, value: "${info.lossStart} dB"),
-            CardRow(title: _locale.finish, value: "${info.lossEnd} dB"),
-            CardRow(title: _locale.total, value: "${info.totalLoss} dB"),
+            CardRow(title: "${_locale.start}:", value: "${info.lossStart} dB"),
+            CardRow(title: "${_locale.finish}:", value: "${info.lossEnd} dB"),
+            CardRow(title: "${_locale.total}:", value: "${info.totalLoss} dB"),
             const SmallSpacer(),
             CardTitle(title: _locale.orl),
-            CardRow(title: _locale.start, value: "${info.orlStart} dB"),
-            CardRow(title: _locale.finish, value: "${info.orlFinish} dB"),
-            CardRow(title: _locale.total, value: "${info.orl} dB"),
+            CardRow(title: "${_locale.start}:", value: "${info.orlStart} dB"),
+            CardRow(title: "${_locale.finish}:", value: "${info.orlFinish} dB"),
+            CardRow(title: "${_locale.total}:", value: "${info.orl} dB"),
           ],
         ),
       ),
@@ -47,26 +47,8 @@ class CardTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: Theme.of(context).textTheme.headline5),
+        Text(title, style: Theme.of(context).textTheme.subtitle2),
         const Divider(),
-      ],
-    );
-  }
-}
-
-class CardRow extends StatelessWidget {
-  final String title;
-  final String value;
-
-  const CardRow({Key? key, required this.title, required this.value}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title, style: Theme.of(context).textTheme.bodyText1),
-        Text(value, style: Theme.of(context).textTheme.bodyText1),
       ],
     );
   }

@@ -26,8 +26,8 @@ class _PortSelectionState extends State<PortSelection> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Text(index != null
-              ? "${_locale!.selected_port} ${index! + 1}"
-              : "${_locale!.selected_port} ${_locale.none}"),
+              ? "${_locale!.selected_port}: ${index! + 1}"
+              : "${_locale!.selected_port}: ${_locale.none}"),
         ),
         SizedBox(
           height: 60,
