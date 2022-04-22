@@ -48,7 +48,7 @@ class CardTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title, style: Theme.of(context).textTheme.subtitle2),
-        const Divider(),
+        const CustomDivider(),
       ],
     );
   }

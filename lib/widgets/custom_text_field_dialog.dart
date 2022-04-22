@@ -27,7 +27,7 @@ class CustomTextFieldDialog extends StatelessWidget {
           children: [
             Text(title, style: _textTheme.headline4),
             const SizedBox(height: 5),
-            const Divider(thickness: 1, color: lightGrayColor),
+            const CustomDivider(),
             const SizedBox(height: 5),
             CustomTextField(
               controller: _textController,

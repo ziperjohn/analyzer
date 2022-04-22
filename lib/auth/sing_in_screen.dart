@@ -1,7 +1,6 @@
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/services/services.dart';
-import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -71,10 +70,7 @@ class SingInScreen extends StatelessWidget {
                     action: () => Navigator.pushNamed(context, "/forgotPassword"),
                     text: _locale.forgot_password,
                   ),
-                  const Divider(
-                    thickness: 1,
-                    color: lightGrayColor,
-                  ),
+                  const CustomDivider(),
                   Center(
                     child: Text(_locale.dont_have_account, style: _textTheme.caption),
                   ),
