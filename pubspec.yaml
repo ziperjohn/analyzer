@@ -32,6 +32,7 @@ dependencies:
   intl: ^0.17.0
   web_socket_channel: ^2.1.0
   avatar_glow: ^2.0.2
+  expandable: ^5.0.1
 
 dev_dependencies:
   flutter_test:
