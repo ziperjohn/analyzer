@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class PulsingIcon extends StatefulWidget {
   final IconData icon;
   final Color color;
+  final double size;
 
-  const PulsingIcon({Key? key, required this.icon, required this.color}) : super(key: key);
+  const PulsingIcon({Key? key, required this.icon, required this.color, required this.size})
+      : super(key: key);
 
   @override
   State<PulsingIcon> createState() => _PulsingIconState();
@@ -39,7 +41,7 @@ class _PulsingIconState extends State<PulsingIcon> with TickerProviderStateMixin
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _animation,
-      child: Icon(widget.icon, color: widget.color, size: 120),
+      child: Icon(widget.icon, color: widget.color, size: widget.size),
     );
   }
 }

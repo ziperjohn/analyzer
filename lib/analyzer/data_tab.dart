@@ -82,6 +82,7 @@ class WrongAnalyzerKeyWidget extends StatelessWidget {
           const PulsingIcon(
             icon: FontAwesomeIcons.key,
             color: redColor,
+            size: 120,
           ),
           Text(_locale!.incorrect_key),
           Text(
@@ -113,6 +114,7 @@ class WebSocketErrorWidget extends StatelessWidget {
           const PulsingIcon(
             icon: FontAwesomeIcons.exclamation,
             color: redColor,
+            size: 120,
           ),
           Text(
             _errorLocalization.parseErrorCodeToLocaleString(
