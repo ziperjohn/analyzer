@@ -16,7 +16,7 @@ class OTDRDetailsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("OTDR details"),
+        title: Text(_locale!.otdr_details),
       ),
       body: ListView.builder(
         itemCount: eventList.length,
@@ -27,11 +27,11 @@ class OTDRDetailsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TitleList(title: _locale!.general_info),
+                  TitleList(title: _locale.location_date),
                   LocationDateCard(info: info),
-                  TitleList(title: "Measurment"),
+                  TitleList(title: _locale.otdr_measurment),
                   InfoCard(info: info),
-                  TitleList(title: "Key event"),
+                  TitleList(title: _locale.events),
                   ExpandableCard(event: eventList[index], index: index),
                 ],
               ),
@@ -46,32 +46,3 @@ class OTDRDetailsScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-          // return ExpandableCard(event: eventList[index]);
-        // },
-      // ),
-      // body: Padding(
-      //   padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      //   child: SingleChildScrollView(
-      //     child: Column(
-      //       crossAxisAlignment: CrossAxisAlignment.start,
-      //       children: [
-      //         TitleList(title: "Location"),
-      //         TitleList(title: "Info"),
-      //         InfoCard(info: info),
-      //         TitleList(title: "Key event"),
-
-      //       ],
-      //     ),
-      //   ),
-      // ),
-//     );
-//   }
-// }
-

@@ -4,7 +4,13 @@ class InfoModel {
   String fiberID;
   String wavelength;
   String datetime;
-  dynamic range;
+  String lossThr;
+  String reflThr;
+  String eotThr;
+  String bc;
+  String index;
+  String pulseWidth;
+  String sampleSpacing;
   dynamic maxX;
   dynamic maxY;
   dynamic minY;
@@ -21,7 +27,13 @@ class InfoModel {
     this.fiberID = "",
     this.wavelength = "",
     this.datetime = "",
-    this.range = 0,
+    this.lossThr = "",
+    this.reflThr = "",
+    this.eotThr = "",
+    this.bc = "",
+    this.index = "",
+    this.pulseWidth = "",
+    this.sampleSpacing = "",
     this.maxX = 0,
     this.maxY = 0,
     this.minY = 0,
@@ -35,12 +47,18 @@ class InfoModel {
 
   factory InfoModel.fromJson(Map<String, dynamic> json) {
     return InfoModel(
-      locationA: json["location A"] as String,
-      locationB: json["location B"] as String,
       fiberID: json["fiber ID"] as String,
       wavelength: json["wavelength"] as String,
+      locationA: json["location A"] as String,
+      locationB: json["location B"] as String,
       datetime: json["date/time"] as String,
-      range: json["range"] as dynamic,
+      lossThr: json["loss thr"] as String,
+      reflThr: json["refl thr"] as String,
+      eotThr: json["EOT thr"] as String,
+      index: json["index"] as String,
+      bc: json["BC"] as String,
+      pulseWidth: json["pulse width"] as String,
+      sampleSpacing: json["sample spacing"] as String,
       maxX: json["maxX"] as dynamic,
       maxY: json["maxY"] as dynamic,
       minY: json['minY'] as dynamic,

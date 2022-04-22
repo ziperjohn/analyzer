@@ -42,9 +42,9 @@ class ExpandableCard extends StatelessWidget {
                     children: [
                       const CustomDivider(),
                       CardRow(title: "${_locale.distance}:", value: "${event.distance} km"),
-                      CardRow(title: "${_locale.slope}:", value: "${event.slope} -"),
                       CardRow(title: "${_locale.splice_loss}:", value: "${event.spliceLoss} dB"),
                       CardRow(title: "${_locale.reflection_loss}:", value: "${event.reflLoss} dB"),
+                      CardRow(title: "${_locale.slope}:", value: event.slope),
                     ],
                   ),
                   builder: (_, collapsed, expanded) {

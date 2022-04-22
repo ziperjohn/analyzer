@@ -99,5 +99,18 @@
     "event": "Event",
     "splice_loss": "Splice loss",
     "reflection_loss": "Reflection loss",
-    "measurment": "Measurment"
+    "loss_threshold": "Loss threshold",
+    "eot_threshold": "EOT threshold",
+    "reflection_threshold": "Reflection threshold",
+    "index": "Index",
+    "pulse_width": "Pulse width",
+    "sample_spacing": "Sample spacing",
+    "bc": "BC",
+    "date": "Date",
+    "time": "Time",
+    "events": "Events",
+    "otdr_measurment": "OTDR measurment",
+    "location_date": "Location & date",
+    "threshold": "Threshold",
+    "otdr_details": "OTDR details"
 }

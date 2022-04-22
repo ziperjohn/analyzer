@@ -3,8 +3,8 @@ import 'package:analyzer_app/models/event_model.dart';
 import 'package:analyzer_app/models/info_model.dart';
 import 'package:analyzer_app/providers/providers.dart';
 import 'package:analyzer_app/theme/colors.dart';
-import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +19,7 @@ class OTDRChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
     final _chartProvider = Provider.of<ChartProvider>(context);
 
     return Card(
@@ -37,7 +38,7 @@ class OTDRChart extends StatelessWidget {
             pointList.isEmpty
                 ? Container()
                 : ThirdButton(
-                    text: "Show details",
+                    text: _locale!.show_details,
                     action: () => navigateToOtdrDetailsScreen(context, eventList, info),
                     icon: Icons.assignment_rounded),
           ],
