@@ -1,3 +1,5 @@
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class EventModel {
   String type;
   String distance;
@@ -24,5 +26,20 @@ class EventModel {
       reflLoss: json["refl loss"] as String,
       comments: json["comments"] as String,
     );
+  }
+
+  String getEventType(AppLocalizations locale) {
+    var splitedType = type.split(" ");
+    String code = splitedType[0];
+    String eventType = splitedType[2];
+
+    switch (eventType) {
+      case "reflection":
+        return "${locale.reflection} - $code";
+      case "loss/drop/gain":
+        return "${locale.loss_drop_gain} - $code";
+      default:
+        return type;
+    }
   }
 }

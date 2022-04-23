@@ -1,9 +1,8 @@
-import 'package:analyzer_app/theme/colors.dart';
+import 'package:analyzer_app/models/models.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-
-import '../models/models.dart';
+import 'package:analyzer_app/theme/colors.dart';
 
 class LocationDateCard extends StatelessWidget {
   final InfoModel info;
@@ -22,7 +21,7 @@ class LocationDateCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AvatarColumn(mark: "A", location: info.locationA),
-                IconColumn(distance: info.range.toDouble().toStringAsFixed(3)),
+                IconColumn(distance: info.range.toDouble().toStringAsFixed(2)),
                 AvatarColumn(mark: "B", location: info.locationB),
               ],
             ),
@@ -63,10 +62,8 @@ class AvatarColumn extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: primaryColor,
-          child: Text(
-            mark,
-            style: const TextStyle(color: whiteColor),
-          ),
+          child: Text(mark,
+              style: const TextStyle(color: whiteColor, fontSize: 17, fontWeight: FontWeight.bold)),
         ),
         Text(location),
       ],

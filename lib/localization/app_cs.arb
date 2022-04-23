@@ -99,9 +99,9 @@
     "event": "Událost",
     "splice_loss": "Ztráta spoje",
     "reflection_loss": "Ztráta odrazu",
-    "loss_threshold": "Prahová hodnota ztrát",
-    "eot_threshold": "Prahová hodnota EOT",
-    "reflection_threshold": "Prahová hodnota odrazu",
+    "loss_threshold": "Ztrát",
+    "eot_threshold": "Ukončení (EOT)",
+    "reflection_threshold": "Odrazu",
     "index": "Index",
     "pulse_width": "Šířka pulzu",
     "sample_spacing": "Vzdálenost vzorků",
@@ -112,5 +112,7 @@
     "otdr_measurment": "OTDR měření",
     "location_date": "Lokalita a datum",
     "threshold": "Prahové hodnoty",
-    "otdr_details": "Detaily OTDR"
+    "otdr_details": "Detaily OTDR",
+    "reflection": "Odraz",
+    "loss_drop_gain": "Ztráta/Pokles/Zisk"
 }

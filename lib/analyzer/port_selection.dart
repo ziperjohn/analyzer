@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:analyzer_app/models/models.dart';
 import 'package:analyzer_app/services/services.dart';
+import 'package:analyzer_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -44,7 +45,11 @@ class _PortSelectionState extends State<PortSelection> {
                   padding: const EdgeInsets.symmetric(horizontal: 3),
                   child: ChoiceChip(
                     avatar: CircleAvatar(
-                        child: Text("${port.id + 1}", style: Theme.of(context).textTheme.bodyText2),
+                        child: Text(
+                          "${port.id + 1}",
+                          style:
+                              const TextStyle(color: whiteColor, fontSize: 17, fontWeight: FontWeight.bold),
+                        ),
                         backgroundColor: port.color),
                     label: Text(_locale.port),
                     selected: index == port.id,

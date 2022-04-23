@@ -36,7 +36,7 @@ class ExpandableCard extends StatelessWidget {
                     tapBodyToCollapse: true,
                     iconColor: primaryColor,
                   ),
-                  header: Text(event.type),
+                  header: Text(event.getEventType(_locale)),
                   collapsed: Container(),
                   expanded: Column(
                     children: [

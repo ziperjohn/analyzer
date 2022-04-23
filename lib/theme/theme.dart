@@ -63,7 +63,7 @@ ThemeData lightTheme = ThemeData(
     ),
     subtitle2: TextStyle(
       fontSize: 17,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w700,
       color: blackColor,
       letterSpacing: 0.15,
     ),
@@ -178,7 +178,7 @@ ThemeData darkTheme = ThemeData(
     ),
     subtitle2: TextStyle(
       fontSize: 17,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w700,
       color: whiteColor,
       letterSpacing: 0.15,
     ),
