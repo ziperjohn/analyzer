@@ -99,9 +99,9 @@ class OTDRChart extends StatelessWidget {
       ),
       borderData: FlBorderData(show: false),
       minX: 0,
-      maxX: 35,
-      minY: 0, //TODO calculate max and min Y values
-      maxY: 35,
+      maxX: info.maxX.toDouble(),
+      minY: info.minY.toDouble(),
+      maxY: info.maxY.toDouble(),
       lineBarsData: [
         LineChartBarData(
           spots: pointList,

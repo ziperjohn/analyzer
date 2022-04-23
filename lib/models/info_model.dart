@@ -22,6 +22,7 @@ class InfoModel {
   dynamic orlStart;
   dynamic orlFinish;
   dynamic datetime;
+  dynamic range;
 
   InfoModel({
     this.locationA = "",
@@ -45,6 +46,7 @@ class InfoModel {
     this.orlStart = 0,
     this.orlFinish = 0,
     this.datetime = 0,
+    this.range = 0,
   });
 
   factory InfoModel.fromJson(Map<String, dynamic> json) {
@@ -70,6 +72,7 @@ class InfoModel {
       orlStart: json["ORL start"] as dynamic,
       orlFinish: json["ORL finish"] as dynamic,
       datetime: json["datetime"] as dynamic,
+      range: json["range"] as dynamic,
     );
   }
 

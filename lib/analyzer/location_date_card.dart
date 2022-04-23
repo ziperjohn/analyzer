@@ -22,7 +22,7 @@ class LocationDateCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AvatarColumn(mark: "A", location: info.locationA),
-                IconColumn(distance: info.maxX),
+                IconColumn(distance: info.range.toDouble().toStringAsFixed(3)),
                 AvatarColumn(mark: "B", location: info.locationB),
               ],
             ),
@@ -37,7 +37,7 @@ class LocationDateCard extends StatelessWidget {
 }
 
 class IconColumn extends StatelessWidget {
-  final double distance;
+  final String distance;
   const IconColumn({Key? key, required this.distance}) : super(key: key);
 
   @override
