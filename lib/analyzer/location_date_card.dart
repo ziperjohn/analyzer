@@ -1,7 +1,9 @@
-import 'package:analyzer_app/models/models.dart';
 import 'package:analyzer_app/theme/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:analyzer_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+
+import '../models/models.dart';
 
 class LocationDateCard extends StatelessWidget {
   final InfoModel info;
@@ -9,6 +11,8 @@ class LocationDateCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _locale = AppLocalizations.of(context);
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(15),
@@ -23,8 +27,8 @@ class LocationDateCard extends StatelessWidget {
               ],
             ),
             const CustomDivider(),
-            CardRow(title: "Date:", value: "20.4.2022"),
-            CardRow(title: "Time:", value: "13:35"),
+            CardRow(title: "${_locale!.date}:", value: info.getDate()),
+            CardRow(title: "${_locale.time}:", value: info.getTime()),
           ],
         ),
       ),
@@ -40,7 +44,7 @@ class IconColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const PulsingIcon(icon: Icons.double_arrow_rounded, color: whiteColor, size: 40),
+        const PulsingIcon(icon: Icons.double_arrow_rounded, color: secondaryColor, size: 40),
         Text("$distance km"),
       ],
     );
@@ -58,7 +62,12 @@ class AvatarColumn extends StatelessWidget {
     return Column(
       children: [
         CircleAvatar(
-            backgroundColor: primaryColor, child: Text(mark, style: Theme.of(context).textTheme.bodyText2)),
+          backgroundColor: primaryColor,
+          child: Text(
+            mark,
+            style: const TextStyle(color: whiteColor),
+          ),
+        ),
         Text(location),
       ],
     );

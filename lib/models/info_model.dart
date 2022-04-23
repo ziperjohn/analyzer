@@ -1,9 +1,10 @@
+import 'package:intl/intl.dart';
+
 class InfoModel {
   String locationA;
   String locationB;
-  String fiberID;
+  String fiberType;
   String wavelength;
-  String datetime;
   String lossThr;
   String reflThr;
   String eotThr;
@@ -20,13 +21,13 @@ class InfoModel {
   dynamic orl;
   dynamic orlStart;
   dynamic orlFinish;
+  dynamic datetime;
 
   InfoModel({
     this.locationA = "",
     this.locationB = "",
-    this.fiberID = "",
+    this.fiberType = "",
     this.wavelength = "",
-    this.datetime = "",
     this.lossThr = "",
     this.reflThr = "",
     this.eotThr = "",
@@ -43,15 +44,15 @@ class InfoModel {
     this.orl = 0,
     this.orlStart = 0,
     this.orlFinish = 0,
+    this.datetime = 0,
   });
 
   factory InfoModel.fromJson(Map<String, dynamic> json) {
     return InfoModel(
-      fiberID: json["fiber ID"] as String,
+      fiberType: json["fiber type"] as String,
       wavelength: json["wavelength"] as String,
       locationA: json["location A"] as String,
       locationB: json["location B"] as String,
-      datetime: json["date/time"] as String,
       lossThr: json["loss thr"] as String,
       reflThr: json["refl thr"] as String,
       eotThr: json["EOT thr"] as String,
@@ -68,6 +69,19 @@ class InfoModel {
       orl: json["ORL"] as dynamic,
       orlStart: json["ORL start"] as dynamic,
       orlFinish: json["ORL finish"] as dynamic,
+      datetime: json["datetime"] as dynamic,
     );
+  }
+
+  String getDate() {
+    DateTime date = DateTime.fromMillisecondsSinceEpoch(datetime);
+    DateFormat formatter = DateFormat("dd.MM.yyyy");
+    return formatter.format(date);
+  }
+
+  String getTime() {
+    DateTime date = DateTime.fromMillisecondsSinceEpoch(datetime);
+    DateFormat formatter = DateFormat("HH:mm:ss");
+    return formatter.format(date);
   }
 }

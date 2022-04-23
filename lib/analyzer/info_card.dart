@@ -18,7 +18,7 @@ class InfoCard extends StatelessWidget {
         child: Column(
           children: [
             CardTitle(title: _locale!.general),
-            CardRow(title: "${_locale.fiber_id}:", value: info.fiberID),
+            CardRow(title: "${_locale.fiber_id}:", value: info.fiberType),
             CardRow(title: "${_locale.wavelength}:", value: info.wavelength),
             CardRow(title: "${_locale.pulse_width}:", value: info.pulseWidth),
             CardRow(title: "${_locale.sample_spacing}:", value: info.sampleSpacing),
