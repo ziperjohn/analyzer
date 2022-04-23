@@ -10,7 +10,7 @@ class UserSharedPreferences {
 
   static bool get showAxisX => _preferences.getBool("showAxisX") ?? true;
   static bool get showAxisY => _preferences.getBool("showAxisY") ?? true;
-  static bool get showGrid => _preferences.getBool("showGrid") ?? false;
+  static bool get showGrid => _preferences.getBool("showGrid") ?? true;
   static bool get showDots => _preferences.getBool("showDots") ?? false;
   static bool get showAreaUnderChart => _preferences.getBool("showAreaUnderChart") ?? true;
 
