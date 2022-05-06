@@ -8,14 +8,17 @@ class AnalyzerPortsStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int firstRowLength = portlist.length > 10 ? 10 : portlist.length;
+    int secondRowLength = portlist.length;
+
     return SizedBox(
       height: 150,
       child: Card(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            RowPort(portlist: portlist.sublist(0, 10)),
-            RowPort(portlist: portlist.sublist(10, 20)),
+            RowPort(portlist: portlist.sublist(0, firstRowLength)),
+            if (portlist.length > 10) RowPort(portlist: portlist.sublist(10, secondRowLength)),
           ],
         ),
       ),
