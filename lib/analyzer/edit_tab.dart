@@ -33,7 +33,7 @@ class EditTab extends StatelessWidget {
             const BigSpacer(),
             CustomTextField(
               controller: _placeController,
-              hintText: _locale.place,
+              hintText: "${_locale.place} ${_locale.optional}",
               isPassword: false,
               isEmail: false,
               autoFocus: false,
@@ -41,7 +41,7 @@ class EditTab extends StatelessWidget {
             const BigSpacer(),
             CustomTextField(
               controller: _ipAddressController,
-              hintText: _locale.ipAddress,
+              hintText: _locale.server_address,
               isPassword: false,
               isEmail: false,
               autoFocus: false,
@@ -49,7 +49,7 @@ class EditTab extends StatelessWidget {
             const BigSpacer(),
             CustomTextField(
               controller: _portController,
-              hintText: _locale.port,
+              hintText: "${_locale.port} ${_locale.optional}",
               isPassword: false,
               isEmail: false,
               autoFocus: false,

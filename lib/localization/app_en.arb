@@ -51,8 +51,8 @@
     "create_analyzer": "Create analyzer",
     "error": "Unspecified error.",
     "port": "Port",
-    "ipAddress": "IP address",
-    "ip_port_not_defined": "IP address or port not defined.",
+    "server_address": "Server address",
+    "server_address_not_defined": "Server address not defined.",
     "wrong_password": "The password is invalid.",
     "invalid_email": "The email address is badly formatted.",
     "weak_password": "Password should be at least 6 characters.",
@@ -60,7 +60,7 @@
     "user_not_found": "There is no user record corresponding to this identifier. The user may have been deleted.",
     "passwords_dont_match": "The passwords don't match.",
     "recovery_email_sent": "Password recovery email has been sent, check your inbox",
-    "wrong_ip_error": "Wrong ip address, try to correct it in the edit tab.",
+    "wrong_server_address_error": "Wrong server address, try to correct it in the edit tab.",
     "wrong_port_or_unavailable_server": "Wrong port or the server is unavailable, try editing the port in the edit tab",
     "no_email": "No email",
     "ok": "Ok",
@@ -114,5 +114,6 @@
     "threshold": "Threshold",
     "otdr_details": "OTDR details",
     "reflection": "Reflection",
-    "loss_drop_gain": "Loss/Drop/Gain"
+    "loss_drop_gain": "Loss/Drop/Gain",
+    "optional": "(optional)"
 }

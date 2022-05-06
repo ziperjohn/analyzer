@@ -19,8 +19,8 @@ class FlushbarLocalization {
         return locale.passwords_dont_match;
       case "recovery_email_sent":
         return locale.recovery_email_sent;
-      case "wrong_ip_error":
-        return locale.wrong_ip_error;
+      case "wrong_server_address_error":
+        return locale.wrong_server_address_error;
       case "wrong_port_or_unavailable_server":
         return locale.wrong_port_or_unavailable_server;
       case "password_changed":
@@ -29,8 +29,8 @@ class FlushbarLocalization {
         return locale.email_changed;
       case "network_request_failed":
         return locale.network_request_failed;
-      case "ip_port_not_defined":
-        return locale.ip_port_not_defined;
+      case "server_address_not_defined":
+        return locale.server_address_not_defined;
       case "changes_saved":
         return locale.changes_saved;
       case "changes_not_saved":
@@ -44,7 +44,7 @@ class FlushbarLocalization {
 
   String findSubstringInErrorMessage(String error) {
     if (error.contains("Failed host lookup")) {
-      return "wrong_ip_error";
+      return "wrong_server_address_error";
     } else if (error.contains("Connection refused")) {
       return "wrong_port_or_unavailable_server";
     } else {

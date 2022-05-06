@@ -17,8 +17,8 @@ class DataTab extends StatelessWidget {
     final _locale = AppLocalizations.of(context);
     final _webSocketService =
         WebSocketService(ipAddress: analyzer.ipAddress, port: analyzer.port, key: analyzer.key);
-    if (analyzer.ipAddress == "" || analyzer.port == "") {
-      return const WebSocketErrorWidget(error: "ip_port_not_defined");
+    if (analyzer.ipAddress == "") {
+      return const WebSocketErrorWidget(error: "server_address_not_defined");
     } else {
       return StreamBuilder<ResponseModel>(
         stream: _webSocketService.webSocketStream(),
@@ -122,7 +122,7 @@ class WebSocketErrorWidget extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Text(
-            error != "ip_port_not_defined" ? error : "",
+            error != "server_address_not_defined" ? error : "",
             style: _textTheme.caption,
             textAlign: TextAlign.center,
           ),
