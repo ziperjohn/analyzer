@@ -17,6 +17,7 @@ class OTDRDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(_locale!.otdr_details),
+        centerTitle: true,
       ),
       body: ListView.builder(
         itemCount: eventList.length,
