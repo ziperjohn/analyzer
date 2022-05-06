@@ -55,7 +55,11 @@ class WebSocketService {
   }
 
   void createWebSocketChannel() {
-    webSocketChannel = WebSocketChannel.connect(Uri.parse("ws://$ipAddress:$port"));
+    String stringPort = port == "" ? "" : ":$port";
+    String uri = "wss://$ipAddress$stringPort/";
+
+    webSocketChannel = WebSocketChannel.connect(Uri.parse(uri));
+
     sendData(jsonEncode({"key": key, "selectedPort": null}));
   }
 
