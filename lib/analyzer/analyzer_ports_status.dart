@@ -46,9 +46,12 @@ class Port extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 20,
-          width: 20,
-          color: port.color,
+          height: 22,
+          width: 22,
+          decoration: BoxDecoration(
+            color: port.color,
+            borderRadius: const BorderRadius.all(Radius.circular(5)),
+          ),
         ),
         const SizedBox(height: 3),
         Text("${port.id + 1}")
