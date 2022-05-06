@@ -172,7 +172,9 @@ class OTDRChart extends StatelessWidget {
           "${_locale!.distance}: ${flSpot.x.toString()} km\n${_locale.attenuation}: ${flSpot.y.toString()} dB",
           const TextStyle(
             color: whiteColor,
+            fontSize: 13,
           ),
+          textAlign: TextAlign.left,
         );
       },
     ).toList();
