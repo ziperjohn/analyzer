@@ -1,16 +1,24 @@
-# analyzer
+# **Master thesis: Analyzer**
 
-A new Flutter project.
+### **Author:** Bc. Jan Vaverka
+
+### **University:** Brno University of Technology
+
+### **Faculty:** Faculty of Electrical Engeneering and Communication
+
+### **Department:** Department of Telecommunications
+
+---
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Create an account
+2. Create an analyzer item
+3. Go to analyzer → Edit tab → Fill
+   1. Server address: **analyzer-server.glitch.me**
+   2. Key: **123456789**
+   3. Other items are optional
+   4. Save changes
+4. Go back to Data tab
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Server address and key are only for testing purposes**
