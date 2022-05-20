@@ -8,8 +8,6 @@
 
 ### **Department:** Department of Telecommunications
 
----
-
 ## Getting Started
 
 1. Create an account
